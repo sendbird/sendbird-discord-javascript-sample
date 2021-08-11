@@ -9,3 +9,54 @@
 .customized-app {
   height: 100vh;
 }
+
+.sendbird-theme--light
+.sendbird-channel-preview--active
+.sendbird-channel-preview__content__upper__header__channel-name {
+    color: white;
+  }
+
+div.sendbird-message {
+  text-align: left;
+
+}
+
+/* selected chat color */
+div.sendbird-channel-preview--active {
+ background-color: rgb(109, 111, 117) !important; 
+}
+
+/* sidebar chanels */
+div.sendbird-channel-list,
+/* sidebar banner */
+div.sendbird-channel-header  {
+  background-color: #474a50 !important;
+}
+
+/* chat  */
+div.sendbird-conversation,
+/* top banner */
+div.sendbird-chat-header,
+/* msg background */
+div.sendbird-user-message__text-balloon__inner{
+   background-color: rgb(63, 65, 68) !important;
+}
+
+/* div.sendbird-emoji-reactions {
+  background-color: red;
+} */
+
+/* options dropdown for a msg */
+ul.sendbird-dropdown__menu{
+    background-color: rgb(32, 32, 34) !important;
+}
+
+/* bubble around emoji reactions outgoing msg */
+.sendbird-theme--light .sendbird-user-message--outgoing .sendbird-user-message__text-balloon .sendbird-user-message__text-balloon__inner .sendbird-user-message__text-balloon__inner__emoji-reactions{
+  border: none;
+}
+
+/* bubble around emoji reactions incoming msg */
+.sendbird-theme--light .sendbird-user-message--incoming .sendbird-user-message__text-balloon .sendbird-user-message__text-balloon__inner .sendbird-user-message__text-balloon__inner__emoji-reactions{
+ border: none; 
+}

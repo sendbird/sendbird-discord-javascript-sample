@@ -11,21 +11,25 @@ function App() {
   const NICKNAME = 'Michelle';
 
   const myColorSet = {
-    //background color
+   //background color
     '--sendbird-light-background-50':  '#474a50',
 
+    //
+    '--sendbird-light-primary-500': '#33353a',
+  
     //hover on my own message
     '--sendbird-light-primary-400': '#33353a',
 
-    //selected chat's group name  AND background color of my text?
+    //selected chat's group name AND bg color of my text? AND hover on emoji reaction
     '--sendbird-light-primary-300' : '#474a50',
-   
+     
     //
     '--sendbird-light-primary-200': 'rgba(0, 0, 0, 0.32)',
-    
-    //selected chat & EMOJI Background
-    '--sendbird-light-primary-100'	:' #55595f',
-
+      
+      //selected chat & EMOJI Background
+          //how to seperate the 2 from both sharing this property?????
+    '--sendbird-light-primary-100'	:' #474a50',
+  
     //all numbers / dates / names in chat
     '--sendbird-light-onlight-02':' #bdbdbd',
 
@@ -35,11 +39,7 @@ function App() {
    //incoming msg background color 
    '--sendbird-light-background-100' : '#474a50',
 
-   //
-  //  '--sendbird-add-reaction-button-border-hover' : '#33353a',
-    //
-  //  '--sendbird-tooltip-text-color' : '#33353a',
-
+   
 };
 
   return (
