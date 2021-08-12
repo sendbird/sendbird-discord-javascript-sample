@@ -25,6 +25,10 @@ div.sendbird-message {
 div.sendbird-channel-preview--active {
  background-color: rgb(109, 111, 117) !important; 
 }
+/* selected chat's msg preview text color */
+div.sendbird-channel-preview--active div.sendbird-channel-preview__content__lower span {
+  color: rgb(109, 111, 117);
+}
 
 /* sidebar chanels */
 div.sendbird-channel-list,
@@ -32,6 +36,26 @@ div.sendbird-channel-list,
 div.sendbird-channel-header  {
   background-color: #474a50 !important;
 }
+
+/* individual's/groups image */
+div.sendbird-chat-header--avatar--group-channel.sendbird-avatar,
+div.sendbird-avatar-img.sendbird-image-renderer,
+div.sendbird-image-renderer__image  {
+  width: 30px !important;
+  height: 30px !important;
+}
+
+/* sidebar channel list preview avatar  */
+div.sendbird-channel-preview__avatar{
+  width: 8% !important;
+}
+
+/* sidebar channel list group box  */
+div.sendbird-channel-preview {
+  height: 60px;
+  padding: 20px;
+}
+
 
 /* chat  */
 div.sendbird-conversation,
@@ -41,10 +65,6 @@ div.sendbird-chat-header,
 div.sendbird-user-message__text-balloon__inner{
    background-color: rgb(63, 65, 68) !important;
 }
-
-/* div.sendbird-emoji-reactions {
-  background-color: red;
-} */
 
 /* options dropdown for a msg */
 ul.sendbird-dropdown__menu{
@@ -60,3 +80,40 @@ ul.sendbird-dropdown__menu{
 .sendbird-theme--light .sendbird-user-message--incoming .sendbird-user-message__text-balloon .sendbird-user-message__text-balloon__inner .sendbird-user-message__text-balloon__inner__emoji-reactions{
  border: none; 
 }
+
+/* add group channel button top left */
+/* ITS AN SVG TAG SO ITS AN IMAGE I CANT CHANGE THE COLOR */
+div.sendbird-channel-header__right-icon {
+  background-color: black;
+}
+
+/* channel list timestamp -> don't want to include it so make it not visable*/ 
+.sendbird-channel-preview .sendbird-channel-preview__content .sendbird-channel-preview__content__upper__last-message-at 
+{
+  color: #474a50 ;
+}
+
+/* msg preview in channel list -> make it not visable*/
+.sendbird-theme--light .sendbird-label--color-onbackground-3 {
+  color: #474a50;
+}
+
+/* edit profile background  */
+div.sendbird-modal__content{
+  background-color: #474a50 ;
+  border: 2px solid #2f3135;
+  padding: 10px;
+}
+
+/* edit profile box */
+div.sendbird-modal__header,
+div.sendbird-modal__body,
+div.sendbird-modal__footer{
+  text-align: center;
+}
+
+/* Channel list names */
+.sendbird-label--subtitle-2{
+  font-size: 16px;
+}
+

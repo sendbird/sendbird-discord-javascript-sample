@@ -39,7 +39,8 @@ function App() {
    //incoming msg background color 
    '--sendbird-light-background-100' : '#474a50',
 
-   
+   //font size
+   'sendbird-label--subtitle-2' : '30px'
 };
 
   return (
