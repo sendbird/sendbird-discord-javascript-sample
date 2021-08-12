@@ -1,11 +1,10 @@
-import './App.css';
+// import './App.css';    -> delete if never use
 import React from "react";
 import { SendBirdProvider as SBProvider } from "sendbird-uikit";
 import "sendbird-uikit/dist/index.css";
 import CustomizedApp from "./CustomizedApp";
 import { APP_ID, USER_ID, NICKNAME } from "./const";
 import "./index.css";
-// import useStyles from "./styles";
 
 export default function App() {
   const myColorSet ={

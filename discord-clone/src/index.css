@@ -1,4 +1,4 @@
-/* body {
+body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -10,14 +10,16 @@
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-} */
+}
+
+
+.sendbird-theme--light {
+  height: 100% ;
+  width: 100%;
+}
 
 .app-wrapper {
   height: calc(100vh - 20px);
-}
-
-.customized-app {
-  height: 90%;
 }
 
 .customized-channelpreview-item:hover {
@@ -33,4 +35,21 @@ code {
 
 .channel-selector__icons {
   display: flex;
+}
+
+/* channel list all groups */
+div.MuiPaper-root.MuiCard-root.MuiPaper-elevation1{
+  background-color: rgb(71, 74, 80) !important ;
+  color: gray;
+}
+
+div.MuiPaper-root.MuiCard-root.MuiPaper-elevation1:hover {
+  background-color: rgb(87, 90, 97) !important;
+  color: white;
+}
+
+/* channel list only selected group's box */
+.makeStyles-selected-1{
+  background-color:  rgb(109, 111, 117) !important;
+  color: white !important;
 }
