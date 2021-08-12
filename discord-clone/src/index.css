@@ -12,14 +12,13 @@ code {
     monospace;
 }
 
-
-.sendbird-theme--light {
-  height: 100% ;
-  width: 100%;
-}
-
 .app-wrapper {
   height: calc(100vh - 20px);
+}
+
+.customized-app {
+  height: 100%;
+  width: 100%;
 }
 
 .customized-channelpreview-item:hover {
