@@ -6,45 +6,18 @@ import {
     ChannelSettings as SBChannelSettings,
     withSendBird 
 } from 'sendbird-uikit';
+import CustomizedChannelPreviewItem from "./CustomizedChannelPreviewItem";
 
 function CustomizedApp(props) {
-    // default props
-        // const {
-        //   stores: { sdkStore, userStore },
-        //   config: {
-        //     isOnline,
-        //     userId,
-        //     appId,
-        //     accessToken,
-        //     theme,
-        //     userListQuery,
-        //     logger,
-        //     pubSub
-        //   }
-        // } = props;
-        // const logDefaultProps = useCallback(() => {}, [
-        //   sdkStore.initialized,
-        //   sdkStore.sdk,
-        //   sdkStore.loading,
-        //   sdkStore.error,
-        //   userStore.initialized,
-        //   userStore.user,
-        //   userStore.loading,
-        //   isOnline,
-        //   userId,
-        //   appId,
-        //   accessToken,
-        //   theme,
-        //   userListQuery,
-        //   logger,
-        //   pubSub
-        // ]);
-        // logDefaultProps();
-  
+
+    const {
+        config: { userId },
+        customizedPreviewItem
+      } = props;
+    
     // useState since in functional component
-    const [showSettings, setShowSettings] = useState(false);
     const [currentChannelUrl, setCurrentChannelUrl] = useState("");
-  
+    const [showSettings, setShowSettings] = useState(false);
     return (
       <div className="customized-app">
         <div className="sendbird-app__wrap">
@@ -55,16 +28,27 @@ function CustomizedApp(props) {
                   setCurrentChannelUrl(channel.url);
                 }
               }}
+              renderChannelPreview={
+                customizedPreviewItem
+                  ? ({ channel, onLeaveChannel }) => (
+                      <CustomizedChannelPreviewItem
+                        userId={userId}
+                        channel={channel}
+                        onLeaveChannel={onLeaveChannel}
+                        currentChannelUrl={currentChannelUrl}
+                      />
+                    )
+                  : null
+              }
             />
           </div>
           <div className="sendbird-app__conversation-wrap">
-            <SBConversation
-              channelUrl={currentChannelUrl}
-              onChatHeaderActionClick={() => {
-                setShowSettings(true);
-              }}
-            />
-          </div>
+          <SBConversation
+            channelUrl={currentChannelUrl}
+            onChatHeaderActionClick={() => {
+              setShowSettings(true);
+            }}
+          />
         </div>
         {showSettings && (
           <div className="sendbird-app__settingspanel-wrap">
@@ -73,15 +57,13 @@ function CustomizedApp(props) {
               onCloseClick={() => {
                 setShowSettings(false);
               }}
-              onChannelModified={(h) => {
-                  console.log(h)
-              }}
             />
           </div>
         )}
       </div>
-    );
-  }
-  //withSendBird ->  higher-order component to access data from SendBirdProvider
-  export default withSendBird(CustomizedApp);
-  
+    </div>
+  );
+}
+
+export default withSendBird(CustomizedApp);
+//withSendBird ->  higher-order component to access data from SendBirdProvider

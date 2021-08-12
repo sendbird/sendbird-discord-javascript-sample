@@ -2,8 +2,7 @@
   Font-family: sans-serif;
   Text-align: center;
   height: 100vh;  
-  width: 100vw;  
-  
+  width: 100vw;    
 }
 
 .customized-app {
@@ -15,6 +14,7 @@
 .sendbird-channel-preview__content__upper__header__channel-name {
     color: white;
   }
+
 
 div.sendbird-message {
   text-align: left;
@@ -37,17 +37,23 @@ div.sendbird-channel-header  {
   background-color: #474a50 !important;
 }
 
-/* individual's/groups image */
+/* channel lists individuals/groups icon */
 div.sendbird-chat-header--avatar--group-channel.sendbird-avatar,
-div.sendbird-avatar-img.sendbird-image-renderer,
-div.sendbird-image-renderer__image  {
+div.sendbird-avatar-img  {
+  width: 30px !important;
+  height: 30px !important;
+}
+
+/* channel lists individuals/groups image in icon */
+div.sendbird-avatar-img.sendbird-image-renderer .sendbird-image-renderer__image{
   width: 30px !important;
   height: 30px !important;
 }
 
 /* sidebar channel list preview avatar  */
 div.sendbird-channel-preview__avatar{
-  width: 8% !important;
+  width: 10% !important;
+  height: 35px !important;
 }
 
 /* sidebar channel list group box  */
@@ -55,7 +61,6 @@ div.sendbird-channel-preview {
   height: 60px;
   padding: 20px;
 }
-
 
 /* chat  */
 div.sendbird-conversation,
@@ -87,11 +92,25 @@ div.sendbird-channel-header__right-icon {
   background-color: black;
 }
 
+/* channel list selected channel's timestamp   */
+/* div.sendbird-channel-preview--active ,
+div.sendbird-channel-preview__content ,
+div.sendbird-channel-preview__content__upper ,
+div.sendbird-channel-preview__content__upper__header ,
+span.sendbird-channel-preview__content__upper__last-message-at {
+  color: rgb(109, 111, 117) !important;
+} */
+
 /* channel list timestamp -> don't want to include it so make it not visable*/ 
-.sendbird-channel-preview .sendbird-channel-preview__content .sendbird-channel-preview__content__upper__last-message-at 
-{
-  color: #474a50 ;
-}
+/* .sendbird-channel-preview__content .sendbird-channel-preview__content__upper__last-message-at,
+.sendbird-channel-preview__content .sendbird-channel-preview__content__upper__header__total-members  {
+  color: #474a50 !important;
+} */
+
+/* top left - current user's ID next to name */
+/* .sendbird-channel-header__title__right .sendbird-channel-header__title__right__user-id {
+  color: #474a50 !important;
+} */
 
 /* msg preview in channel list -> make it not visable*/
 .sendbird-theme--light .sendbird-label--color-onbackground-3 {
