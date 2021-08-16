@@ -14,6 +14,7 @@ import {
 } from "@material-ui/core";
 import { MoreVert as MoreVertIcon } from "@material-ui/icons";
 import { makeStyles, withStyles } from "@material-ui/styles";
+// import { OpenChannel } from "sendbird-uikit";
 
 const SmallAvatar = withStyles(theme => ({
   root: {
@@ -92,7 +93,7 @@ export default function CustomizedChannelPreviewItem(props) {
       : `${membersNamesExcludingMe.slice(0, 30)}...`;
   }, [userId, channel, channelName]);
 
-  // channel type filter
+  // channel type filter    
   if (
     channel.isOpenChannel() ||
     channel.isFrozen ||

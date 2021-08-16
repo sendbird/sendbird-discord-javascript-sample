@@ -3,7 +3,7 @@ import React from "react";
 import { SendBirdProvider as SBProvider } from "sendbird-uikit";
 import "sendbird-uikit/dist/index.css";
 import CustomizedApp from "./CustomizedApp";
-import { APP_ID, USER_ID, NICKNAME } from "./const";
+import { APP_ID, USER_ID, NICKNAME, ACCESS_TOKEN } from "./const";
 import "./index.css";
 
 export default function App() {
@@ -33,7 +33,7 @@ export default function App() {
     //incoming msg font color
     '--sendbird-light-onlight-01' : '#FFFFFF',
         
-    //incoming msg background color 
+    //incoming msg background color sss
     '--sendbird-light-background-100' : '#474a50'
   };
 
@@ -41,7 +41,7 @@ export default function App() {
 
   return (
       <div  className="app-wrapper">
-        <SBProvider appId={APP_ID} userId={USER_ID} nickname={NICKNAME}  colorSet={myColorSet}>
+        <SBProvider appId={APP_ID} userId={USER_ID} nickname={NICKNAME} accessToken={ACCESS_TOKEN} colorSet={myColorSet}>
           <CustomizedApp  customizedPreviewItem={customizedPreviewItem} />
         </SBProvider>
       </div>
