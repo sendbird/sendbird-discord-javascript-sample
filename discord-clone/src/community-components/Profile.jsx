@@ -10,7 +10,7 @@ export default function Profile({ user }) {
       </div>
       <div className="profile-text">
         <div className="profile-name">{user.nickname}</div>
-        <div className="profile-nickname">{user.userId}</div>
+        <div className="profile-nickname">#{user.userId}</div>
       </div>
     </div>
   );

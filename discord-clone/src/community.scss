@@ -1,23 +1,28 @@
 .community-app {
-    display: flex;
-    flex-direction: row;
-    height: 99vh;
-    * {
-      font-family: var(--sendbird-font-family-default);
-    }
-  
-    .community-app {
-      flex: 1;
-    }
-  
-    .channel-list {
-      background-color: var(--bg-0);
-      border-right: 1px solid var(--gray-1);
-    }
-  
-    .community-open-channel {
-      flex: 1;
-      background-color: var(--bg-0);
-    }
+  display: flex;
+  flex-direction: row;
+  height: 99vh;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  background-color: var(--sendbird-light-background-50);
+  color: gray;
+
+  .community-app {
+    flex: 1;
   }
-  
+
+  // .channel-list {
+  //   background-color: var(--bg-0);
+  //   border-right: 1px solid var(--gray-1);
+  // }
+
+ 
+  .community-open-channel {
+    flex: 1;
+    background-color: var(--bg-0);
+  }
+}
+
+div.community-channel-list .channel-preview:hover {
+  background-color: rgb(87, 90, 97) !important;
+  color: white;
+}

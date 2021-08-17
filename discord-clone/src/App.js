@@ -2,7 +2,7 @@
 import React from "react";
 import { SendBirdProvider as SBProvider } from "sendbird-uikit";
 import "sendbird-uikit/dist/index.css";
-import CustomizedApp from "./CustomizedApp";
+import CustomizedApp from "./CustomizedApp.jsx";
 import { APP_ID, USER_ID, NICKNAME, ACCESS_TOKEN } from "./const";
 import "./index.css";
 

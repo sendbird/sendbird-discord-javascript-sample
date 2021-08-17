@@ -39,7 +39,7 @@ code {
 /* channel list all groups */
 div.MuiPaper-root.MuiCard-root.MuiPaper-elevation1{
   background-color: rgb(71, 74, 80) !important ;
-  color: gray;
+  color: rgb(155, 151, 151);
 }
 
 div.MuiPaper-root.MuiCard-root.MuiPaper-elevation1:hover {
@@ -51,4 +51,14 @@ div.MuiPaper-root.MuiCard-root.MuiPaper-elevation1:hover {
 .makeStyles-selected-1{
   background-color:  rgb(109, 111, 117) !important;
   color: white !important;
+}
+
+div.private-channel-list .private-channel-list__title {
+  padding: 20px 24px;
+  box-sizing: border-box;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  color: var(--gray-0);
+  border-bottom: 1px solid var(--gray-1);
 }

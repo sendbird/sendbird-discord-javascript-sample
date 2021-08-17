@@ -1,7 +1,7 @@
 import React , { useEffect, useState }  from 'react';
 import { withSendBird, sendBirdSelectors } from 'sendbird-uikit';
 import './community-channel-list.scss';
-import OpenChannelPreview from './OpenChannelPreview';
+import OpenChannelPreview from './OpenChannelPreview.jsx';
 import Profile from './Profile';
 
 function CommunityChannelList({
@@ -22,7 +22,8 @@ function CommunityChannelList({
       // @ts-ignore: Unreachable code error
 
       //filtered for specific customType 
-      // openChannelListQuery.customTypes = ["SB_COMMUNITY_TYPE"];
+        // openChannelListQuery.customTypes = ["SB_COMMUNITY_TYPE"];
+//only renders up to 20
       openChannelListQuery.next(function (openChannels, error) {
         if (error) {
           return;
@@ -33,7 +34,7 @@ function CommunityChannelList({
         }
       });
     }, [sdk]);
-  
+
     return (
       <div className="community-channel-list">
         <div className="community-channel-list__title">Community Channels</div>
@@ -56,9 +57,6 @@ function CommunityChannelList({
               </div>
             </div>
           )}
-          <p className="community-channel-list__placeholder">
-            Preset channels developed by UI Kit
-          </p>
         </div>
         <div className="community-channel-list__footer">
           <Profile user={user} />
