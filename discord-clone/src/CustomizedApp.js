@@ -4,67 +4,85 @@ import {
     Channel as SBConversation,
     ChannelList as SBChannelList,
     ChannelSettings as SBChannelSettings,
-    withSendBird
+    withSendBird,
+    OpenChannel,
+    OpenChannelSettings
 } from 'sendbird-uikit';
-//import CustomizedChannelPreviewItem from "./CustomizedChannelPreviewItem";
-import CommunityChannelList from './CommunityChannelList.js';
+import CustomizedChannelPreviewItem from "./CustomizedChannelPreviewItem";
+import CommunityChannelList from './community-components/CommunityChannelList.js';
+import "./community.scss";
 
-function CustomizedApp(props) {
-
-    const {
-        config: { userId },
-        // customizedPreviewItem, 
-        appId,
-        nickname,
-      } = props;
-    
-    // utilized w/ private channel list
-    // const [currentChannelUrl, setCurrentChannelUrl] = useState("");
+function CustomizedApp({ appId, userId, nickname, accessToken,customizedPreviewItem }) {
     
     const [showSettings, setShowSettings] = useState(false);
-
-        //const [currentChannel, setCurrentChannel] = useState<Sendbird.OpenChannel>(null) ;
-    const [currentChannel, setCurrentChannel] = useState("") ;
-
-        //const [channels, setChannels] = useState<Array<Sendbird.OpenChannel>>([]);
+    const [currentChannel, setCurrentChannel] = useState(null);
     const [channels, setChannels] = useState([""]);
-    const currentChannelUrl = currentChannel ? currentChannel.url : '';
+    // const currentChannelUrl = currentChannel ? currentChannel.url : '';
+    const [currentChannelUrl, setCurrentChannelUrl] = useState("");
 
     return (
       <div className="customized-app">
         <div className="sendbird-app__wrap">
           <div className="sendbird-app__channellist-wrap">
-            {/* //List of private chats */}
-                        {/* <SBChannelList
-                        onChannelSelect={(channel) => {
-                            if (channel && channel.url) {
+            <div className="private-channel-list">
+                <SBChannelList
+                    onChannelSelect={(channel) => {
+                        if (channel && channel.url) {
                             setCurrentChannelUrl(channel.url);
-                            }
-                        }}
-                        renderChannelPreview={
-                            customizedPreviewItem
-                            ? ({ channel, onLeaveChannel }) => (
-                                <CustomizedChannelPreviewItem
-                                    userId={userId}
-                                    channel={channel}
-                                    onLeaveChannel={onLeaveChannel}
-                                    currentChannelUrl={currentChannelUrl}
-                                />
-                                )
-                            : null
+                        } //added
+                        else {
+                            setCurrentChannelUrl('')
                         }
-                        /> */}
-                    <div className="channel-list">
-                        <CommunityChannelList
-                            currentChannelUrl={currentChannelUrl}
-                            setCurrentChannel={setCurrentChannel}
-                            channels={channels}
-                            setChannels={setChannels}
-                        />
-                    </div> 
-          </div>
+                    }}
+                    renderChannelPreview={
+                        customizedPreviewItem
+                        ? ({ channel, onLeaveChannel }) => (
+                            <CustomizedChannelPreviewItem
+                                userId={userId}
+                                channel={channel}
+                                onLeaveChannel={onLeaveChannel}
+                                currentChannelUrl={currentChannelUrl}
+                            />
+                            )
+                        : null
+                    }
+                /> 
+            </div>
+            <div className="community-app">
+                <div className="channel-list">
+                    <CommunityChannelList
+                        currentChannelUrl={currentChannelUrl}
+                        setCurrentChannel={setCurrentChannel}
+                    />
+                </div>
+               
+             </div>
 
 
+
+
+        </div>
+
+
+{/* chat conversation for Open Channel */}
+        <div className="community-open-channel">
+            <OpenChannel
+                channelUrl={currentChannelUrl}
+                onChatHeaderActionClick={() => {
+                    setShowSettings(true);
+                }}
+            />
+        </div>
+        {showSettings && (
+        <OpenChannelSettings
+            channelUrl={currentChannelUrl}
+            onCloseClick={() => {
+                setShowSettings(false);
+            }}
+        />
+        )}
+
+{/* chat conversation for Private Channel */}
         <div className="sendbird-app__conversation-wrap">
           <SBConversation
             channelUrl={currentChannelUrl}
