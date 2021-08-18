@@ -5,18 +5,68 @@
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   background-color: var(--sendbird-light-background-50);
   color: gray;
+  flex: 1;
+}
 
-  .community-app {
+//whole sidebar container
+div.sendbird-app__channellist-wrap {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+.private-channel-list__title {
+  padding: 20px 24px;
+  box-sizing: border-box;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  color: var(--gray-0);
+  border-bottom: 1px solid var(--gray-1);
+}
+
+//private channel under whole sidebar
+.private-channel-list{
+    display: flex;
+    height: 99vh;
+    flex-direction: column;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    background-color: var(--sendbird-light-background-50);
+    color: "gray";
     flex: 1;
-  }
- 
-  .community-open-channel__conversation-wrap {
-    flex: 1;
-    background-color: var(--bg-0);
-  }
+}
+
+//community/open channel under whole sidebar
+.community-app{
+  flex: 0 1 auto;
+}
+
+//sidebar header for channel list
+.sendbird-channel-list__header{
+  display: none;
 }
 
 div.community-channel-list .channel-preview:hover {
   background-color: rgb(87, 90, 97) !important;
   color: white;
 }
+
+div.sendbird-app__conversation-wrap{
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+div.community-open-channel__conversation-wrap {
+  flex: 1;
+  background-color: var(--bg-0);
+}
+
+div.group-channel__conversation-wrap {
+  flex: 1;
+  background-color: var(--bg-0);
+}
+
+
+
+
