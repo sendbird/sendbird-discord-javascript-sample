@@ -9,14 +9,8 @@
   .community-app {
     flex: 1;
   }
-
-  // .channel-list {
-  //   background-color: var(--bg-0);
-  //   border-right: 1px solid var(--gray-1);
-  // }
-
  
-  .community-open-channel {
+  .community-open-channel__conversation-wrap {
     flex: 1;
     background-color: var(--bg-0);
   }

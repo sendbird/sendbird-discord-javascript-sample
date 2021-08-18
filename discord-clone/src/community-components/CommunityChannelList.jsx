@@ -17,11 +17,12 @@ function CommunityChannelList({
       }
 
  //be able to filter the channels in later step     
-      //return empty channels
+    //return empty channels
       const openChannelListQuery = sdk.OpenChannel.createOpenChannelListQuery();
       // @ts-ignore: Unreachable code error
 
-      //filtered for specific customType 
+
+    //filtered for specific customType 
         // openChannelListQuery.customTypes = ["SB_COMMUNITY_TYPE"];
 //only renders up to 20
       openChannelListQuery.next(function (openChannels, error) {

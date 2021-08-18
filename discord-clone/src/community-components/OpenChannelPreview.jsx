@@ -24,13 +24,12 @@ export default function OpenChannelPreview({
         //return the channelMeta (data) & keep running if isStreaming is there
 
   const streamInfo = useMemo(() => {
-    //Error : Using type annotation here (typescript)
-    let channelMeta: ChannelMeta;
+    let channelMeta = null ;
     if (isStreaming) {
       try {
         channelMeta = JSON.parse(channel.data);
       } catch (error) {
-        channelMeta = null;
+ 
       }
     }
     return channelMeta;
