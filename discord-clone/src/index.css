@@ -86,7 +86,6 @@ div.private-channel-list .private-channel-list__title {
   font-stretch: normal;
   font-style: normal;
   line-height: 1.14;
-
 }
 
 
@@ -99,4 +98,16 @@ div.private-channel-list .private-channel-list__title {
 div.group-channel__conversation-wrap {
   flex: 1;
   background-color: var(--bg-0);
+}
+
+.sendbird-theme--light .sendbird-avatar .sendbird-avatar-img{
+  background-color:  var(--bg-0) !important;
+}
+
+
+/*  group channel's conversation header # */
+.sendbird-chat-header--avatar--group-channel.sendbird-avatar{
+  font-size: 1.25rem;
+  color: white;
+  font-weight: 600;
 }

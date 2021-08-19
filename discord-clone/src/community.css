@@ -8,24 +8,24 @@
   flex: 1;
 }
 
-//community/open channel under whole sidebar
+/* //community/open channel under whole sidebar */
 .community-app{
   flex: 0 1 auto;
 }
 
-//whole sidebar container
+/* //whole sidebar container */
 div.sendbird-app__channellist-wrap {
   display: flex;
   flex-flow: column;
   height: 100%;
 }
 
-//sidebar header for private channel list
+/* //sidebar header for private channel list */
 .sendbird-channel-list__header{
   display: none;
 }
 
-//on hover of channel
+/* //on hover of channel */
 div.community-channel-list .channel-preview:hover,
 .MuiCardHeader-root:hover {
   background-color: var(--sendbird-light-background-50) !important;
@@ -37,15 +37,15 @@ div.community-channel-list .channel-preview:hover,
   display: none;
 }
 
-
-//conversation chat opened
+/* 
+//conversation chat opened */
 div.sendbird-app__conversation-wrap{
   display: flex;
   flex-flow: column;
   height: 100%;
 }
 
-//community channel's chat window
+/* //community channel's chat window */
 div.community-open-channel__conversation-wrap {
   flex: 1;
   background-color: var(--bg-0);
@@ -56,16 +56,13 @@ div.community-open-channel__conversation-wrap {
   margin-right: 0 !important;
 }
 
-//community channel list's # icon       padding-lfet:12 (so 12 from hidding side 
+/* //community channel list's # icon       padding-lfet:12 (so 12 from hidding side  */
 .channel-preview .channel-preview__avatar{
   width: 10px !important;
-  
-
-
 
 }
 
-//community channel list header title
+/* //community channel list header title */
 .community-channel-list .community-channel-list__title{
   padding: 20px 24px;
   box-sizing: border-box;
@@ -89,12 +86,12 @@ div.community-open-channel__conversation-wrap {
   line-height: 1.14;
 }
 
-//community channel selector on current channel left tab
+/* //community channel selector on current channel left tab */
 .channel-preview.channel-preview--selected .channel-preview__selection{
   display: none;
 }
 
-//current selected  community channel 
+/* //current selected community channel  */
 .channel-preview.channel-preview--selected{
   background-color: var(--sendbird-light-background-50) !important;
   color: white;
@@ -102,20 +99,44 @@ div.community-open-channel__conversation-wrap {
 
 
 
-//community channel container for preview channel name
+/* //community channel container for preview channel name */
 .channel-preview__inner-right{
   padding-left: 5px !important;
-  // padding-top: 0px !important;
+  /* // padding-top: 0px !important; */
 }
 
-//community channel container for icon
+/* //community channel container for icon */
 .channel-preview__inner-left{
   padding-top: 14px !important;
  padding-left: 20px !important;
 }
 
-//ONLY chat header's icon
+/* //ONLY chat header's icon */
 .sendbird-openchannel-conversation-header .sendbird-image-renderer__image,
 .sendbird-chat-header .sendbird-image-renderer__image{
+  display: none;
+}
+
+
+.sendbird-chat-header__left .community-channel-preview__avatar  {
+  font-size: 1.25rem;
+  color: white;
+  font-weight: 600;
+}
+
+
+.openchannel-conversation-header-icon{
+  font-size: 1.25rem;
+  color: white;
+  font-weight: 900;
+}
+
+/* //img tag for conversation header */
+.sendbird-image-renderer__hidden-image-loader{
+  display: none;
+}
+/* 
+//div tag for conversation header on top of img tag */
+.sendbird-openchannel-conversation-header__left__cover-image.sendbird-avatar .sendbird-avatar-img.sendbird-image-renderer{
   display: none;
 }

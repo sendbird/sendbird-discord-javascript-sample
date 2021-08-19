@@ -1,6 +1,6 @@
 import React, { ReactElement, useMemo } from "react";
 import "./open-channel-preview.scss";
-import { ChannelMeta } from "./DummyStream";
+// import { ChannelMeta } from "./DummyStream";
 
 //setting var to display to show inthousands using 'k'
 const kFormat = (num) => {
@@ -10,8 +10,6 @@ const kFormat = (num) => {
   const trimmed = num / 1000;
   return `${trimmed.toFixed(2)} k`;
 };
-
-//props we're expecting: 
 
 export default function OpenChannelPreview({
   channel,

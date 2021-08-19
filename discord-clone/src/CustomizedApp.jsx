@@ -9,54 +9,62 @@ import {
 } from 'sendbird-uikit';
 import CustomizedChannelPreviewItem from "./CustomizedChannelPreviewItem";
 import CommunityChannelList from './community-components/CommunityChannelList.jsx';
-import "./community.scss";
-import { ContactSupportOutlined } from "@material-ui/icons";
+import "./community.css";
 
 export default function CustomizedApp({customizedPreviewItem}) {
     const [showSettings, setShowSettings] = useState(false);
     const [currentChannel, setCurrentChannel] = useState(null);
     const [channels, setChannels] = useState([""]);
     const currentChannelUrl = currentChannel ? currentChannel.url : "";
-    const communityOpenChannelConversation = document.getElementsByClassName("community-open-channel__conversation-wrap");
-    const groupChannelConversation = document.getElementsByClassName("group-channel__conversation-wrap");
-    //replacing avatar img with # in private channels
+   
+    //grab private channel list's preview channel avatar element, change innerText to be # which removes img tag
     const privateChannelAvatarBox = document.getElementsByClassName('MuiAvatar-root MuiAvatar-circular');
     Array.from(privateChannelAvatarBox).forEach( (iconBox) => {
         iconBox.innerText='#'
         iconBox.style.fontWeight="bold";
-    })
+    });
 
-    //removing img tag from channel-preview__avatar div
-    const communityChannelAvatarBox = document.getElementsByClassName('channel-preview__avatar')
+    //grab community channel list's preview channel avatar element, change innerText to be # which removes img tag
+    const communityChannelAvatarBox = document.getElementsByClassName('channel-preview__avatar');
     Array.from(communityChannelAvatarBox).forEach( (iconBox) => {
-        iconBox.innerHTML=`
-            <div class="community-channel-preview__avatar" style="font-weight: bold;">#</div>
-        `;
+        iconBox.innerText='#';
+        iconBox.style.fontWeight="bold";
     })
+    
 
-    //Channel icon in chat's header changed to #
+    //Open channel icon in chat's header changed to #
     const chatHeaderIcon = document.getElementsByClassName('sendbird-openchannel-conversation-header__left__cover-image sendbird-avatar');
     Array.from(chatHeaderIcon).forEach( (iconBox) => {
-        console.log(iconBox, "icon box")
-        // iconBox.style=""
-        iconBox.innerHTML=`
-            <div class="community-channel-preview__avatar" style="font-weight: bold; padding:0px 5px;">#</div>
-        `;
+        iconBox.innerText='#';
+        iconBox.style="font-weight:bold;color:white; padding:0px 5px; ";
     })
 
-//only runs when currentChannel is changed
+
     useEffect( () => {
+        const communityOpenChannelConversation = document.getElementsByClassName("community-open-channel__conversation-wrap");
+        const groupChannelConversation = document.getElementsByClassName("group-channel__conversation-wrap");
+        const welcomeConversation = document.getElementsByClassName('welcome-conversation-wrap');
+    
         if(currentChannel && currentChannel.url.includes('group_channel')){
             console.log("INCLUDES GROUP_CHANNEL")
             communityOpenChannelConversation[0].style.display="none";
+            welcomeConversation[0].style.display="none";
             groupChannelConversation[0].style.display="";
         } else if (currentChannel && currentChannel.url.includes('open_channel') ){
             console.log("INCLUDES OPEN CHANNEL")
             groupChannelConversation[0].style.display="none";
+            welcomeConversation[0].style.display="none";
             communityOpenChannelConversation[0].style.display="";
-        }     
+        }  
+        // else {
+        //     groupChannelConversation[0].style.display="none";
+        //     communityOpenChannelConversation[0].style.display="none";
+        //     welcomeConversation[0].style.display=""
+        // }
+
     }, [currentChannel])
-   
+
+console.log(currentChannel)
     return (
       <div className="customized-app">
         <div className="sendbird-app__wrap">
@@ -92,7 +100,16 @@ export default function CustomizedApp({customizedPreviewItem}) {
                     </div>
                 </div>
             </div>
+
+
+
             <div className="sendbird-app__conversation-wrap">
+
+                <div className="welcome-conversation-wrap">
+                    <h1>Welcome</h1>
+                </div>
+
+
                 <div className="community-open-channel__conversation-wrap" >
                     <OpenChannel
                         channelUrl={currentChannelUrl}
@@ -108,8 +125,11 @@ export default function CustomizedApp({customizedPreviewItem}) {
                             setShowSettings(false);
                         }}
                     />
-                )}                  
-                <div className="group-channel__conversation-wrap" >
+                )}
+
+            
+         
+                <div className="group-channel__conversation-wrap"  >
                     <SBConversation
                         channelUrl={currentChannelUrl}
                             onChatHeaderActionClick={() => {
@@ -127,6 +147,11 @@ export default function CustomizedApp({customizedPreviewItem}) {
                         />
                     </div>
                 )}  
+
+    
+
+
+
             </div> 
       </div>
     </div>
