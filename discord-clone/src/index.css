@@ -1,16 +1,16 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  /* font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace; */
 }
+
 
 .app-wrapper {
   height: calc(100vh - 20px);
@@ -36,29 +36,67 @@ code {
   display: flex;
 }
 
-/* channel list all groups */
+/* private channel list private groups */
 div.MuiPaper-root.MuiCard-root.MuiPaper-elevation1{
-  background-color: rgb(71, 74, 80) !important ;
+  background-color: rgb(55, 55, 59)  !important ;
   color: rgb(155, 151, 151);
 }
 
-div.MuiPaper-root.MuiCard-root.MuiPaper-elevation1:hover {
-  background-color: rgb(87, 90, 97) !important;
-  color: white;
-}
-
-/* channel list only selected group's box */
-.makeStyles-selected-1{
-  background-color:  rgb(109, 111, 117) !important;
+/* private channel list only selected group's box */
+.MuiPaper-root.MuiCard-root.makeStyles-selected-1.MuiPaper-elevation1{
+  background-color: var(--sendbird-light-background-50) !important;
   color: white !important;
 }
 
+/* private channel under whole sidebar */
+.private-channel-list{
+  display: flex;
+  height: 99vh;
+  flex-direction: column;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  background-color: rgb(55, 55, 59);
+  color:  rgb(155, 151, 151);
+  flex: 1;
+}
+
+/* private channels list header */
 div.private-channel-list .private-channel-list__title {
   padding: 20px 24px;
   box-sizing: border-box;
-  font-size: 18px;
-  font-weight: 600;
-  letter-spacing: -0.2px;
-  color: var(--gray-0);
+  font-size: 14px;
+  font-weight: 900;
+  color: rgb(155, 151, 151) !important;
+  background-color: rgb(55, 55, 59) ;
   border-bottom: 1px solid var(--gray-1);
+}
+
+/* private channel # icon  */
+.MuiAvatar-root{
+  width: 20px !important;
+}
+
+/* private channel preview name */
+.MuiTypography-root.MuiCardHeader-title.MuiTypography-body2.MuiTypography-displayBlock{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 210px;
+  font-size: 14px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.14;
+
+}
+
+
+/* private channel message preview content */
+.MuiTypography-root.MuiTypography-caption.MuiTypography-colorTextSecondary{
+  display: none;
+}
+
+/* private channel's chat window */
+div.group-channel__conversation-wrap {
+  flex: 1;
+  background-color: var(--bg-0);
 }

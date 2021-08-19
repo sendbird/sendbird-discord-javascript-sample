@@ -38,7 +38,7 @@ function CommunityChannelList({
 
     return (
       <div className="community-channel-list">
-        <div className="community-channel-list__title">Community Channels</div>
+        <div className="community-channel-list__title">COMMUNITY CHANNELS</div>
         <div className="community-channel-list__list">
           {channels.length === 0 ? (
             "No Channels"

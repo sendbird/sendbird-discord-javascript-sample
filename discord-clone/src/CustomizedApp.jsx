@@ -10,6 +10,7 @@ import {
 import CustomizedChannelPreviewItem from "./CustomizedChannelPreviewItem";
 import CommunityChannelList from './community-components/CommunityChannelList.jsx';
 import "./community.scss";
+import { ContactSupportOutlined } from "@material-ui/icons";
 
 export default function CustomizedApp({customizedPreviewItem}) {
     const [showSettings, setShowSettings] = useState(false);
@@ -18,7 +19,31 @@ export default function CustomizedApp({customizedPreviewItem}) {
     const currentChannelUrl = currentChannel ? currentChannel.url : "";
     const communityOpenChannelConversation = document.getElementsByClassName("community-open-channel__conversation-wrap");
     const groupChannelConversation = document.getElementsByClassName("group-channel__conversation-wrap");
-    
+    //replacing avatar img with # in private channels
+    const privateChannelAvatarBox = document.getElementsByClassName('MuiAvatar-root MuiAvatar-circular');
+    Array.from(privateChannelAvatarBox).forEach( (iconBox) => {
+        iconBox.innerText='#'
+        iconBox.style.fontWeight="bold";
+    })
+
+    //removing img tag from channel-preview__avatar div
+    const communityChannelAvatarBox = document.getElementsByClassName('channel-preview__avatar')
+    Array.from(communityChannelAvatarBox).forEach( (iconBox) => {
+        iconBox.innerHTML=`
+            <div class="community-channel-preview__avatar" style="font-weight: bold;">#</div>
+        `;
+    })
+
+    //Channel icon in chat's header changed to #
+    const chatHeaderIcon = document.getElementsByClassName('sendbird-openchannel-conversation-header__left__cover-image sendbird-avatar');
+    Array.from(chatHeaderIcon).forEach( (iconBox) => {
+        console.log(iconBox, "icon box")
+        // iconBox.style=""
+        iconBox.innerHTML=`
+            <div class="community-channel-preview__avatar" style="font-weight: bold; padding:0px 5px;">#</div>
+        `;
+    })
+
 //only runs when currentChannel is changed
     useEffect( () => {
         if(currentChannel && currentChannel.url.includes('group_channel')){
@@ -37,7 +62,7 @@ export default function CustomizedApp({customizedPreviewItem}) {
         <div className="sendbird-app__wrap">
             <div className="sendbird-app__channellist-wrap">
                 <div className="private-channel-list">
-                    <div className="private-channel-list__title">Private Channels</div>
+                    <div className="private-channel-list__title">PRIVATE CHANNELS</div>
                         <SBChannelList
                             onChannelSelect={(channel) => {
                                 if (channel && channel.url) {
