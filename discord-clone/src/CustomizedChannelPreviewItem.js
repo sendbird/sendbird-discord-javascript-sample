@@ -11,7 +11,7 @@ import {
   Typography,
   IconButton as MIconButton
 } from "@material-ui/core";
-import { MoreVert as MoreVertIcon } from "@material-ui/icons";
+import { MoreVert as MoreVertIcon, TrendingUpRounded } from "@material-ui/icons";
 import { makeStyles, withStyles } from "@material-ui/styles";
 
 const SmallAvatar = withStyles(theme => ({
@@ -118,7 +118,7 @@ export default function CustomizedChannelPreviewItem(props) {
   };
 
   return (
-    <div className="customized-channelpreview-item">
+    <div className="customized-channelpreview-item"  >
       <Popper
         transition
         id={popperId}
