@@ -5,6 +5,5 @@ export default function(){
              <div className="welcome-conversation-wrap" >
                     <h1>Welcome</h1>
                 </div>
-
     )
 }

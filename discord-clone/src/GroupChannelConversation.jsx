@@ -9,11 +9,8 @@ import "./community.css";
 
 export default function GroupChannelConversation(props){
     const {currentChannelUrl, setShowSettings, showSettings} = props;
-    console.log("in GroupChannelConversation")
     return (
-        <div>
-            
-            <div className="group-channel__conversation-wrap" >
+        <div className="group-channel__conversation-wrap" >
                                 <SBConversation
                                     channelUrl={currentChannelUrl}
                                         onChatHeaderActionClick={() => {
@@ -21,7 +18,7 @@ export default function GroupChannelConversation(props){
                                     }}
 
                                 />
-                            </div>
+                          
                             {showSettings && (
                                 <div className="sendbird-app__settingspanel-wrap">
                                     <SBChannelSettings

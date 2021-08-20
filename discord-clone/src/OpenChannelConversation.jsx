@@ -11,15 +11,13 @@ export default function communityOpenChannelConversation(props){
     const {currentChannelUrl, setShowSettings, showSettings} = props;
     console.log("in GroupChannelConversation")
     return (
-        <div>
-          <div className="community-open-channel__conversation-wrap"  >
-                    <OpenChannel
-                        channelUrl={currentChannelUrl}
-                        onChatHeaderActionClick={() => {
-                            setShowSettings(true);
-                        }}
-                    />
-                </div>
+        <div className="community-open-channel__conversation-wrap"  >
+                <OpenChannel
+                    channelUrl={currentChannelUrl}
+                    onChatHeaderActionClick={() => {
+                        setShowSettings(true);
+                    }}
+                />
                 {showSettings && (
                     <OpenChannelSettings
                         channelUrl={currentChannelUrl}
@@ -28,7 +26,6 @@ export default function communityOpenChannelConversation(props){
                         }}
                     />
                 )}
-
         </div>
     )
 }
