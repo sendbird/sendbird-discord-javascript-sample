@@ -40,12 +40,15 @@ code {
 div.MuiPaper-root.MuiCard-root.MuiPaper-elevation1{
   background-color: rgb(55, 55, 59)  !important ;
   color: rgb(155, 151, 151);
+  
 }
 
 /* private channel list only selected group's box */
 .MuiPaper-root.MuiCard-root.makeStyles-selected-1.MuiPaper-elevation1{
   background-color: var(--sendbird-light-background-50) !important;
   color: white !important;
+
+  /* border-radius: 20px; */
 }
 
 /* private channel under whole sidebar */
@@ -100,6 +103,7 @@ div.group-channel__conversation-wrap {
   background-color: var(--bg-0);
 }
 
+
 .sendbird-theme--light .sendbird-avatar .sendbird-avatar-img{
   background-color:  var(--bg-0) !important;
 }
@@ -110,4 +114,9 @@ div.group-channel__conversation-wrap {
   font-size: 1.25rem;
   color: white;
   font-weight: 600;
+}
+
+/* settings button for private channels on sidebar */
+.MuiButtonBase-root.MuiIconButton-root.MuiIconButton-sizeSmall{
+  display: none;
 }

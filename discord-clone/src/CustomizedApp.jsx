@@ -74,7 +74,7 @@ console.log(currentChannel)
                         <SBChannelList
                             onChannelSelect={(channel) => {
                                 if (channel && channel.url) {
-                                    //setCurrentChannelUrl(channel.url);
+                                    // setCurrentChannelUrl(channel.url);
                                     setCurrentChannel(channel)
                                 } 
                             }}
