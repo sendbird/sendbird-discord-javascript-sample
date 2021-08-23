@@ -166,3 +166,22 @@ div.group-channel__conversation-wrap {
 .sendbird-user-message--incoming .sendbird-user-message__avatar{
   bottom: revert !important;
 }
+
+/* insert content before the channel preview name */
+.MuiAvatar-root.MuiAvatar-circular::before{
+  content: "#" !important;
+ 
+}
+
+/* avatar img in chat conversation */
+.sendbird-chat-header--avatar--group-channel.sendbird-avatar::before{
+  content: "#" !important;
+  color: #72767d;
+  padding-left: 16px;
+  font-size: 25px;
+}
+
+/* channel conversation header text */
+.sendbird-chat-header__left__title.sendbird-label.sendbird-label--h-2.sendbird-label--color-onbackground-1{
+  padding-left: 8px;
+}
