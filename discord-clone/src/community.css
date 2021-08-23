@@ -69,6 +69,11 @@ div.community-open-channel__conversation-wrap {
   width: 10px !important;
 }
 
+/* insert content before the channel preview name */
+.channel-preview__avatar::before{
+  content: "#"
+}
+
 .channel-preview__inner-right .channel-preview__name {
   white-space: nowrap;
   overflow: hidden;
@@ -136,4 +141,27 @@ div.community-open-channel__conversation-wrap {
 /* div tag for conversation header on top of img tag */
 .sendbird-openchannel-conversation-header__left__cover-image.sendbird-avatar .sendbird-avatar-img.sendbird-image-renderer{
   display: none;
+}
+
+/* avatar img in channel preview */
+.channel-preview .channel-preview__avatar img{
+  display: none;
+}
+
+/* avatar img in chat conversation */
+.sendbird-openchannel-conversation-header__left__cover-image.sendbird-avatar::after{
+  content: "#";
+  color: #72767d;
+  padding-left: 16px;
+  font-size: 25px;
+}
+
+/* participant count channel conversation header  */
+.sendbird-openchannel-conversation-header__left__sub-title.sendbird-label.sendbird-label--body-2.sendbird-label--color-onbackground-2{
+  display: none;
+}
+
+/* channel conversation header text */
+.sendbird-openchannel-conversation-header__left__title.sendbird-label.sendbird-label--h-2.sendbird-label--color-onbackground-1{
+  padding-top: 8px ;
 }

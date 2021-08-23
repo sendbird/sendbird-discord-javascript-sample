@@ -120,3 +120,49 @@ div.group-channel__conversation-wrap {
 .MuiButtonBase-root.MuiIconButton-root.MuiIconButton-sizeSmall{
   display: none;
 }
+
+/* chat messages */
+.sendbird-user-message--outgoing{
+  display: block !important;
+}
+
+/* message heck marks */
+.sendbird-message-status__icon.sendbird-icon.sendbird-icon-color--read{
+  display: none;
+}
+
+/* timestamp on message */
+.sendbird-message-status__text.sendbird-label {
+  float: right !important;
+}
+
+/* message box wrapper */
+.sendbird-user-message__text-balloon{
+  width: 100% !important;
+}
+
+/* box only around text */
+.sendbird-user-message__text-balloon__inner__text-place__text.sendbird-label.sendbird-label--body-1.sendbird-label--color-oncontent-1{
+  display: "" !important;
+}
+
+
+/* emoji reactions wrapper */
+/* .sendbird-emoji-reactions__emoji-reaction.sendbird-tooltip-wrapper{
+  background-color:  rgb(55, 55, 59)  !important;
+} */
+
+/* .sendbird-theme--light .sendbird-reaction-badge */
+.sendbird-reaction-badge .sendbird-reaction-badge__inner{ 
+  background-color: rgb(55, 55, 59) !important;
+  border-radius: 10px;
+}
+
+/* timestamp incoming message */
+.sendbird-user-message--incoming .sendbird-user-message__right-padding .sendbird-user-message__sent-at{
+  bottom: revert !important;
+}
+
+.sendbird-user-message--incoming .sendbird-user-message__avatar{
+  bottom: revert !important;
+}

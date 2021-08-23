@@ -15,33 +15,12 @@ export default function CustomizedApp({customizedPreviewItem}) {
     const [channels, setChannels] = useState([""]);
     const currentChannelUrl = currentChannel ? currentChannel.url : "";
    
-    //grab private channel list's preview channel avatar element, change innerText to be # which removes img tag
-    const privateChannelAvatarBox = document.getElementsByClassName('MuiAvatar-root MuiAvatar-circular');
-    Array.from(privateChannelAvatarBox).forEach( (iconBox) => {
-        iconBox.innerText='#'
-        iconBox.style.fontWeight="bold";
-    });
-
-    //grab community channel list's preview channel avatar element, change innerText to be # which removes img tag
-    const communityChannelAvatarBox = document.getElementsByClassName('channel-preview__avatar');
-    Array.from(communityChannelAvatarBox).forEach( (iconBox) => {
-        iconBox.innerText='#';
-        iconBox.style.fontWeight="bold";
-    })
-    
-    //Open channel icon in chat's header changed to #
-    const chatHeaderIcon = document.getElementsByClassName('sendbird-openchannel-conversation-header__left__cover-image sendbird-avatar');
-    Array.from(chatHeaderIcon).forEach( (iconBox) => {
-        iconBox.innerText='#';
-        iconBox.style="font-weight:bold;color:white; padding:0px 5px; ";
-    })
-
     const conversationChatWindow = () => {
         if(currentChannel && currentChannel.url.includes('group_channel')){ 
             return <GroupChannelConversation
                         currentChannelUrl={currentChannelUrl}
                         setShowSettings={setShowSettings}
-                         showSettings={showSettings}
+                        showSettings={showSettings}
                     />
         } else if (currentChannel && currentChannel.url.includes('open_channel') ){
             return <OpenChannelConversation 
