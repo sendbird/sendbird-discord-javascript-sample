@@ -2,8 +2,8 @@
   display: flex;
   flex-direction: row;
   height: 99vh;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-  background-color: rgb(55, 55, 59) ;
+  font-family: "Whitney", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  background-color: rgb(47, 49, 54) ;
   color: rgb(155, 151, 151);
   flex: 1;
 }
@@ -39,6 +39,7 @@ div.community-channel-list .channel-preview:hover {
   width: 90%;
 }
 
+
 .MuiAvatar-img{
   display: none;
 }
@@ -55,7 +56,7 @@ div.sendbird-app__conversation-wrap{
 /* community channel's chat window */
 div.community-open-channel__conversation-wrap {
   flex: 1;
-  background-color: var(--bg-0);
+  background-color:rgb(54, 57, 63);
 }
 
 
@@ -99,6 +100,7 @@ div.community-open-channel__conversation-wrap {
 
 .community-channel-list__list{
   margin-left: 10px;
+  
 }
 
 /* community channel container for preview channel name */
@@ -162,4 +164,45 @@ div.community-open-channel__conversation-wrap {
 /* channel conversation header text */
 .sendbird-openchannel-conversation-header__left__title.sendbird-label.sendbird-label--h-2.sendbird-label--color-onbackground-1{
   padding-top: 8px ;
+}
+
+.sendbird-message-input--textarea{
+  border: none !important;
+  background-color: rgba(84, 84, 90, 0.767) !important;
+
+
+}
+
+/* default 'enter message' saying in chat input box */
+.sendbird-message-input--placeholder.sendbird-label.sendbird-label--body-1.sendbird-label--color-onbackground-3{
+  color: rgb(168, 164, 164);
+}
+
+/* input message attachment button */
+.sendbird-message-input .sendbird-icon.sendbird-icon-color--content-inverse::before{
+  content: "+";
+  color: rgb(55, 55, 59) ;
+
+}
+
+.icon-attach_svg__fill{
+  display: none;
+}
+
+.sendbird-theme--light .sendbird-iconbutton{
+  background-color: rgb(168, 164, 164);
+  font-weight: bold;
+  border-radius: 25px;
+  font-size: 20px;
+}
+.sendbird-theme--light .sendbird-iconbutton:hover{
+  background-color: rgb(197, 193, 193);
+}
+
+.sendbird-message-input .sendbird-message-input--attach{
+  padding: 4px 0px;
+}
+
+.sendbird-openchannel-footer{
+  margin-top: 20px;
 }

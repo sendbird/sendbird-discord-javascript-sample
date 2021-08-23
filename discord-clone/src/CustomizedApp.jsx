@@ -8,6 +8,7 @@ import "./index.css";
 import GroupChannelConversation from "./GroupChannelConversation";
 import OpenChannelConversation from './OpenChannelConversation';
 import WelcomeConversation from "./WelcomeConversation";
+import { NICKNAME } from "./const";
 
 export default function CustomizedApp({customizedPreviewItem}) {
     const [showSettings, setShowSettings] = useState(false);
@@ -39,8 +40,9 @@ export default function CustomizedApp({customizedPreviewItem}) {
       <div className="customized-app">
         <div className="sendbird-app__wrap">
             <div className="sendbird-app__channellist-wrap">
+                <h1 className="server-headline">{NICKNAME}'s server</h1>
                 <div className="private-channel-list">
-                    <div className="private-channel-list__title">PRIVATE CHANNELS</div>
+                    <div className="private-channel-list__title">Private Channels</div>
                         <SBChannelList
                             onChannelSelect={(channel) => {
                                 if (channel && channel.url) {

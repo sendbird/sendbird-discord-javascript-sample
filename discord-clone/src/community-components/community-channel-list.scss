@@ -3,6 +3,7 @@
     height: 100%;
     display: flex;
     flex-direction: column;
+    
     .community-channel-list__list {
       height: 100%;
       overflow-y: scroll;
@@ -15,8 +16,9 @@
       font-size: 14px;
       font-weight: 900;
       color: rgb(155, 151, 151) !important;
-      background-color: rgb(55, 55, 59) ;
+      background-color: rgb(47, 49, 54) ;
       border-bottom: 1px solid var(--gray-1);
+      text-transform: uppercase;
     }
 
     .community-channel-list__placeholder {
