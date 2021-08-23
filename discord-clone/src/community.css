@@ -27,8 +27,7 @@ div.sendbird-app__channellist-wrap {
 
 
 /* on hover of channel */
-div.community-channel-list .channel-preview:hover,
-.MuiCardHeader-root:hover {
+div.community-channel-list .channel-preview:hover {
   background-color: var(--sendbird-light-background-50) !important;
   color: white;
   border-radius: 20px;
@@ -105,13 +104,12 @@ div.community-open-channel__conversation-wrap {
 /* community channel container for preview channel name */
 .channel-preview__inner-right{
   padding-left: 5px !important;
-  /* // padding-top: 0px !important; */
 }
 
 /* community channel container for icon */
 .channel-preview__inner-left{
   padding-top: 14px !important;
- padding-left: 20px !important;
+ /* padding-left: 20px !important; */
 }
 
 /* ONLY chat header's icon */
