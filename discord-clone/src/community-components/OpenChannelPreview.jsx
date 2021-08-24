@@ -1,4 +1,4 @@
-import React, { ReactElement, useMemo } from "react";
+import React, { useMemo } from "react"; //ReactElement
 import "./open-channel-preview.scss";
 // import { ChannelMeta } from "./DummyStream";
 

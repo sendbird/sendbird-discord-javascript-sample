@@ -3,9 +3,11 @@ export const USER_ID = '1';
 export const NICKNAME = 'Michelle';
 export const ACCESS_TOKEN = '160788808245482f9a0cd0970fac80033c908698';
 
-export default {
+const userInfo = {
   APP_ID,
   USER_ID,
   NICKNAME,
   ACCESS_TOKEN
-};
+}
+
+export default userInfo;

@@ -5,7 +5,7 @@ body {
     sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
+  height: 100%;}
 
 .server-headline{
   font-family : "Ginto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
@@ -151,6 +151,10 @@ div.group-channel__conversation-wrap {
   float: right !important;
 }
 
+.sendbird-user-message__left-padding{
+  position: absolute;
+}
+
 /* message box wrapper */
 .sendbird-user-message__text-balloon{
   width: 100% !important;
@@ -291,3 +295,22 @@ div.group-channel__conversation-wrap {
    background-color: rgb(71, 74, 80) !important;
 }
 
+
+/* settings sidebar */
+.sendbird-app__settingspanel-wrap{
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: rgb(71, 74, 80); 
+    overflow-x: hidden;  
+    padding-top: 60px;
+  }
+
+  /* .sendbird-channel-profile{
+    padding: 0px !important;
+  } */
+
+ 

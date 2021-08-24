@@ -149,9 +149,6 @@ div.sendbird-app__channellist-wrap {
 /* avatar img in chat conversation */
 .sendbird-openchannel-conversation-header__left__cover-image.sendbird-avatar::after{
   content: "#";
-  /* color: #72767d;
-  padding-left: 16px;
-  font-size: 25px; */
 }
 
 .sendbird-openchannel-conversation-header__left__cover-image.sendbird-avatar{
@@ -159,8 +156,6 @@ div.sendbird-app__channellist-wrap {
   height: revert !important;
   width: revert !important;
   padding: 8px 20px !important;
-  /* padding-left: 15px;
-  padding-right: 10px; */
   -webkit-transform:scale(1.8,1.2);
   -moz-transform:scale(1.8,1.2);
   -ms-transform:scale(1.8,1.2);
@@ -168,7 +163,6 @@ div.sendbird-app__channellist-wrap {
   transform:scale(2.6,1.6);
   font-weight: 350;
 }
-
 
 /* participant count channel conversation header  */
 .sendbird-openchannel-conversation-header__left__sub-title.sendbird-label.sendbird-label--body-2.sendbird-label--color-onbackground-2{
