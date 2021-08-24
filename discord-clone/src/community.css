@@ -27,10 +27,10 @@ div.sendbird-app__channellist-wrap {
 
 
 /* on hover of channel */
-div.community-channel-list .channel-preview:hover {
+.community-channel-list .channel-preview:hover {
   background-color: var(--sendbird-light-background-50) !important;
   color: white;
-  border-radius: 20px;
+  border-radius: 4px;
 }
 
 /* community channel individual channel preview */
@@ -39,29 +39,17 @@ div.community-channel-list .channel-preview:hover {
   width: 90%;
 }
 
-
-.MuiAvatar-img{
-  display: none;
-}
-
 /* conversation chat opened */
-div.sendbird-app__conversation-wrap{
+.sendbird-app__conversation-wrap{
   display: flex;
   flex-flow: column;
   height: 100%;
 }
 
-
-
 /* community channel's chat window */
-div.community-open-channel__conversation-wrap {
+.community-open-channel__conversation-wrap {
   flex: 1;
   background-color:rgb(54, 57, 63);
-}
-
-
-.MuiCardHeader-avatar{
-  margin-right: 0 !important;
 }
 
 /* community channel list's # icon */
@@ -94,13 +82,12 @@ div.community-open-channel__conversation-wrap {
 .channel-preview.channel-preview--selected{
   background-color: var(--sendbird-light-background-50) !important;
   color: white;
-  border-radius: 20px;
+  border-radius: 4px;
   width: 90%;
 }
 
 .community-channel-list__list{
   margin-left: 10px;
-  
 }
 
 /* community channel container for preview channel name */
@@ -120,13 +107,11 @@ div.community-open-channel__conversation-wrap {
   display: none;
 }
 
-
 .sendbird-chat-header__left .community-channel-preview__avatar  {
   font-size: 1.25rem;
   color: white;
   font-weight: 600;
 }
-
 
 .openchannel-conversation-header-icon{
   font-size: 1.25rem;
@@ -169,8 +154,6 @@ div.community-open-channel__conversation-wrap {
 .sendbird-message-input--textarea{
   border: none !important;
   background-color: rgba(84, 84, 90, 0.767) !important;
-
-
 }
 
 /* default 'enter message' saying in chat input box */
@@ -182,7 +165,6 @@ div.community-open-channel__conversation-wrap {
 .sendbird-message-input .sendbird-icon.sendbird-icon-color--content-inverse::before{
   content: "+";
   color: rgb(55, 55, 59) ;
-
 }
 
 .icon-attach_svg__fill{

@@ -3,13 +3,8 @@ body {
   /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif; */
-    
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  /* font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace; */
 }
 
 .server-headline{
@@ -44,8 +39,27 @@ code {
   display: flex;
 }
 
+.MuiCard-root {
+  overflow: revert !important;
+}
+
+/* on hover of channel */
+.MuiCardHeader-root:hover {
+  background-color: var(--sendbird-light-background-50) !important;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.MuiCardHeader-root {
+  padding: 10px !important;
+  margin-top: 10px !important;
+}
+
 /* private channel list private groups */
-div.MuiPaper-root.MuiCard-root.MuiPaper-elevation1{
+.MuiPaper-root.MuiCard-root.MuiPaper-elevation1{
   background-color: rgb(47, 49, 54) !important ;
   color: rgb(155, 151, 151);
   width: 90%;
@@ -56,7 +70,17 @@ div.MuiPaper-root.MuiCard-root.MuiPaper-elevation1{
 .MuiPaper-root.MuiCard-root.makeStyles-selected-1.MuiPaper-elevation1{
   background-color: var(--sendbird-light-background-50) !important;
   color: white !important;
-  border-radius: 20px;
+  border-radius: 4px;
+  margin-top: 10px !important;
+  width: 90% !important;
+}
+
+.MuiAvatar-img{
+  display: none;
+}
+
+.MuiCardHeader-avatar{
+  margin-right: 0 !important;
 }
 
 /* private channel under whole sidebar */
@@ -107,10 +131,6 @@ div.MuiPaper-root.MuiCard-root.MuiPaper-elevation1{
 div.group-channel__conversation-wrap {
   flex: 1;
   background-color: rgb(47, 49, 54);
-}
-
-.sendbird-theme--light .sendbird-avatar .sendbird-avatar-img{
-  /* background-color:  var(--bg-0) !important; */
 }
 
 /*  group channel's conversation header # */
@@ -171,6 +191,7 @@ div.group-channel__conversation-wrap {
   padding-left: 16px;
   font-size: 25px;
 }
+
 /* chat header wrap */
 .sendbird-chat-header {
   padding: 23px 20px !important;
@@ -214,14 +235,6 @@ div.group-channel__conversation-wrap {
   padding-left: 5px !important;
 }
 
-/* on hover of channel */
-.MuiCardHeader-root:hover {
-  background-color: var(--sendbird-light-background-50) !important;
-  color: white;
-  border-radius: 20px;
-  cursor: pointer;
-}
-
 /* private channels wrapper box */
 .sendbird-channel-list{
   background-color: revert !important;
@@ -233,4 +246,8 @@ div.group-channel__conversation-wrap {
 
 .sendbird-conversation__footer{
   margin-top: 20px;
+}
+
+.sendbird-chat-header--avatar--group-channel.sendbird-avatar .sendbird-avatar-img.sendbird-image-renderer {
+  display: none;
 }
