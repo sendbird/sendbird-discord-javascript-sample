@@ -9,7 +9,6 @@ import "./community.css";
 
 export default function communityOpenChannelConversation(props){
     const {currentChannelUrl, setShowSettings, showSettings} = props;
-    console.log("in GroupChannelConversation")
     return (
         <div className="community-open-channel__conversation-wrap"  >
                 <OpenChannel

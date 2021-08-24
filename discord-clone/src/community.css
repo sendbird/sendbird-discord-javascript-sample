@@ -55,7 +55,20 @@ div.sendbird-app__channellist-wrap {
 /* community channel list's # icon */
 .channel-preview .channel-preview__avatar{
   width: 10px !important;
+  -webkit-transform:scale(2.2,1.5);
+  -moz-transform:scale(2.2,1.5);
+  -ms-transform:scale(2.2,1.5);
+  -o-transform:scale(2.2,1.5);
+  transform:scale(2.2,1.5);
+  height: 20px;
+  font-weight: 350;
 }
+
+
+
+
+
+
 
 /* insert content before the channel preview name */
 .channel-preview__avatar::before{
@@ -71,6 +84,7 @@ div.sendbird-app__channellist-wrap {
   font-stretch: normal;
   font-style: normal;
   line-height: 1.14;
+  padding-left: 5px;
 }
 
 /* community channel selector on current channel left tab */
@@ -110,7 +124,6 @@ div.sendbird-app__channellist-wrap {
 .sendbird-chat-header__left .community-channel-preview__avatar  {
   font-size: 1.25rem;
   color: white;
-  font-weight: 600;
 }
 
 .openchannel-conversation-header-icon{
@@ -136,10 +149,26 @@ div.sendbird-app__channellist-wrap {
 /* avatar img in chat conversation */
 .sendbird-openchannel-conversation-header__left__cover-image.sendbird-avatar::after{
   content: "#";
-  color: #72767d;
+  /* color: #72767d;
   padding-left: 16px;
-  font-size: 25px;
+  font-size: 25px; */
 }
+
+.sendbird-openchannel-conversation-header__left__cover-image.sendbird-avatar{
+  color: #72767d;
+  height: revert !important;
+  width: revert !important;
+  padding: 8px 20px !important;
+  /* padding-left: 15px;
+  padding-right: 10px; */
+  -webkit-transform:scale(1.8,1.2);
+  -moz-transform:scale(1.8,1.2);
+  -ms-transform:scale(1.8,1.2);
+  -o-transform:scale(1.8,1.2);
+  transform:scale(2.6,1.6);
+  font-weight: 350;
+}
+
 
 /* participant count channel conversation header  */
 .sendbird-openchannel-conversation-header__left__sub-title.sendbird-label.sendbird-label--body-2.sendbird-label--color-onbackground-2{
@@ -187,4 +216,10 @@ div.sendbird-app__channellist-wrap {
 
 .sendbird-openchannel-footer{
   margin-top: 20px;
+}
+
+/* channel text name in list & chat header channel text name*/
+.channel-preview__name,
+.sendbird-openchannel-conversation-header__left__title.sendbird-label.sendbird-label--h-2.sendbird-label--color-onbackground-1{
+  text-transform: lowercase;
 }
