@@ -22,7 +22,7 @@ export default function GroupChannelConversation(props){
     }
     
     const hideSettingsBar=()=>{
-        conversationWrap.style.marginRight= "";
+        conversationWrap.style.marginRight= "0px";
     }
    
     return (
