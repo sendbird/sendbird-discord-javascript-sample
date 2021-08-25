@@ -10,7 +10,9 @@
     color: var(--gray-0);
   
     &:hover {
-      background-color: var(--preview-hover);
+      background-color:var(--sendbird-light-background-50);
+      color: white;
+      border-radius: 4px;
     }
   
     &.channel-preview--streaming {

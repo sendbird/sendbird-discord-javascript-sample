@@ -43,8 +43,8 @@ body {
   overflow: revert !important;
 }
 
-/* on hover of channel */
-.MuiCardHeader-root:hover {
+/* on hover of channel in channel list */
+.private-channel-list .MuiCardHeader-root:hover {
   background-color: var(--sendbird-light-background-50) !important;
   color: white;
   border-radius: 4px;
@@ -54,14 +54,14 @@ body {
   width: 90%;
 }
 
-.MuiCardHeader-root {
+.private-channel-list .MuiCardHeader-root {
   width: 90%;
   padding: 14px !important;
   margin-top: 10px !important;
 }
 
-/* private channel list private groups */
-.MuiPaper-root.MuiCard-root.MuiPaper-elevation1{
+/* private channel list private channel wrap */
+.customized-channelpreview-item .MuiPaper-root.MuiCard-root.MuiPaper-elevation1{
   background-color: rgb(47, 49, 54) !important ;
   color: rgb(155, 151, 151);
   width: 90%;
@@ -69,12 +69,35 @@ body {
 }
 
 /* private channel list only selected group's box */
-.MuiPaper-root.MuiCard-root.makeStyles-selected-1.MuiPaper-elevation1{
+.customized-channelpreview-item .MuiPaper-root.MuiCard-root.makeStyles-selected-1.MuiPaper-elevation1{
   background-color: var(--sendbird-light-background-50) !important;
   color: white !important;
   border-radius: 4px;
   margin-top: 10px !important;
   width: 90% !important;
+}
+
+/* incoming message entire wrap on hover*/
+.user-message .MuiPaper-root.MuiCard-root.MuiPaper-elevation1.MuiPaper-rounded:hover {
+  background-color: rgb(63, 67, 73) ;
+  width: 100%;
+}
+
+/* incoming message entire wrap */
+.user-message .MuiPaper-root.MuiCard-root.MuiPaper-elevation1.MuiPaper-rounded {
+  background-color: rgb(71, 74, 80);
+  color: white;
+}
+
+/* user message's text */
+.user-message .MuiPaper-root.MuiCard-root.MuiPaper-elevation1.MuiPaper-rounded .MuiCardContent-root{
+  padding: 0px 50px;
+}
+
+/* user message's name */
+.user-message .MuiPaper-root.MuiCard-root.MuiPaper-elevation1.MuiPaper-rounded .MuiCardHeader-root{
+  margin-bottom: 2px;
+  padding: 0;
 }
 
 .MuiAvatar-img{
@@ -141,9 +164,10 @@ div.group-channel__conversation-wrap {
   display: none;
 }
 
-/* chat messages */
+/* outgoing chat message */
 .sendbird-user-message--outgoing{
-  display: block !important;
+  display: flex !important;
+  width: 100%;
 }
 
 /* timestamp on message */
@@ -151,19 +175,9 @@ div.group-channel__conversation-wrap {
   float: right !important;
 }
 
-.sendbird-user-message__left-padding{
-  position: absolute;
-}
-
 /* message box wrapper */
 .sendbird-user-message__text-balloon{
   width: 100% !important;
-}
-
-/* message box wrapper on hover of outgoing msg*/
-.sendbird-user-message__text-balloon__inner:hover{
-  width: 100% !important;
-  background-color: rgb(71, 74, 80) !important;
 }
 
 /* box only around text for outgoing msg*/
@@ -176,21 +190,27 @@ div.group-channel__conversation-wrap {
   border-radius: 10px;
 }
 
+.sendbird-user-message--incoming{
+  max-width: 100% !important;
+}
+
 /* timestamp incoming message */
+.sendbird-user-message__sent-at.sendbird-label.sendbird-label--caption-3.sendbird-label--color-onbackground-2,
 .sendbird-user-message--incoming .sendbird-user-message__right-padding .sendbird-user-message__sent-at{
   bottom: revert !important;
+
 }
 
 .sendbird-user-message--incoming .sendbird-user-message__avatar{
   bottom: revert !important;
 }
 
-/* insert content before the channel preview name */
-.MuiAvatar-root.MuiAvatar-circular::before{
+/* insert content before the channel preview name in channel list*/
+.customized-channelpreview-item .MuiAvatar-root.MuiAvatar-circular::before{
   content: "#" !important;
 }
 
-.MuiAvatar-root.MuiAvatar-circular{
+.customized-channelpreview-item .MuiAvatar-root.MuiAvatar-circular{
   width: 15px !important;  
   -webkit-transform:scale(1.8,1.2);
   -moz-transform:scale(1.8,1.2);
@@ -202,9 +222,24 @@ div.group-channel__conversation-wrap {
   font-family: "Whitney", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
+.user-message .MuiCardHeader-avatar .MuiAvatar-root.MuiAvatar-circular .MuiAvatar-img{
+  display: table-cell;
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  border-radius: 20px;
+}
+
 .MuiPaper-root.MuiCard-root.MuiPaper-elevation1 .MuiAvatar-root {
   height: revert;
   overflow: visible !important;
+}
+/* wrap around avatar img tag */
+.MuiCardHeader-avatar .MuiAvatar-root.MuiAvatar-circular{
+  display: revert;
 }
 
 /* avatar img in chat conversation */
@@ -288,29 +323,24 @@ div.group-channel__conversation-wrap {
   text-transform: lowercase;
 }
 
-
-
+.sendbird-message.sendbird-message--incoming{
+  width: 1186px;
+}
 /*on hover of this class, it changes background of another class (sendbird-user-message__text-balloon__inner) */
 .sendbird-user-message--incoming:hover {
-   background-color: rgb(71, 74, 80) !important;
+  background-color: purple !important;
+  width: 1186px;
 }
-
 
 /* settings sidebar */
 .sendbird-app__settingspanel-wrap{
-    height: 100%;
-    width: 250px;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    right: 0;
-    background-color: rgb(71, 74, 80); 
-    overflow-x: hidden;  
-    padding-top: 60px;
-  }
-
-  /* .sendbird-channel-profile{
-    padding: 0px !important;
-  } */
-
- 
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: rgb(71, 74, 80); 
+  overflow-x: hidden;  
+  padding-top: 60px;
+}

@@ -7,7 +7,7 @@ import "./community.css";
 import "./index.css";
 import GroupChannelConversation from "./GroupChannelConversation";
 import OpenChannelConversation from './OpenChannelConversation';
-import { NICKNAME } from "./const";
+import { NICKNAME, USER_ID } from "./const";
 
 export default function CustomizedApp({customizedPreviewItem}) {
     const [showSettings, setShowSettings] = useState(false);
@@ -23,6 +23,7 @@ export default function CustomizedApp({customizedPreviewItem}) {
                         currentChannelUrl={currentChannelUrl}
                         setShowSettings={setShowSettings}
                         showSettings={showSettings}
+                        userId={USER_ID}
                     />
         } else if (currentChannel && currentChannel.url.includes('open_channel') ){
             return <OpenChannelConversation 
@@ -36,7 +37,7 @@ export default function CustomizedApp({customizedPreviewItem}) {
         //     return <WelcomeConversation />
         // }
     }
-
+    
     return (
       <div className="customized-app">
         <div className="sendbird-app__wrap">
