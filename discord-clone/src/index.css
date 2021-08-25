@@ -93,7 +93,7 @@ body {
 
 /* user message's text */
 .user-message .MuiPaper-root.MuiCard-root.MuiPaper-elevation1.MuiPaper-rounded .MuiCardContent-root{
-  padding: 0px 45px;
+  padding: 0px 40px;
 }
 
 /* user message's name */
@@ -140,8 +140,9 @@ body {
   text-transform: uppercase;
 }
 
-/* private channel preview name */
-.MuiTypography-root.MuiCardHeader-title.MuiTypography-body2.MuiTypography-displayBlock{
+/* private channel preview name in channel list*/
+
+/* .customized-channelpreview-item .MuiTypography-root.MuiCardHeader-title.MuiTypography-body2.MuiTypography-displayBlock{
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -151,16 +152,20 @@ body {
   font-stretch: normal;
   font-style: normal;
   line-height: 1.14;
-  padding-left: 5px;
+} */
+
+/* users name in chat window's on top of msg sent */
+.user-message .MuiCardHeader-content .MuiTypography-root.MuiCardHeader-title.MuiTypography-body2.MuiTypography-displayBlock{
+  text-transform: none !important;
 }
 
 /* private channel message preview content */
-.MuiTypography-root.MuiTypography-caption.MuiTypography-colorTextSecondary{
+.sendbird-channel-list__body .MuiTypography-root.MuiTypography-caption.MuiTypography-colorTextSecondary{
   display: none;
 }
 
 /* private channel's chat window */
-div.group-channel__conversation-wrap {
+.group-channel__conversation-wrap {
   flex: 1;
   background-color: rgb(47, 49, 54);
 }
@@ -317,7 +322,7 @@ div.group-channel__conversation-wrap {
 }
 
 /* channel text name in list & chat header channel text name*/
-.MuiTypography-root.MuiCardHeader-title.MuiTypography-body2.MuiTypography-displayBlock,
+.MuiCardHeader-root .MuiCardHeader-content .MuiTypography-root.MuiCardHeader-title.MuiTypography-body2.MuiTypography-displayBlock,
 .sendbird-chat-header__left__title.sendbird-label.sendbird-label--h-2.sendbird-label--color-onbackground-1{
   text-transform: lowercase;
 }
