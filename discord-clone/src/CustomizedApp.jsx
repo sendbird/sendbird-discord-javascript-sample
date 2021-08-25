@@ -9,11 +9,15 @@ import GroupChannelConversation from "./GroupChannelConversation";
 import OpenChannelConversation from './OpenChannelConversation';
 import { NICKNAME, USER_ID } from "./const";
 
-export default function CustomizedApp({customizedPreviewItem}) {
+export default function CustomizedApp({customizedPreviewItem, userId}) {
     const [showSettings, setShowSettings] = useState(false);
     const [currentChannel, setCurrentChannel] = useState(null);
     // const [channels, setChannels] = useState([""]);
+    
+    //changed from currentChannelUrl - Used only in private channel SBChannelList
+    const [currentPrivateChannelUrl, setCurrentPrivateChannelUrl] = useState("");
     const currentChannelUrl = currentChannel ? currentChannel.url : "";
+
     const serverName = `${NICKNAME}'s server`;
     const lowerCaseServerName = serverName.toLowerCase();
 
@@ -47,15 +51,19 @@ export default function CustomizedApp({customizedPreviewItem}) {
                     <div className="private-channel-list__title">Private Channels</div>
                         <SBChannelList
                             onChannelSelect={(channel) => {
-                                if (channel && channel.url) {
-                                    // setCurrentChannelUrl(channel.url);
-                                    setCurrentChannel(channel);                        
+                                if (channel && channel.url) {                                 
+                                    // setCurrentPrivateChannelUrl(currentPrivateChannelUrl);
+                                
+                                    //gives errors
+                                    setCurrentChannel(channel);   
+                                                    
                                 } 
                             }}                           
                             renderChannelPreview={                               
                                 customizedPreviewItem
                                 ? ({ channel, onLeaveChannel }) => (
                                     <CustomizedChannelPreviewItem
+                                        userId={userId}
                                         channel={channel}
                                         onLeaveChannel={onLeaveChannel}
                                         currentChannelUrl={currentChannelUrl}                                        

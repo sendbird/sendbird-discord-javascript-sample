@@ -81,17 +81,19 @@ body {
 .user-message .MuiPaper-root.MuiCard-root.MuiPaper-elevation1.MuiPaper-rounded:hover {
   background-color: rgb(63, 67, 73) ;
   width: 100%;
+  padding: 5px;
 }
 
 /* incoming message entire wrap */
 .user-message .MuiPaper-root.MuiCard-root.MuiPaper-elevation1.MuiPaper-rounded {
   background-color: rgb(71, 74, 80);
   color: white;
+  padding: 5px;
 }
 
 /* user message's text */
 .user-message .MuiPaper-root.MuiCard-root.MuiPaper-elevation1.MuiPaper-rounded .MuiCardContent-root{
-  padding: 0px 50px;
+  padding: 0px 45px;
 }
 
 /* user message's name */
@@ -100,11 +102,15 @@ body {
   padding: 0;
 }
 
-.MuiAvatar-img{
+.sendbird-conversation__messages .sendbird-conversation__scroll-container .sendbird-conversation__messages-padding {
+  padding-left: 15px;
+}
+
+.sendbird-channel-list__body .MuiAvatar-img{
   display: none;
 }
 
-.MuiCardHeader-avatar{
+.sendbird-channel-list__body .MuiCardHeader-avatar{
   margin-right: 0 !important;
 }
 
@@ -231,12 +237,18 @@ div.group-channel__conversation-wrap {
   background-position: center center;
   background-size: cover;
   border-radius: 20px;
+  
+}
+
+.user-message .MuiPaper-root.MuiCard-root.MuiPaper-elevation1.MuiPaper-rounded .MuiCardHeader-root .MuiCardHeader-avatar {
+  margin-right: 0px;
 }
 
 .MuiPaper-root.MuiCard-root.MuiPaper-elevation1 .MuiAvatar-root {
   height: revert;
   overflow: visible !important;
 }
+
 /* wrap around avatar img tag */
 .MuiCardHeader-avatar .MuiAvatar-root.MuiAvatar-circular{
   display: revert;
@@ -267,20 +279,11 @@ div.group-channel__conversation-wrap {
   padding: 23px 20px !important;
   border-bottom: 1px solid var(--sendbird-light-onlight-04) !important;
 }
+
 /* channel conversation header text */
 .sendbird-chat-header__left__title.sendbird-label.sendbird-label--h-2.sendbird-label--color-onbackground-1{
   padding-left: 8px;
 }
-
-/* message checkmark on received message */
-/* .sendbird-message-status__icon.sendbird-icon.sendbird-icon-color--sent{
-  display: none;
-} */
-
-/* message checkmark on outgoing message */
-/* .sendbird-message-status__icon.sendbird-icon.sendbird-icon-color--read{
-  display: none;
-} */
 
 /* private channel preview name  */
 .MuiTypography-root.MuiCardHeader-title.MuiTypography-body2.MuiTypography-displayBlock{
@@ -294,10 +297,6 @@ div.group-channel__conversation-wrap {
   font-style: normal;
   line-height: 1.14;
   letter-spacing: -0.2px;
-}
-
-.MuiCardHeader-content{
-  padding-left: 5px !important;
 }
 
 /* private channels wrapper box */
