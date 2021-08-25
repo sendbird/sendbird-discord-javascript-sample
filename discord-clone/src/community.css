@@ -3,7 +3,7 @@
   flex-direction: row;
   height: 99vh;
   font-family: "Whitney", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  background-color: rgb(47, 49, 54) ;
+  background-color: #2f3136;;
   color: rgb(155, 151, 151);
   flex: 1;
 }
@@ -24,13 +24,6 @@ div.sendbird-app__channellist-wrap {
 .sendbird-channel-list__header{
   display: none;
 }
-
-/* Added to open-channel-preview */
-/* .community-channel-list .channel-preview:hover {
-  background-color: var(--sendbird-light-background-50) !important;
-  color: white;
-  border-radius: 4px;
-} */
 
 /* community channel individual channel preview */
 .channel-preview{
@@ -84,8 +77,8 @@ div.sendbird-app__channellist-wrap {
 }
 
 /* current selected community channel  */
-.channel-preview.channel-preview--selected{
-  background-color: var(--sendbird-light-background-50) !important;
+.community-channel-list__list .channel-preview.channel-preview--selected{
+  background-color: var(--sendbird-light-background-50) ;
   color: white;
   border-radius: 4px;
   width: 90%;
@@ -270,4 +263,33 @@ div.sendbird-app__channellist-wrap {
 .sendbird-openchannel-user-message__right .sendbird-openchannel-user-message__right__top .sendbird-openchannel-user-message__right__top__sender-name.sendbird-label.sendbird-label--caption-2{
   width: revert !important;
   padding-right: 5px;
+}
+
+.MuiCardHeader-content .MuiTypography-root.MuiCardHeader-title.MuiTypography-body2.MuiTypography-displayBlock{
+  padding-left: 5px;
+}
+
+
+/* each wrap in settings sidebar */
+.sendbird-openchannel-settings,
+.sendbird-openchannel-settings__header, 
+.sendbird-openchannel-settings__profile .sendbird-openchannel-profile,
+ .sendbird-openchannel-settings__url,
+ .sendbird-participants-accordion.sendbird-accordion__panel-header,
+ .sendbird-openchannel-settings__panel-item.sendbird-openchannel-settings__delete-channel{
+  background-color:  #2f3136 !important;
+}
+
+.sendbird-openchannel-profile--inner .sendbird-label.sendbird-label--button-1{
+  color:white;
+}
+
+.sendbird-openchannel-settings__accordion-icon.sendbird-icon.sendbird-icon-color--primary .icon-members_svg__fill,
+.sendbird-openchannel-settings__panel-icon-left.sendbird-openchannel-settings__panel-icon__delete.sendbird-icon .icon-delete_svg__fill,
+.sendbird-openchannel-settings__copy-icon.sendbird-icon .icon-copy_svg__fill{
+  fill: white !important;
+}
+
+.sendbird-accordion{
+  background-color: revert !important;
 }

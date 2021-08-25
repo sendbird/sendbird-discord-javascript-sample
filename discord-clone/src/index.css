@@ -12,7 +12,7 @@ body {
   font-size : 15px;
   font-style :normal;
   font-weight: 600;
-  background-color: rgb(47, 49, 54);
+  background-color: #2f3136;
   color: white;
   margin: 0 ;
   padding: 22px 20px;
@@ -62,7 +62,7 @@ body {
 
 /* private channel list private channel wrap */
 .customized-channelpreview-item .MuiPaper-root.MuiCard-root.MuiPaper-elevation1{
-  background-color: rgb(47, 49, 54) !important ;
+  background-color: #2f3136 ;
   color: rgb(155, 151, 151);
   width: 90%;
   margin-left: 10px;
@@ -114,7 +114,7 @@ body {
   margin-right: 0 !important;
 }
 
-/* private channel under whole sidebar */
+/* private channel wrap behind list of channel sidebar */
 .private-channel-list{
   display: flex;
   height: 99vh;
@@ -123,7 +123,7 @@ body {
   font-size: 12px;
   font-style: normal;
   font-weight :600;
-  background-color: rgb(47, 49, 54);
+  background-color: #2f3136;
   color:  rgb(155, 151, 151);
   flex: 1;
 }
@@ -135,7 +135,7 @@ body {
   font-size: 14px;
   font-weight: 900;
   color: rgb(155, 151, 151) !important;
-  background-color: rgb(47, 49, 54) ;
+  background-color: #2f3136 ;
   border-bottom: 1px solid var(--gray-1);
   text-transform: uppercase;
 }
@@ -167,7 +167,7 @@ body {
 /* private channel's chat window */
 .group-channel__conversation-wrap {
   flex: 1;
-  background-color: rgb(47, 49, 54);
+  /* background-color: #2f3136; */
 }
 
 /* settings button for private channels on sidebar */
@@ -400,3 +400,12 @@ body {
 .sendbird-modal__footer .sendbird-button.sendbird-button--secondary.sendbird-button--big:hover{
   background-color: var(--sendbird-light-primary-400);
 }
+
+/* settings sidebar wrap */
+.sendbird-app__settingspanel-wrap .sendbird-channel-settings,
+.sendbird-channel-profile,
+.sendbird-channel-settings__freeze,
+.sendbird-channel-settings__panel-item.sendbird-channel-settings__leave-channel {
+  background-color: #2f3136 !important;
+}
+
