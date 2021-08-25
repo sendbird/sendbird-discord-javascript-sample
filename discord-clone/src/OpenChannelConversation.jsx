@@ -11,7 +11,7 @@ export default function communityOpenChannelConversation(props){
     const {currentChannelUrl, setShowSettings, showSettings} = props;
     const conversationWrap= document.getElementsByClassName('sendbird-app__conversation-wrap')[0];
     const renderSettingsBar =()=>{    
-        conversationWrap.style.marginRight= "250px";
+        conversationWrap.style.marginRight= "318px";
     }
     const hideSettingsBar=()=>{
         conversationWrap.style.marginRight= "0px";

@@ -211,12 +211,22 @@ div.sendbird-app__channellist-wrap {
 /* settings bar */
 .sendbird-openchannel-settings{
   height: 100%;
-  width: 250px;
   position: fixed;
   z-index: 1;
   top: 0;
   right: 0;
   background-color: rgb(71, 74, 80); 
   overflow-x: hidden;  
-  /* padding-top: 60px; */
+ }
+ 
+ .sendbird-accordion__panel-icon-left, .sendbird-accordion__panel-icon-right {
+   top: revert;
+ }
+
+.sendbird-participants-accordion.sendbird-accordion__panel-header{
+  display: block;
+  cursor: pointer;
+  box-sizing: border-box;
+  position: relative;
+  padding: 12px 22px 10px 56px;
  }

@@ -243,12 +243,12 @@ div.group-channel__conversation-wrap {
 }
 
 /* avatar img in chat conversation */
-.sendbird-chat-header--avatar--group-channel.sendbird-avatar::before{
+.sendbird-chat-header .sendbird-chat-header--avatar--group-channel.sendbird-avatar::before{
   content: "#" !important;
 }
 
 /*  group channel's conversation header # */
-.sendbird-chat-header--avatar--group-channel.sendbird-avatar{
+.sendbird-chat-header .sendbird-chat-header--avatar--group-channel.sendbird-avatar{
   color: #72767d;
   height: revert !important;
   width: revert !important;
@@ -273,14 +273,14 @@ div.group-channel__conversation-wrap {
 }
 
 /* message checkmark on received message */
-.sendbird-message-status__icon.sendbird-icon.sendbird-icon-color--sent{
+/* .sendbird-message-status__icon.sendbird-icon.sendbird-icon-color--sent{
   display: none;
-}
+} */
 
 /* message checkmark on outgoing message */
-.sendbird-message-status__icon.sendbird-icon.sendbird-icon-color--read{
+/* .sendbird-message-status__icon.sendbird-icon.sendbird-icon-color--read{
   display: none;
-}
+} */
 
 /* private channel preview name  */
 .MuiTypography-root.MuiCardHeader-title.MuiTypography-body2.MuiTypography-displayBlock{
@@ -313,7 +313,7 @@ div.group-channel__conversation-wrap {
   margin-top: 20px;
 }
 
-.sendbird-chat-header--avatar--group-channel.sendbird-avatar .sendbird-avatar-img.sendbird-image-renderer {
+.sendbird-chat-header .sendbird-chat-header--avatar--group-channel.sendbird-avatar .sendbird-avatar-img.sendbird-image-renderer {
   display: none;
 }
 
@@ -326,21 +326,73 @@ div.group-channel__conversation-wrap {
 .sendbird-message.sendbird-message--incoming{
   width: 1186px;
 }
-/*on hover of this class, it changes background of another class (sendbird-user-message__text-balloon__inner) */
-.sendbird-user-message--incoming:hover {
-  background-color: purple !important;
-  width: 1186px;
-}
 
 /* settings sidebar */
 .sendbird-app__settingspanel-wrap{
   height: 100%;
-  width: 250px;
   position: fixed;
   z-index: 1;
   top: 0;
   right: 0;
   background-color: rgb(71, 74, 80); 
   overflow-x: hidden;  
-  padding-top: 60px;
+}
+
+/* private channel settings, member count */
+.sendbird-channel-settings__members-list.sendbird-accordion__panel-header .sendbird-badge{
+  position: revert;
+  margin-left: 10px;
+}
+
+/* private channel settings, options drop downs*/
+.sendbird-channel-settings__operators-list.sendbird-accordion__panel-header,
+.sendbird-channel-settings__members-list.sendbird-accordion__panel-header,
+.sendbird-channel-settings__muted-members-list.sendbird-accordion__panel-header,
+.sendbird-channel-settings__banned-members-list.sendbird-accordion__panel-header{
+  display: block;
+  cursor: pointer;
+  box-sizing: border-box;
+  position: relative;
+  padding: 12px 22px 10px 56px;
+}
+
+/* private channel settings, options drop down icons*/
+.sendbird-channel-settings__accordion-icon.sendbird-icon.sendbird-icon-color--primary .icon-members_svg__fill,
+.sendbird-channel-settings__accordion-icon.sendbird-icon.sendbird-icon-color--primary .icon-operator_svg__fill,
+.sendbird-channel-settings__accordion-icon.sendbird-icon.sendbird-icon-color--primary .icon-mute_svg__fill,
+.sendbird-channel-settings__accordion-icon.sendbird-icon.sendbird-icon-color--primary .icon-ban_svg__fill,
+.sendbird-channel-settings__accordion-icon.sendbird-icon.sendbird-icon-color--primary .icon-freeze_svg__fill{
+  fill: white;
+}
+
+/* private channel settings sidebar, edit button */
+.sendbird-channel-profile__edit.sendbird-color--onbackground-1.sendbird-textbutton--not-underline .sendbird-label.sendbird-label--button-1.sendbird-label--color-primary{
+  color: revert;
+}
+
+/*private channel settings sidebar, on click of edit button -> wrap with editing options */
+#sendbird-modal-root .sendbird-modal .sendbird-modal__content{
+  background-color: var(--sendbird-light-background-50);;
+  padding: 40px;
+}
+
+/*private channel settings sidebar, on click of edit button, background behind wrap with editing options  */
+#sendbird-modal-root .sendbird-modal{
+  background-color: rgba(62, 63, 63, 0.9);
+}
+
+/*private channel settings sidebar, on click of edit button -> wrap with editing options */
+#sendbird-modal-root .sendbird-modal .sendbird-modal__content .sendbird-modal__footer{
+  padding-bottom: 20px;
+}
+
+/*private channel settings sidebar, on click of edit button -> save button */
+.sendbird-modal__footer .sendbird-button.sendbird-button--primary.sendbird-button--big{
+  border: 1px solid var(--sendbird-light-onlight-03) !important; 
+  margin-left: 8px;
+}
+
+/*private channel settings sidebar, on click of edit button -> cancel button */
+.sendbird-modal__footer .sendbird-button.sendbird-button--secondary.sendbird-button--big:hover{
+  background-color: var(--sendbird-light-primary-400);
 }
