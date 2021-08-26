@@ -78,6 +78,7 @@ body {
 }
 
 /* incoming message entire wrap on hover*/
+.admin-message .MuiPaper-root.MuiCard-root.MuiPaper-elevation1.MuiPaper-rounded:hover,
 .user-message .MuiPaper-root.MuiCard-root.MuiPaper-elevation1.MuiPaper-rounded:hover {
   background-color: rgb(63, 67, 73) ;
   width: 100%;
@@ -85,6 +86,7 @@ body {
 }
 
 /* incoming message entire wrap */
+.admin-message .MuiPaper-root.MuiCard-root.MuiPaper-elevation1.MuiPaper-rounded,
 .user-message .MuiPaper-root.MuiCard-root.MuiPaper-elevation1.MuiPaper-rounded {
   background-color: rgb(71, 74, 80);
   color: white;
@@ -100,6 +102,27 @@ body {
 .user-message .MuiPaper-root.MuiCard-root.MuiPaper-elevation1.MuiPaper-rounded .MuiCardHeader-root{
   margin-bottom: 2px;
   padding: 0;
+}
+.admin-message .MuiPaper-root.MuiCard-root.MuiPaper-elevation1.MuiPaper-rounded{
+  margin-top: 20px;
+}
+
+.admin-message .MuiPaper-root.MuiCard-root.MuiPaper-elevation1.MuiPaper-rounded .MuiCardContent-root{
+  margin-left: 40px;
+  padding: 0px;
+}
+.admin-message .MuiPaper-root.MuiCard-root.MuiPaper-elevation1.MuiPaper-rounded .MuiCardContent-root .MuiTypography-root.MuiTypography-body1.MuiTypography-colorTextSecondary{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 210px;
+  font-size: 14px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.14;
+  letter-spacing: -0.2px;
+  color: white;
 }
 
 .sendbird-conversation__messages .sendbird-conversation__scroll-container .sendbird-conversation__messages-padding {
@@ -127,32 +150,6 @@ body {
   color:  rgb(155, 151, 151);
   flex: 1;
 }
-
-/* private channels list header */
-.private-channel-list__title {
-  padding: 20px 24px;
-  box-sizing: border-box;
-  font-size: 14px;
-  font-weight: 900;
-  color: rgb(155, 151, 151) !important;
-  background-color: #2f3136 ;
-  border-bottom: 1px solid var(--gray-1);
-  text-transform: uppercase;
-}
-
-/* private channel preview name in channel list*/
-
-/* .customized-channelpreview-item .MuiTypography-root.MuiCardHeader-title.MuiTypography-body2.MuiTypography-displayBlock{
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  width: 210px;
-  font-size: 14px;
-  font-weight: 600;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.14;
-} */
 
 /* users name in chat window's on top of msg sent */
 .user-message .MuiCardHeader-content .MuiTypography-root.MuiCardHeader-title.MuiTypography-body2.MuiTypography-displayBlock{
@@ -243,7 +240,6 @@ body {
   background-position: center center;
   background-size: cover;
   border-radius: 20px;
-  
 }
 
 .user-message .MuiPaper-root.MuiCard-root.MuiPaper-elevation1.MuiPaper-rounded .MuiCardHeader-root .MuiCardHeader-avatar {
@@ -411,3 +407,52 @@ body {
 }
 
 
+
+
+/* private channel header */
+.sendbird-channel-list .sendbird-channel-list__header{
+  display: revert;
+}
+/*  private channel header avatar */
+.sendbird-channel-header__title__left .sendbird-avatar{
+  display: none;
+}
+/*  private channel header username & id number */
+.sendbird-channel-header__title__right .sendbird-channel-header__title__right__user-id.sendbird-label.sendbird-label--body-2.sendbird-label--color-onbackground-2,
+.sendbird-channel-header__title__right .sendbird-channel-header__title__right__name.sendbird-label.sendbird-label--subtitle-2.sendbird-label--color-onbackground-1{
+  display: none;
+}
+
+.sendbird-channel-header__title__right::after{
+  content: "Private Channels";
+  /* padding: 20px 24px; */
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 900;
+  color: rgb(155, 151, 151) !important;
+  background-color: #2f3136;
+  border-bottom: 1px solid var(--gray-1);
+  text-transform: uppercase;
+}
+
+.sendbird-channel-list .sendbird-channel-list__header .sendbird-channel-header .sendbird-channel-header__title:hover{
+  background-color: revert;
+}
+
+.sendbird-channel-list .sendbird-channel-list__header .sendbird-channel-header  {
+  padding: 20px;
+  background-color: revert;
+}
+
+.sendbird-chat-header .sendbird-chat-header__right .sendbird-chat-header__right__info.sendbird-iconbutton{
+  background-color: rgb(71, 74, 80);
+}
+.sendbird-channel-header .sendbird-channel-header__right-icon .sendbird-iconbutton {
+  background-color: #2f3136;
+}
+
+/* private channel's settings sidebar button & create new channel button */
+.sendbird-chat-header .sendbird-chat-header__right .sendbird-chat-header__right__info.sendbird-iconbutton .icon-info_svg__fill,
+.sendbird-channel-header .sendbird-channel-header__right-icon .sendbird-iconbutton .sendbird-iconbutton__inner .sendbird-icon.sendbird-icon-color--primary .icon-create_svg__fill{
+  fill: rgb(142, 146, 151) ;
+}

@@ -297,3 +297,11 @@ div.sendbird-app__channellist-wrap {
   background-color: rgb(63, 67, 73) !important;
   width: 100%;
 }
+
+.sendbird-openchannel-conversation-header__right .sendbird-openchannel-conversation-header__right__trigger.sendbird-iconbutton{
+  background-color: rgb(71, 74, 80);
+}
+
+.sendbird-openchannel-conversation-header__right .sendbird-openchannel-conversation-header__right__trigger.sendbird-iconbutton .sendbird-iconbutton__inner .sendbird-icon.sendbird-icon-color--primary .icon-info_svg__fill {  
+  fill: rgb(142, 146, 151) ;
+}

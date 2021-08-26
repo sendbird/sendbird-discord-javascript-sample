@@ -48,7 +48,6 @@ export default function CustomizedApp({customizedPreviewItem, userId}) {
             <div className="sendbird-app__channellist-wrap">
                 <h1 className="server-headline">{lowerCaseServerName}</h1>
                 <div className="private-channel-list">
-                    <div className="private-channel-list__title">Private Channels</div>
                         <SBChannelList
                             onChannelSelect={(channel) => {
                                 if (channel && channel.url) {                                 
@@ -71,7 +70,9 @@ export default function CustomizedApp({customizedPreviewItem, userId}) {
                                 )
                                 : null
                             }
-                        />  
+                            
+                        /> 
+                   
                 </div>
                 <div className="community-app">
                     <div className="community-channel-list">
