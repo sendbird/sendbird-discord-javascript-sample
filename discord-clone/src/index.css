@@ -447,6 +447,8 @@ body {
 .sendbird-chat-header .sendbird-chat-header__right .sendbird-chat-header__right__info.sendbird-iconbutton{
   background-color: rgb(71, 74, 80);
 }
+
+/* private channel's settings sidebar button wrap */
 .sendbird-channel-header .sendbird-channel-header__right-icon .sendbird-iconbutton {
   background-color: #2f3136;
 }
@@ -456,3 +458,34 @@ body {
 .sendbird-channel-header .sendbird-channel-header__right-icon .sendbird-iconbutton .sendbird-iconbutton__inner .sendbird-icon.sendbird-icon-color--primary .icon-create_svg__fill{
   fill: rgb(142, 146, 151) ;
 }
+
+.sendbird-theme--light .sendbird-checkbox--checkmark{
+  color: red;
+}
+
+/* # people selected to create new channel */
+.sendbird-modal__body .sendbird-label.sendbird-label--caption-1,
+.sendbird-theme--light .sendbird-label--color-primary {
+  color: white !important;
+}
+
+.sendbird-theme--light .sendbird-checkbox input:checked ~ .sendbird-checkbox--checkmark,
+.sendbird-theme--light .sendbird-checkbox .sendbird-checkbox--checkmark:after{
+  background-color: white !important;
+}
+
+/* Settings sidebar:  Dropdown options -> Text color */
+.sendbird-accordion .sendbird-accordion__list .sendbird-channel-settings__empty-list.sendbird-label.sendbird-label--subtitle-2.sendbird-label--color-onbackground-3{
+  color: white;
+}
+
+/* Settings sidebar:  Members dropdown -> Member options (...)*/
+/* Settings sidebar: Member # count */
+/* Settings sidebar: close sidebar bttn */
+.sendbird-user-list-item--small__action .sendbird-context-menu .sendbird-user-message__more__menu.sendbird-iconbutton,
+.sendbird-channel-settings__members-list.sendbird-accordion__panel-header .sendbird-badge,
+.sendbird-channel-settings__header-icon .sendbird-iconbutton {
+  background-color: rgb(47, 49, 54) !important;
+}
+
+

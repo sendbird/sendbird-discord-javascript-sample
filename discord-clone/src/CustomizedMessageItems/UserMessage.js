@@ -13,12 +13,24 @@ import {
 
 export default function UserMessage(props) {
   // props
-  const { message, userId, onDeleteMessage, onUpdateMessage } = props;
+  const { message, emojiContainer, userId, onDeleteMessage, onUpdateMessage } = props;
 
   // useState
   const [pressedUpdate, setPressedUpdate] = useState(false);
   const [messageText, changeMessageText] = useState(message.message);
-console.log(message.sender)
+
+  const [displayEmojis,setDisplayEmojis] = useState(false);
+// console.log("emoji container",emojiContainer.emojiCategories[0].emojis)
+
+//onClick, renderEmojis to displayEmojis(true) ; have displayEmojis under the btn
+  const renderEmojis = () => {
+    setDisplayEmojis(!displayEmojis);
+    emojiContainer.emojiCategories[0].emojis.forEach((emoji) => {
+      console.log("emoji", emoji)
+      //emoji.url
+
+    })
+  }
   return (
     <div className="user-message">
       <Card>
@@ -58,8 +70,16 @@ console.log(message.sender)
             </div>
           )}
         </CardContent>
+        <button className="usesr-message__options-btn" onClick={() => renderEmojis()}>...</button>    
+      {
+        displayEmojis && (
+          <div className="emoji-picker-tab-panel" >
+            <p>Display emojis</p>
+          </div>
+        )
 
-        
+      }     
+       
         {/* {message.sender && message.sender.userId === userId && (
           <CardActions>
             {!pressedUpdate && (

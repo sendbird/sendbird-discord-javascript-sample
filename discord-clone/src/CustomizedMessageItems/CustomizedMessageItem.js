@@ -5,8 +5,9 @@ import FileMessage from "./FileMessage";
 import UserMessage from "./UserMessage";
 
 export default function CustomizedMessageItem(props) {
-  const { message, onDeleteMessage, onUpdateMessage, userId } = props;
-
+  const { message, emojiContainer, onDeleteMessage, onUpdateMessage, userId } = props;
+  // console.log("emojiContainer", emojiContainer)
+  
   const MessageHOC = useMemo(() => {
     if (message.isAdminMessage && message.isAdminMessage()) {
       return () => <AdminMessage message={message} />;
@@ -23,15 +24,17 @@ export default function CustomizedMessageItem(props) {
         <UserMessage
           message={message}
           userId={userId}
+          emojiContainer={emojiContainer}
         //   onDeleteMessage={onDeleteMessage}
         //   onUpdateMessage={onUpdateMessage}
         />
       );
     }
     return () => <div />;
-  }, [message, userId, onDeleteMessage, onUpdateMessage]);
+  }, [message, emojiContainer, userId, onDeleteMessage, onUpdateMessage]);
 
   return (
+    
     <div id={message.messageId} className="customized-message-item">
       <MessageHOC />
       <br />

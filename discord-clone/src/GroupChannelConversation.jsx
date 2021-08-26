@@ -9,6 +9,7 @@ import "./community.css";
 
 //testing this 
 import CustomizedMessageItem from "./CustomizedMessageItems/CustomizedMessageItem";
+import communityOpenChannelConversation from "./OpenChannelConversation";
 
 
 export default function GroupChannelConversation(props){
@@ -21,6 +22,7 @@ export default function GroupChannelConversation(props){
         conversationWrap.style.marginRight= "0px";
     };
 
+
     return (
         <div className="group-channel__conversation-wrap" >
                                 <SBConversation
@@ -30,15 +32,15 @@ export default function GroupChannelConversation(props){
                                         renderSettingsBar();
                                     }}     
                                     renderChatItem={({
-                                        message
-                                        // ,
+                                        message,
                                         // onDeleteMessage,
                                         // onUpdateMessage
                                         // onResendMessage
-                                        // emojiContainer
+                                        emojiContainer
                                       }) => (
                                         <CustomizedMessageItem
                                           message={message}
+                                          emojiContainer={emojiContainer}
                                         //   onDeleteMessage={onDeleteMessage}
                                         //   onUpdateMessage={onUpdateMessage}
                                           userId={userId}
