@@ -157,6 +157,7 @@ body {
 /* users name in chat window's on top of msg sent */
 .user-message .MuiCardHeader-content .MuiTypography-root.MuiCardHeader-title.MuiTypography-body2.MuiTypography-displayBlock{
   text-transform: none !important;
+  padding-left: revert;
 }
 
 /* private channel message preview content */
@@ -408,4 +409,5 @@ body {
 .sendbird-channel-settings__panel-item.sendbird-channel-settings__leave-channel {
   background-color: #2f3136 !important;
 }
+
 

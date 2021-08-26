@@ -269,14 +269,13 @@ div.sendbird-app__channellist-wrap {
   padding-left: 5px;
 }
 
-
 /* each wrap in settings sidebar */
 .sendbird-openchannel-settings,
 .sendbird-openchannel-settings__header, 
 .sendbird-openchannel-settings__profile .sendbird-openchannel-profile,
- .sendbird-openchannel-settings__url,
- .sendbird-participants-accordion.sendbird-accordion__panel-header,
- .sendbird-openchannel-settings__panel-item.sendbird-openchannel-settings__delete-channel{
+.sendbird-openchannel-settings__url,
+.sendbird-participants-accordion.sendbird-accordion__panel-header,
+.sendbird-openchannel-settings__panel-item.sendbird-openchannel-settings__delete-channel{
   background-color:  #2f3136 !important;
 }
 
@@ -292,4 +291,9 @@ div.sendbird-app__channellist-wrap {
 
 .sendbird-accordion{
   background-color: revert !important;
+}
+
+.sendbird-openchannel-user-message:hover{
+  background-color: rgb(63, 67, 73) !important;
+  width: 100%;
 }
