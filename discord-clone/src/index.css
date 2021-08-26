@@ -278,7 +278,7 @@ body {
 
 /* chat header wrap */
 .sendbird-chat-header {
-  padding: 23px 20px !important;
+  /* padding: 23px 20px !important; */
   border-bottom: 1px solid var(--sendbird-light-onlight-04) !important;
 }
 
@@ -489,3 +489,21 @@ body {
 }
 
 
+.sendbird-iconbutton {
+  padding: 0px;
+}
+
+
+/* input message field: attachment icon bttn */
+.sendbird-message-input--attach.sendbird-iconbutton  {
+  left: 12px;
+}
+
+/* text area around msg text */
+.sendbird-message-input .sendbird-message-input--textarea{
+  padding-left: 50px !important;
+}
+/* msg text for input field */
+.sendbird-message-input .sendbird-message-input--placeholder {
+  left: 50px !important;
+}
