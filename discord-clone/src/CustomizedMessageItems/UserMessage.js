@@ -70,14 +70,13 @@ export default function UserMessage(props) {
             </div>
           )}
         </CardContent>
-        <button className="usesr-message__options-btn" onClick={() => renderEmojis()}>...</button>    
+      <button className="user-message__options-btn" onClick={() => renderEmojis()}>...</button>    
       {
         displayEmojis && (
           <div className="emoji-picker-tab-panel" >
             <p>Display emojis</p>
           </div>
         )
-
       }     
        
         {/* {message.sender && message.sender.userId === userId && (
