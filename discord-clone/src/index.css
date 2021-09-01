@@ -466,3 +466,22 @@ body {
 .sendbird-message-input .sendbird-message-input--textarea {
   padding-left: 50px !important;
 }
+
+.user-message__options-btn{
+  display: none;
+}
+
+.user-message .MuiPaper-root.MuiCard-root.MuiPaper-elevation1.MuiPaper-rounded:hover .user-message__options-btn {
+  background-color: var(--sendbird-light-background-200);
+  color: white;
+  padding: 5px;
+  display: inline-block;
+  height: 32px;
+  width: 32px;
+  font-weight: bold;
+  border-radius: 25px;
+  border: none;
+  font-size: 20px;
+  top: 0;
+}
+

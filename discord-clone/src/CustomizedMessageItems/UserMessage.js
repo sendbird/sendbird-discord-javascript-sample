@@ -19,7 +19,7 @@ export default function UserMessage(props) {
   const [pressedUpdate, setPressedUpdate] = useState(false);
   const [messageText, changeMessageText] = useState(message.message);
   const [messageOptions,setMessageOptions] = useState(false);
-  
+
   return (
     <div className="user-message">
       <Card>
@@ -59,7 +59,11 @@ export default function UserMessage(props) {
             </div>
           )}
         </CardContent>
-      <button className="user-message__options-btn" onClick={() => setMessageOptions(!messageOptions)}>...</button>    
+      {/* <div class="sendbird-pivatechannel-user-message__context-menu" style="top: 8px;">
+        <div class="sendbird-privatechannel-context-menu" style="display: inline;"> */}
+          <button className="user-message__options-btn" onClick={() => setMessageOptions(!messageOptions)}>...</button>    
+        {/* </div>
+      </div> */}
       {
         messageOptions && (
           <div className="message-options-wrap" >
