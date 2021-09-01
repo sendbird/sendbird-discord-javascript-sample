@@ -1,13 +1,11 @@
 import React, { useMemo } from "react";
-
 import AdminMessage from "./AdminMessage";
 import FileMessage from "./FileMessage";
 import UserMessage from "./UserMessage";
 
 export default function CustomizedMessageItem(props) {
   const { message, emojiContainer, onDeleteMessage, onUpdateMessage, userId } = props;
-  // console.log("emojiContainer", emojiContainer)
-  
+
   const MessageHOC = useMemo(() => {
     if (message.isAdminMessage && message.isAdminMessage()) {
       return () => <AdminMessage message={message} />;
@@ -16,17 +14,17 @@ export default function CustomizedMessageItem(props) {
         <FileMessage
           message={message}
           userId={userId}
-        //   onDeleteMessage={onDeleteMessage}
+          onDeleteMessage={onDeleteMessage}
         />
-      );
+      );   
     } else if (message.isUserMessage && message.isUserMessage()) {
       return () => (
         <UserMessage
           message={message}
           userId={userId}
           emojiContainer={emojiContainer}
-        //   onDeleteMessage={onDeleteMessage}
-        //   onUpdateMessage={onUpdateMessage}
+          onDeleteMessage={onDeleteMessage}
+          onUpdateMessage={onUpdateMessage}
         />
       );
     }

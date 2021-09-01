@@ -13,24 +13,13 @@ import {
 
 export default function UserMessage(props) {
   // props
-  const { message, emojiContainer, userId, onDeleteMessage, onUpdateMessage } = props;
+  const { message, userId, onDeleteMessage, onUpdateMessage } = props;
 
   // useState
   const [pressedUpdate, setPressedUpdate] = useState(false);
   const [messageText, changeMessageText] = useState(message.message);
-
-  const [displayEmojis,setDisplayEmojis] = useState(false);
-// console.log("emoji container",emojiContainer.emojiCategories[0].emojis)
-
-//onClick, renderEmojis to displayEmojis(true) ; have displayEmojis under the btn
-  const renderEmojis = () => {
-    setDisplayEmojis(!displayEmojis);
-    emojiContainer.emojiCategories[0].emojis.forEach((emoji) => {
-      console.log("emoji", emoji)
-      //emoji.url
-
-    })
-  }
+  const [messageOptions,setMessageOptions] = useState(false);
+  
   return (
     <div className="user-message">
       <Card>
@@ -70,60 +59,57 @@ export default function UserMessage(props) {
             </div>
           )}
         </CardContent>
-      <button className="user-message__options-btn" onClick={() => renderEmojis()}>...</button>    
+      <button className="user-message__options-btn" onClick={() => setMessageOptions(!messageOptions)}>...</button>    
       {
-        displayEmojis && (
-          <div className="emoji-picker-tab-panel" >
-            <p>Display emojis</p>
+        messageOptions && (
+          <div className="message-options-wrap" >
+           {message.sender && message.sender.userId === userId && (
+            <CardActions>
+              {!pressedUpdate && (
+                <Button
+                  size="small"
+                  variant="contained"
+                  onClick={() => onDeleteMessage(message)}
+                >
+                  Delete
+                </Button>
+              )}
+              {pressedUpdate && (
+                <Button
+                  size="small"
+                  variant="contained"
+                  onClick={() => setPressedUpdate(false)}
+                >
+                  Cancel
+                </Button>
+              )}
+              {!pressedUpdate && (
+                <Button
+                  size="small"
+                  variant="contained"
+                  onClick={() => {
+                    setPressedUpdate(true);
+                  }}
+                >
+                  Edit
+                </Button>
+              )}
+              {pressedUpdate && (
+                <Button
+                  size="small"
+                  variant="contained"
+                  color="primary"
+                  onClick={() => onUpdateMessage(message.messageId, messageText)}
+                >
+                  Save
+                </Button>
+              )}
+            </CardActions>
+          )}
           </div>
-        )
-      }     
-       
-        {/* {message.sender && message.sender.userId === userId && (
-          <CardActions>
-            {!pressedUpdate && (
-              <Button
-                size="small"
-                variant="contained"
-                onClick={() => onDeleteMessage(message)}
-              >
-                Delete
-              </Button>
-            )}
-            {pressedUpdate && (
-              <Button
-                size="small"
-                variant="contained"
-                onClick={() => setPressedUpdate(false)}
-              >
-                Cancel
-              </Button>
-            )}
-            {!pressedUpdate && (
-              <Button
-                size="small"
-                variant="contained"
-                onClick={() => {
-                  setPressedUpdate(true);
-                }}
-              >
-                Update
-              </Button>
-            )}
-            {pressedUpdate && (
-              <Button
-                size="small"
-                variant="contained"
-                color="primary"
-                onClick={() => onUpdateMessage(message.messageId, messageText)}
-              >
-                Update
-              </Button>
-            )}
-          </CardActions>
-        )} */}
-
-
+        ) 
+        
+      }           
       </Card>
     </div>
   );

@@ -8,17 +8,21 @@ import "./index.css";
 import GroupChannelConversation from "./GroupChannelConversation";
 import OpenChannelConversation from './OpenChannelConversation';
 import { NICKNAME, USER_ID } from "./const";
-import {   
-    OpenChannel
-} from 'sendbird-uikit';
+// import {   
+//     OpenChannel
+// } from 'sendbird-uikit';
 
-import {
-    withSendBird,
-    sendBirdSelectors,
-} from 'sendbird-uikit';
+// import {
+//     withSendBird,
+//     sendBirdSelectors,
+// } from 'sendbird-uikit';
 
-
-export default function CustomizedApp({customizedPreviewItem, userId}) {
+export default function CustomizedApp({customizedPreviewItem, userId, appId}) {
+    // const {
+    //     stores: { sdkStore }
+    //   } = props;
+    //   const { sdk } = sdkStore;
+    
     const [showSettings, setShowSettings] = useState(false);
     const [currentChannel, setCurrentChannel] = useState(null);
     // const [channels, setChannels] = useState([""]);
@@ -50,10 +54,23 @@ export default function CustomizedApp({customizedPreviewItem, userId}) {
         //     return <WelcomeConversation />
         // }
     }
-    
 
 
 
+    // const CustomComponentWithSendBird = withSendBird(CustomComponent, (state) => {
+    //     //example  //(store) => (channelUrl) => Promise<(_, error)>
+    //     const enterOpenChannel = sendBirdSelectors.getEnterOpenChannel(state);
+        
+
+    // //using the sendbird Selector called 'getCreateOpenChannel'
+    //     const createOpenChannel = sendBirdSelectors.getCreateOpenChannel(state);
+    //     // (store) => (GroupChannelParams) => Promise<(GroupChannel, error)>
+
+    //     return ({
+    //         enterOpenChannel,
+    //         createOpenChannel
+    //     });
+    // }); 
 
     // const CustomComponent = (props) => {
     //     const {
@@ -66,7 +83,7 @@ export default function CustomizedApp({customizedPreviewItem, userId}) {
     //             Enter Channel
     //         </button>
     //         {/* how to send argument GroupChannelParams */}
-    //         <button onClick={() => { createOpenChannel(OpenChannelParams).then((OpenChannelParams) => { console.log(channel); }) }}>
+    //         <button onClick={() => { createOpenChannel(params).then((params) => { console.log(params); }) }}>
     //             Create Open Channel
     //         </button>
     //       </div>
@@ -74,19 +91,33 @@ export default function CustomizedApp({customizedPreviewItem, userId}) {
     // };
 
 
-    // const CustomComponentWithSendBird = withSendBird(CustomComponent, (state) => {
-    //     //example
-    //     const enterOpenChannel = sendBirdSelectors.getEnterOpenChannel(state);
-    //     //(store) => (channelUrl) => Promise<(_, error)>
-
-    //     const createOpenChannel = sendBirdSelectors.getCreateOpenChannel(state);
-    //     // (store) => (GroupChannelParams) => Promise<(GroupChannel, error)>
-
-    //     return ({
-    //         enterOpenChannel,
-    //         createOpenChannel
-    //     });
+    // OpenChannel.createChannel(NAME, COVER_IMAGE_OR_URL, DATA, OPERATOR_IDS, CUSTOM_TYPE, function(openChannel, error) {
+    //     if (error) {
+    //         // Handle error.
+    //     }
+    
+    //     // An open channel is successfully created.
+    //     // Through the "openChannel" parameter of the callback function,
+    //     // you can get the open channel's data from the result object that Sendbird server has passed to the callback function.
+    //     const channelUrl = openChannel.channelUrl;
+        
     // });
+
+
+//this is a sendbird Selector
+    // export const getCreateOpenChannel = (store) => (params) => {
+    //     const sdk = getSdk(store);
+    //     return new Promise((resolve, reject) => {
+    //       if (!sdk) {
+    //         reject(new Error('Sdk not found'));
+    //       }
+    //       sdk.OpenChannel.createChannel(params)
+    //         .then((channel) => {
+    //           resolve(channel);
+    //         })
+    //         .catch(reject);
+    //     });
+    //   };
 
 
     return (

@@ -22,7 +22,6 @@ export default function GroupChannelConversation(props){
         conversationWrap.style.marginRight= "0px";
     };
 
-
     return (
         <div className="group-channel__conversation-wrap" >
                                 <SBConversation
@@ -33,16 +32,16 @@ export default function GroupChannelConversation(props){
                                     }}     
                                     renderChatItem={({
                                         message,
-                                        // onDeleteMessage,
-                                        // onUpdateMessage
-                                        // onResendMessage
+                                        onDeleteMessage,
+                                        onUpdateMessage,
+                                        // onResendMessage,
                                         emojiContainer
                                       }) => (
                                         <CustomizedMessageItem
                                           message={message}
                                           emojiContainer={emojiContainer}
-                                        //   onDeleteMessage={onDeleteMessage}
-                                        //   onUpdateMessage={onUpdateMessage}
+                                          onDeleteMessage={onDeleteMessage}
+                                          onUpdateMessage={onUpdateMessage}
                                           userId={userId}
                                         />
                                       )}                                     
