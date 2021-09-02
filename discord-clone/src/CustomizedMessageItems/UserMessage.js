@@ -66,66 +66,19 @@ export default function UserMessage(props) {
                 {message.sender && message.sender.userId === userId && (
                   <CardActions>
                       {pressedUpdate && (
-
-                        <li onClick={() => setPressedUpdate(false)}>
-                          Cancel
-                        {/* <Button
-                          size="small"
-                          variant="contained"
-                          onClick={() => setPressedUpdate(false)}
-                        >
-                          Cancel
-                        </Button> */}
-
-                        </li>
-
+                        <li onClick={() => setPressedUpdate(false)}>Cancel</li>
                       )}
 
                       {!pressedUpdate && (
-                        <li onClick={() => {
-                          setPressedUpdate(true);
-                        }}>Edit
-                          
-                        {/* <Button
-                          size="small"
-                          variant="contained"
-                          onClick={() => {
-                            setPressedUpdate(true);
-                          }}
-                        >
-                          Edit
-                        </Button> */}
-
-                        </li>
+                        <li onClick={() => {setPressedUpdate(true)}}>Edit</li>
                       )}
 
                       {pressedUpdate && (
-                        <li onClick={() => onUpdateMessage(message.messageId, messageText)}>
-                          Save
-                      
-                        {/* <Button
-                          size="small"
-                          variant="contained"
-                          color="primary"
-                          onClick={() => onUpdateMessage(message.messageId, messageText)}
-                        >
-                          Save
-                        </Button> */}
-                        </li>
+                        <li onClick={() => onUpdateMessage(message.messageId, messageText)}>Save</li>
                       )}
 
                       {!pressedUpdate && (
-                        <li onClick={() => onDeleteMessage(message)}>
-                            Delete
-                        {/* <Button
-                          size="small"
-                          variant="contained"
-                          onClick={() => onDeleteMessage(message)}
-                        >
-                          Delete
-                        </Button> */}
-
-                        </li>
+                        <li onClick={() => onDeleteMessage(message)}>Delete</li>
                       )}
 
                   </CardActions>

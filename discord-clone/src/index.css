@@ -124,7 +124,6 @@ body {
   color: white;
 }
 
-
 .sendbird-conversation__messages .sendbird-conversation__scroll-container .sendbird-conversation__messages-padding {
   padding-left: 15px;
 }
@@ -513,3 +512,19 @@ body {
 li {
   list-style-type: none;
 }
+
+/* edit/ delete btn wrapper */
+.MuiCardActions-root.MuiCardActions-spacing{
+  cursor: pointer;
+}
+
+/* 
+{
+  font-size: 14px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.14;
+  letter-spacing: -0.2px;
+  font-family: var(--sendbird-font-family-default);
+} */
