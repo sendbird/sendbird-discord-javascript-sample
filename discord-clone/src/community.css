@@ -65,32 +65,18 @@ div.sendbird-app__channellist-wrap {
   padding-left: 5px;
 }
 
-.channel-preview{
-  margin-bottom: 10px;
-}
-
 .channel-preview:hover,
 .channel-preview.channel-preview--selected{
   background-color: var(--sendbird-light-background-50);
   color: white;
   border-radius: 4px;
-  width: 90%;
-  margin-bottom: 10px;
-}
-
-.community-channel-list__list{
-  margin-left: 10px;
+  width: 92%;
   margin-top: 10px;
 }
 
 /* community channel container for preview channel name */
 .channel-preview__inner-right{
   padding-left: 5px !important;
-}
-
-/* community channel container for # icon */
-.channel-preview__inner-left{
-  padding-top: 14px !important;
 }
 
 .sendbird-chat-header__left .community-channel-preview__avatar,
@@ -138,10 +124,6 @@ div.sendbird-app__channellist-wrap {
   font-weight: bold;
   border-radius: 25px;
   font-size: 20px;
-}
-
-.sendbird-theme--light .sendbird-iconbutton:hover{
-  background-color: rgb(197, 193, 193);
 }
 
 .sendbird-message-input .sendbird-message-input--attach{
@@ -259,8 +241,6 @@ div.sendbird-app__channellist-wrap {
   fill: rgb(142, 146, 151);
 }
 
-
-
 .community-channel-create-iconbutton{
   height: 24px;
   width: 24px;
@@ -278,10 +258,4 @@ div.sendbird-app__channellist-wrap {
   position: relative;
   margin-left: 200px;
   margin-top: 16px;
-}
-
-.community-channel-list__title{
-  position: absolute;
-  display: block;
-  border-bottom: 1px solid var(--gray-1);
 }
