@@ -74,9 +74,6 @@ function CommunityChannelList({
             });
         }); 
 
-
-
-    
 //another way to try
       //   var test = sdk.OpenChannel.createChannel("Channel", "img url", "data", "OPERATOR_IDS", "CUSTOM_TYPE", function(openChannel, error) {
       //     if (error) {
@@ -90,7 +87,6 @@ function CommunityChannelList({
          
       // }); 
       
-
     return (
       <div className="community-channel-list">
         <div className="community-channel-list__title">Community Channels</div>
