@@ -46,15 +46,21 @@ body {
   color: white;
   border-radius: 4px;
   cursor: pointer;
-  padding: 14px;
-  margin-top: 10px;
   width: 90%;
+  padding: 0px 14px !important;
+  margin-top: 10px;
 }
 
 .private-channel-list .MuiCardHeader-root {
-  width: 90%;
-  padding: 14px !important;
+  height: 34px;
+  width: 232px;
+  padding: 0px 14px !important;
   margin-top: 10px !important;
+}
+
+.sendbird-app__channellist-wrap {
+
+
 }
 
 /* private channel list private channel wrap */
@@ -67,11 +73,13 @@ body {
 
 /* private channel list only selected group's box */
 .customized-channelpreview-item .MuiPaper-root.MuiCard-root.makeStyles-selected-1.MuiPaper-elevation1{
+  
   background-color: var(--sendbird-light-background-50) !important;
   color: white !important;
   border-radius: 4px;
-  margin-top: 10px !important;
-  width: 90% !important;
+  
+  /* margin-top: 10px !important;
+  width: 90% !important; */
 }
 
 /* incoming message entire wrap on hover*/
