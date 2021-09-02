@@ -36,7 +36,6 @@ export default function UserMessage(props) {
               ? message.sender.nickname || message.sender.userId
               : "(No name)"
           }
-          // subheader="User Message"
         />
         <CardContent>
           {!pressedUpdate && (
@@ -59,57 +58,79 @@ export default function UserMessage(props) {
             </div>
           )}
         </CardContent>
-      {/* <div class="sendbird-pivatechannel-user-message__context-menu" style="top: 8px;">
-        <div class="sendbird-privatechannel-context-menu" style="display: inline;"> */}
-          <button className="user-message__options-btn" onClick={() => setMessageOptions(!messageOptions)}>...</button>    
-        {/* </div>
-      </div> */}
+        <button className="user-message__options-btn" onClick={() => setMessageOptions(!messageOptions)}>...</button>    
       {
         messageOptions && (
           <div className="message-options-wrap" >
-           {message.sender && message.sender.userId === userId && (
-            <CardActions>
-              {!pressedUpdate && (
-                <Button
-                  size="small"
-                  variant="contained"
-                  onClick={() => onDeleteMessage(message)}
-                >
-                  Delete
-                </Button>
-              )}
-              {pressedUpdate && (
-                <Button
-                  size="small"
-                  variant="contained"
-                  onClick={() => setPressedUpdate(false)}
-                >
-                  Cancel
-                </Button>
-              )}
-              {!pressedUpdate && (
-                <Button
-                  size="small"
-                  variant="contained"
-                  onClick={() => {
-                    setPressedUpdate(true);
-                  }}
-                >
-                  Edit
-                </Button>
-              )}
-              {pressedUpdate && (
-                <Button
-                  size="small"
-                  variant="contained"
-                  color="primary"
-                  onClick={() => onUpdateMessage(message.messageId, messageText)}
-                >
-                  Save
-                </Button>
-              )}
-            </CardActions>
-          )}
+            <ul className="sendbird_dropdown_menu"> 
+                {message.sender && message.sender.userId === userId && (
+                  <CardActions>
+                      {pressedUpdate && (
+
+                        <li onClick={() => setPressedUpdate(false)}>
+                          Cancel
+                        {/* <Button
+                          size="small"
+                          variant="contained"
+                          onClick={() => setPressedUpdate(false)}
+                        >
+                          Cancel
+                        </Button> */}
+
+                        </li>
+
+                      )}
+
+                      {!pressedUpdate && (
+                        <li onClick={() => {
+                          setPressedUpdate(true);
+                        }}>Edit
+                          
+                        {/* <Button
+                          size="small"
+                          variant="contained"
+                          onClick={() => {
+                            setPressedUpdate(true);
+                          }}
+                        >
+                          Edit
+                        </Button> */}
+
+                        </li>
+                      )}
+
+                      {pressedUpdate && (
+                        <li onClick={() => onUpdateMessage(message.messageId, messageText)}>
+                          Save
+                      
+                        {/* <Button
+                          size="small"
+                          variant="contained"
+                          color="primary"
+                          onClick={() => onUpdateMessage(message.messageId, messageText)}
+                        >
+                          Save
+                        </Button> */}
+                        </li>
+                      )}
+
+                      {!pressedUpdate && (
+                        <li onClick={() => onDeleteMessage(message)}>
+                            Delete
+                        {/* <Button
+                          size="small"
+                          variant="contained"
+                          onClick={() => onDeleteMessage(message)}
+                        >
+                          Delete
+                        </Button> */}
+
+                        </li>
+                      )}
+
+                  </CardActions>
+                )}
+              </ul>
           </div>
         ) 
         

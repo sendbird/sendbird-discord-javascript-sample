@@ -467,11 +467,19 @@ body {
   padding-left: 50px !important;
 }
 
+
+
+
+
 .user-message__options-btn{
   display: none;
 }
 
-.user-message .MuiPaper-root.MuiCard-root.MuiPaper-elevation1.MuiPaper-rounded:hover .user-message__options-btn {
+.user-message__options-btn:hover{
+  background-color: var(--sendbird-light-primary-100) !important;
+}
+
+.user-message .MuiPaper-root.MuiCard-root.MuiPaper-elevation1.MuiPaper-rounded:hover .user-message__options-btn{
   background-color: var(--sendbird-light-background-200);
   color: white;
   padding: 5px;
@@ -482,6 +490,8 @@ body {
   border-radius: 25px;
   border: none;
   font-size: 20px;
-  top: 0;
 }
 
+li {
+  list-style-type: none;
+}

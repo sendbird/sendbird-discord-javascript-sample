@@ -34,12 +34,10 @@ export default function GroupChannelConversation(props){
                                         message,
                                         onDeleteMessage,
                                         onUpdateMessage,
-                                        // onResendMessage,
                                         emojiContainer
                                       }) => (
                                         <CustomizedMessageItem
                                           message={message}
-                                          emojiContainer={emojiContainer}
                                           onDeleteMessage={onDeleteMessage}
                                           onUpdateMessage={onUpdateMessage}
                                           userId={userId}
