@@ -40,7 +40,6 @@ body {
   overflow: revert !important;
 }
 
-/* on hover of channel in channel list */
 .private-channel-list .MuiCardHeader-root:hover {
   background-color: var(--sendbird-light-background-50) !important;
   color: white;
@@ -53,33 +52,29 @@ body {
 
 .private-channel-list .MuiCardHeader-root {
   height: 34px;
-  width: 232px;
+  width: 90%;
   padding: 0px 14px !important;
   margin-top: 10px !important;
 }
 
-.sendbird-app__channellist-wrap {
-
-
-}
-
-/* private channel list private channel wrap */
-.customized-channelpreview-item .MuiPaper-root.MuiCard-root.MuiPaper-elevation1{
+.MuiPaper-root.MuiCard-root.MuiPaper-elevation1{
   background-color: #2f3136 ;
   color: rgb(155, 151, 151);
   width: 90%;
-  margin-left: 10px;
+  margin: 10px;
 }
 
-/* private channel list only selected group's box */
-.customized-channelpreview-item .MuiPaper-root.MuiCard-root.makeStyles-selected-1.MuiPaper-elevation1{
-  
+.MuiPaper-root.MuiCard-root.makeStyles-selected-1.MuiPaper-elevation1{
   background-color: var(--sendbird-light-background-50) !important;
   color: white !important;
   border-radius: 4px;
-  
-  /* margin-top: 10px !important;
-  width: 90% !important; */
+  width: 90%;
+}
+
+.sendbird-app__channellist-wrap,
+.sendbird-channel-list,
+.customized-channelpreview-item{
+  width: 240px;
 }
 
 /* incoming message entire wrap on hover*/
@@ -278,9 +273,9 @@ body {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  width: 210px;
   font-size: 14px;
   font-weight: 600;
+  width: 80%;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.14;

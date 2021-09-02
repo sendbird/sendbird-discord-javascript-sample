@@ -118,7 +118,7 @@ export default function CustomizedChannelPreviewItem(props) {
   };
 
   return (
-    <div className="customized-channelpreview-item"  >
+    <div className="customized-channelpreview-item" >
       <Popper
         transition
         id={popperId}
