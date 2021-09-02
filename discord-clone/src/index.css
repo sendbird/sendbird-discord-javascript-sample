@@ -54,7 +54,7 @@ body {
   margin: 10px;
 }
 
-.MuiPaper-root.MuiCard-root.makeStyles-selected-1.MuiPaper-elevation1{
+.customized-channelpreview-item .MuiPaper-root.MuiCard-root.makeStyles-selected-1.MuiPaper-elevation1{
   background-color: var(--sendbird-light-background-50) !important;
   color: white !important;
   border-radius: 4px;
@@ -67,7 +67,7 @@ body {
   margin-top: 10px !important;
 }
 
-.MuiCardHeader-root:hover {
+.customized-channelpreview-item .MuiCardHeader-root:hover {
   background-color: var(--sendbird-light-background-50) !important;
   color: white;
   border-radius: 4px;
@@ -485,9 +485,6 @@ body {
 }
 
 
-
-
-
 .user-message__options-btn{
   display: none;
 }
@@ -496,17 +493,31 @@ body {
   background-color: var(--sendbird-light-primary-100) !important;
 }
 
+
+
+/* 
+.user-message{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+} */
+
 .user-message .MuiPaper-root.MuiCard-root.MuiPaper-elevation1.MuiPaper-rounded:hover .user-message__options-btn{
   background-color: var(--sendbird-light-background-200);
   color: white;
   padding: 5px;
-  display: inline-block;
+  display: block;
   height: 32px;
   width: 32px;
   font-weight: bold;
   border-radius: 25px;
   border: none;
   font-size: 20px;
+
+  float: right;
+  position: absolute;
+  right: 16px;
 }
 
 li {
@@ -518,8 +529,48 @@ li {
   cursor: pointer;
 }
 
+
 /* 
-{
+.message-options-wrap {
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.sendbird_dropdown_menu{
+  z-index: 99999;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: inline-block;
+  position: fixed;
+  left: 1197px;
+  top: 254px;
+  min-width: 140px;
+  margin: 0px;
+  padding: 8px 0px;
+  border-radius: 4px;
+  list-style: none;
+} */
+
+/* UL menu wrap */
+.sendbird_dropdown_menu {
+  display: block;
+  float: right;
+}
+/* LI */
+.dropdown__menu-item {
+  cursor: pointer;
+  white-space: nowrap;
+  padding: 8px 16px;
+  margin-right: auto;
+  z-index: 99;
+  opacity: 0.8;
+}
+
+.dropdown__menu-item-text{
   font-size: 14px;
   font-weight: 600;
   font-stretch: normal;
@@ -527,4 +578,14 @@ li {
   line-height: 1.14;
   letter-spacing: -0.2px;
   font-family: var(--sendbird-font-family-default);
-} */
+}
+
+/* Text when editing msg, */
+.MuiInputBase-input.MuiFilledInput-input.MuiInputBase-inputMultiline.MuiFilledInput-inputMultiline,
+.MuiFormLabel-root.MuiInputLabel-root.MuiInputLabel-formControl.MuiInputLabel-animated.MuiInputLabel-shrink.MuiInputLabel-filled.MuiFormLabel-filled{
+  color:white;
+}
+
+.MuiFormControl-root.MuiTextField-root{
+  border-radius: 4px;
+}

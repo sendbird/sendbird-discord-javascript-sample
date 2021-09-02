@@ -66,21 +66,28 @@ export default function UserMessage(props) {
                 {message.sender && message.sender.userId === userId && (
                   <CardActions>
                       {pressedUpdate && (
-                        <li onClick={() => setPressedUpdate(false)}>Cancel</li>
+                        <li className="dropdown__menu-item" onClick={() => setPressedUpdate(false)}>
+                          <span className="dropdown__menu-item-text">Cancel</span>
+                        </li>
                       )}
 
                       {!pressedUpdate && (
-                        <li onClick={() => {setPressedUpdate(true)}}>Edit</li>
+                        <li className="dropdown__menu-item" onClick={() => {setPressedUpdate(true)}}>
+                          <span className="dropdown__menu-item-text">Edit</span>
+                        </li>
                       )}
 
                       {pressedUpdate && (
-                        <li onClick={() => onUpdateMessage(message.messageId, messageText)}>Save</li>
+                        <li className="dropdown__menu-item" onClick={() => onUpdateMessage(message.messageId, messageText)}>
+                          <span className="dropdown__menu-item-text">Save</span>
+                        </li>
                       )}
 
                       {!pressedUpdate && (
-                        <li onClick={() => onDeleteMessage(message)}>Delete</li>
+                        <li className="dropdown__menu-item" onClick={() => onDeleteMessage(message)}>
+                          <span className="dropdown__menu-item-text">Delete</span>
+                        </li>
                       )}
-
                   </CardActions>
                 )}
               </ul>

@@ -8,23 +8,8 @@ import "./index.css";
 import GroupChannelConversation from "./GroupChannelConversation";
 import OpenChannelConversation from './OpenChannelConversation';
 import { NICKNAME, USER_ID } from "./const";
-import {   
-    OpenChannel
-} from 'sendbird-uikit';
 
-import {
-    withSendBird,
-    sendBirdSelectors
-} from 'sendbird-uikit';
-
-import * as SendBird from "sendbird";
-
-export default function CustomizedApp({customizedPreviewItem, userId, appId}) {
-    // const {
-    //     stores: { sdkStore }
-    //   } = props;
-    //   const { sdk } = sdkStore;
-    
+export default function CustomizedApp({customizedPreviewItem, userId, appId}) {    
     const [showSettings, setShowSettings] = useState(false);
     const [currentChannel, setCurrentChannel] = useState(null);
     // const [channels, setChannels] = useState([""]);
@@ -52,46 +37,6 @@ export default function CustomizedApp({customizedPreviewItem, userId, appId}) {
                     />
         } 
     };
-
-    // Initialize a SendBird instance to use APIs in your app.
-    var sb = new SendBird({appId: appId});
-
-    //createOpenChannel necessary params
-            //need to import 'sb'
-    var params = new sb.OpenChannelParams();
-    params.name = '';
-    params.coverUrlOrImage = '';
-    params.operatorUserIds = ['']; // Or .operators(Array<User>)
-    params.data = '';
-    params.customType = '';
-    params.channelUrl = ''; // For an open channel, you can create a channel by specifying its unique channel URL in a `OpenChannelParams` object.    
-
-    const CustomComponent = (props) => {
-        const {
-            enterOpenChannel,
-            createOpenChannel
-        } = props;
-        return (
-            <div> 
-            <button onClick={() => { enterOpenChannel('channelUrl').then((channel) => { console.log(channel); }) }}>
-                Enter Channel
-            </button>
-            {/* how to send argument GroupChannelParams */}
-            <button onClick={() => { createOpenChannel(console.log(params)).then((params) => { console.log(params); }) }}>
-                Create Open Channel
-            </button>
-          </div>
-        )
-    };
-
-    const CustomComponentWithSendBird = withSendBird(CustomComponent, (state) => {
-        //using sendBirdSelector to grab getCreateOpenChannel function
-            const createOpenChannel = sendBirdSelectors.getCreateOpenChannel(state);
-            // (store) => (GroupChannelParams) => Promise<(GroupChannel, error)>    
-            return ({
-                createOpenChannel
-            });
-        }); 
 
     return (
       <div className="customized-app">
@@ -121,12 +66,11 @@ export default function CustomizedApp({customizedPreviewItem, userId, appId}) {
                             }
                             
                         /> 
-                   
                 </div>
                 <div className="community-app">
-                <CustomComponentWithSendBird />
                     <div className="community-channel-list">
                         <CommunityChannelList
+                            appId={appId}
                             currentChannelUrl={currentChannelUrl}
                             setCurrentChannel={setCurrentChannel}
                         /> 

@@ -11,7 +11,7 @@
     }
   
     .community-channel-list__title {
-      padding: 20px 24px;
+      padding: 20px;
       box-sizing: border-box;
       font-size: 14px;
       font-weight: 900;
@@ -19,6 +19,8 @@
       background-color: rgb(47, 49, 54) ;
       border-bottom: 1px solid var(--gray-1);
       text-transform: uppercase;
+      position: absolute;
+      display: block;
     }
 
     .community-channel-list__placeholder {
