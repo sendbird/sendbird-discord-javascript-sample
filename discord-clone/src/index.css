@@ -2,7 +2,7 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 100%;}
+}
 
 .server-headline{
   font-family : "Ginto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
@@ -17,7 +17,7 @@ body {
 }
 
 .app-wrapper {
-  height: calc(100vh - 20px);
+  height: 100vh;
 }
 
 .customized-app {
@@ -36,28 +36,18 @@ body {
   display: flex;
 }
 
+.sendbird-app__channellist-wrap,
+.sendbird-channel-list,
+.customized-channelpreview-item{
+  width: 240px !important;
+}
+
 .MuiCard-root {
   overflow: revert !important;
 }
 
-.private-channel-list .MuiCardHeader-root:hover {
-  background-color: var(--sendbird-light-background-50) !important;
-  color: white;
-  border-radius: 4px;
-  cursor: pointer;
-  width: 90%;
-  padding: 0px 14px !important;
-  margin-top: 10px;
-}
-
-.private-channel-list .MuiCardHeader-root {
-  height: 34px;
-  width: 90%;
-  padding: 0px 14px !important;
-  margin-top: 10px !important;
-}
-
-.MuiPaper-root.MuiCard-root.MuiPaper-elevation1{
+/* need specific */
+.customized-channelpreview-item .MuiPaper-root.MuiCard-root.MuiPaper-elevation1{
   background-color: #2f3136 ;
   color: rgb(155, 151, 151);
   width: 90%;
@@ -68,13 +58,22 @@ body {
   background-color: var(--sendbird-light-background-50) !important;
   color: white !important;
   border-radius: 4px;
-  width: 90%;
 }
 
-.sendbird-app__channellist-wrap,
-.sendbird-channel-list,
-.customized-channelpreview-item{
-  width: 240px;
+/* need specific */
+.customized-channelpreview-item .MuiCardHeader-root {
+  height: 34px;
+  padding: 0px 14px !important;
+  margin-top: 10px !important;
+}
+
+.MuiCardHeader-root:hover {
+  background-color: var(--sendbird-light-background-50) !important;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 0px 14px !important;
+  margin-top: 10px;
 }
 
 /* incoming message entire wrap on hover*/
@@ -124,6 +123,7 @@ body {
   letter-spacing: -0.2px;
   color: white;
 }
+
 
 .sendbird-conversation__messages .sendbird-conversation__scroll-container .sendbird-conversation__messages-padding {
   padding-left: 15px;
@@ -338,6 +338,10 @@ body {
   fill: white;
 }
 
+.sendbird-user-list-item--small:hover .sendbird-user-list-item--small__operator, .sendbird-user-list-item--small.sendbird-icon--pressed .sendbird-user-list-item--small__operator {
+  display: inline-block !important;
+}
+
 /* private channel settings sidebar, edit button */
 .sendbird-channel-profile__edit.sendbird-color--onbackground-1.sendbird-textbutton--not-underline .sendbird-label.sendbird-label--button-1.sendbird-label--color-primary{
   color: revert;
@@ -356,7 +360,7 @@ body {
 
 /*private channel settings sidebar, on click of edit button -> wrap with editing options */
 #sendbird-modal-root .sendbird-modal .sendbird-modal__content .sendbird-modal__footer{
-  padding-bottom: 20px;
+  padding: 20px 0px;
 }
 
 /*private channel settings sidebar, on click of edit button -> save button */
@@ -403,6 +407,7 @@ body {
 .sendbird-channel-list .sendbird-channel-list__header .sendbird-channel-header  {
   padding: 20px;
   background-color: revert;
+  width: revert;
 }
 
 .sendbird-chat-header .sendbird-chat-header__right .sendbird-chat-header__right__info.sendbird-iconbutton{
@@ -422,6 +427,16 @@ body {
 
 .sendbird-theme--light .sendbird-checkbox--checkmark{
   color: red;
+}
+
+.sendbird-input__placeholder.sendbird-label.sendbird-label--body-1.sendbird-label--color-onbackground-3{
+  display: block;
+  color: white;
+  padding-top: 5px;
+}
+
+.sendbird-label--caption-3{
+  font-size: revert;
 }
 
 /* # people selected to create new channel *//* Settings sidebar:  Dropdown options -> Text color */
