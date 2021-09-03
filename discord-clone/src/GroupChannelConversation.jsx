@@ -33,8 +33,7 @@ export default function GroupChannelConversation(props){
                                     renderChatItem={({
                                         message,
                                         onDeleteMessage,
-                                        onUpdateMessage,
-                                        emojiContainer
+                                        onUpdateMessage
                                       }) => (
                                         <CustomizedMessageItem
                                           message={message}

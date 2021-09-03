@@ -497,21 +497,21 @@ body {
 
 .user-message .MuiPaper-root.MuiCard-root.MuiPaper-elevation1.MuiPaper-rounded:hover .user-message__options-btn{
   background-color: var(--sendbird-light-background-200);
-  color: white;
-  padding: 5px;
   height: 32px;
   width: 32px;
-  font-weight: bold;
   border-radius: 25px;
   border: none;
-  font-size: 20px;
   float: right;
   position: absolute;
-  right: 16px;
   display: inline-block;
   position:absolute;
   right: 10px;
   top: 8px;
+  font-weight: bold;
+}
+
+.icon-more_svg__fill{
+  fill: var(--sendbird-light-onlight-01);
 }
 
 li {
@@ -538,6 +538,7 @@ li {
   margin-right: auto;
   z-index: 99;
   opacity: 0.8;
+  display: inline-block;
 }
 
 .dropdown__menu-item-text{
