@@ -514,10 +514,6 @@ body {
   fill: var(--sendbird-light-onlight-01);
 }
 
-li {
-  list-style-type: none;
-}
-
 /* edit/ delete btn wrapper */
 .MuiCardActions-root.MuiCardActions-spacing{
   cursor: pointer;
@@ -525,9 +521,9 @@ li {
 
 /* UL menu wrap */
 .sendbird_dropdown_menu {
-  display: block;
   float: right;
   padding: 0px;
+  display: inline-block;
 }
 
 /* LI */
@@ -538,7 +534,8 @@ li {
   margin-right: auto;
   z-index: 99;
   opacity: 0.8;
-  display: inline-block;
+  display: list-item;
+  list-style-type: none;
 }
 
 .dropdown__menu-item-text{

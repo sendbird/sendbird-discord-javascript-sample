@@ -5,9 +5,7 @@ import {
   CardHeader,
   Avatar,
   CardContent,
-  CardActions,
   Typography,
-  Button,
   TextField
 } from "@material-ui/core";
 
@@ -66,7 +64,7 @@ export default function UserMessage(props) {
           <div className="message-options-wrap" >
             <ul className="sendbird_dropdown_menu"> 
                 {message.sender && message.sender.userId === userId && (
-                  <CardActions>
+                  <div> 
                       {pressedUpdate && (
                         <li className="dropdown__menu-item" onClick={() => setPressedUpdate(false)}>
                           <span className="dropdown__menu-item-text">Cancel</span>
@@ -90,12 +88,11 @@ export default function UserMessage(props) {
                           <span className="dropdown__menu-item-text">Delete</span>
                         </li>
                       )}
-                  </CardActions>
+                  </div>
                 )}
               </ul>
           </div>
         ) 
-        
       }           
       </Card>
     </div>
