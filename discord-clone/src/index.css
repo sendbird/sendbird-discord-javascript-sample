@@ -80,8 +80,8 @@ body {
 .admin-message .MuiPaper-root.MuiCard-root.MuiPaper-elevation1.MuiPaper-rounded:hover,
 .user-message .MuiPaper-root.MuiCard-root.MuiPaper-elevation1.MuiPaper-rounded:hover {
   background-color: rgb(63, 67, 73) ;
-  width: 100%;
   padding: 5px;
+  /* position:relative; */
 }
 
 /* incoming message entire wrap */
@@ -90,7 +90,7 @@ body {
   background-color: rgb(71, 74, 80);
   color: white;
   padding: 5px;
-  position:relative;
+  /* position:relative; */
 }
 
 /* user message's text */
@@ -519,11 +519,25 @@ body {
   cursor: pointer;
 }
 
+.customized-message-item{
+  position: relative;
+  /* z-index: 1; */
+}
+
 /* UL menu wrap */
 .sendbird_dropdown_menu {
   float: right;
   padding: 0px;
-  display: inline-block;
+  display: inline;
+  margin: 0px;
+  position:relative;
+  z-index: 4;
+  box-shadow: var(--sendbird-light-shadow-02);
+  background-color: var(--sendbird-light-background-50);
+  min-width: 140px;
+  padding: 8px 0px;
+  border-radius: 4px;
+  list-style: none;
 }
 
 /* LI */
@@ -531,11 +545,6 @@ body {
   cursor: pointer;
   white-space: nowrap;
   padding: 8px 16px;
-  margin-right: auto;
-  z-index: 99;
-  opacity: 0.8;
-  display: list-item;
-  list-style-type: none;
 }
 
 .dropdown__menu-item-text{
