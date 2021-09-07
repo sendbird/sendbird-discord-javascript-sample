@@ -402,7 +402,7 @@ body {
 .sendbird-channel-header__title__right::after{
   content: "Private Channels";
   box-sizing: border-box;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 900;
   color: rgb(155, 151, 151) !important;
   background-color: #2f3136;
