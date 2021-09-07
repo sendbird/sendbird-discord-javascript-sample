@@ -43,14 +43,14 @@ function CommunityChannelList({
     }
 
     var newChannelName = '';
-
+    var imageUrl= 'https://logos-world.net/wp-content/uploads/2020/12/Discord-Logo.png';
     const openChannelFormSubmit = (event) => {
       newChannelName= event.target.channelName.value;
       CreatingNewChannel();
     }
 
     const CreatingNewChannel =()=> {
-      sdk.OpenChannel.createChannel(newChannelName, "imageUrl", "data", "OPERATOR_IDS", "CUSTOM_TYPE", function(openChannel, error) {
+      sdk.OpenChannel.createChannel(newChannelName, imageUrl, "data", "OPERATOR_IDS", "CUSTOM_TYPE", function(openChannel, error) {
         if (error) {
           // Handle error.
         }
