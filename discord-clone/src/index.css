@@ -81,7 +81,6 @@ body {
 .user-message .MuiPaper-root.MuiCard-root.MuiPaper-elevation1.MuiPaper-rounded:hover {
   background-color: rgb(63, 67, 73) ;
   padding: 5px;
-  /* position:relative; */
 }
 
 /* incoming message entire wrap */
@@ -90,7 +89,6 @@ body {
   background-color: rgb(71, 74, 80);
   color: white;
   padding: 5px;
-  /* position:relative; */
 }
 
 /* user message's text */
@@ -108,10 +106,10 @@ body {
 }
 
 .admin-message .MuiPaper-root.MuiCard-root.MuiPaper-elevation1.MuiPaper-rounded .MuiCardContent-root{
-  margin-left: 40px;
   padding: 0px;
 }
-.admin-message .MuiPaper-root.MuiCard-root.MuiPaper-elevation1.MuiPaper-rounded .MuiCardContent-root .MuiTypography-root.MuiTypography-body1.MuiTypography-colorTextSecondary{
+
+.admin-message .MuiTypography-root.MuiTypography-body1.MuiTypography-colorTextSecondary{
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -123,6 +121,11 @@ body {
   line-height: 1.14;
   letter-spacing: -0.2px;
   color: white;
+  margin-left: 40px;
+}
+
+.admin-message .MuiTypography-root.MuiTypography-body2{
+  margin-left: 40px;
 }
 
 .sendbird-conversation__messages .sendbird-conversation__scroll-container .sendbird-conversation__messages-padding {
@@ -227,6 +230,7 @@ body {
   font-family: "Whitney", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
+.admin-message .MuiCardContent-root .MuiAvatar-root.MuiAvatar-circular .MuiAvatar-img,
 .user-message .MuiCardHeader-avatar .MuiAvatar-root.MuiAvatar-circular .MuiAvatar-img{
   display: table-cell;
   width: 28px;
@@ -244,6 +248,7 @@ body {
 }
 
 /* wrap around avatar img tag */
+.MuiCardContent-root .MuiAvatar-root.MuiAvatar-circular,
 .MuiCardHeader-avatar .MuiAvatar-root.MuiAvatar-circular{
   display: revert;
 }
