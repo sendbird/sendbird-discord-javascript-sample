@@ -260,3 +260,7 @@ div.sendbird-app__channellist-wrap {
   margin-left: 200px;
   margin-top: 16px;
 }
+
+.sendbird-openchannel-user-message__context-menu--icon.sendbird-iconbutton {
+  background-color: #2f3136 !important;
+}
