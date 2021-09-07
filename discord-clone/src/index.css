@@ -210,6 +210,11 @@ body {
   content: "#" !important;
 }
 
+.sendbird-channel-header .sendbird-channel-header__title {
+  width: 200px !important;
+  height: 20px !important;
+}
+
 .customized-channelpreview-item .MuiAvatar-root.MuiAvatar-circular{
   width: 15px !important;  
   -webkit-transform:scale(1.8,1.2);
@@ -385,6 +390,8 @@ body {
 /* private channel header */
 .sendbird-channel-list .sendbird-channel-list__header{
   display: revert;
+  height: 45px;
+  min-height: 45px;
 }
 
 .sendbird-channel-header__title__right::after{
@@ -394,7 +401,6 @@ body {
   font-weight: 900;
   color: rgb(155, 151, 151) !important;
   background-color: #2f3136;
-  border-bottom: 1px solid var(--gray-1);
   text-transform: uppercase;
 }
 
@@ -409,9 +415,10 @@ body {
 }
 
 .sendbird-channel-list .sendbird-channel-list__header .sendbird-channel-header  {
-  padding: 20px;
+  padding: 20px ;
   background-color: revert;
   width: revert;
+  border-bottom: none !important;
 }
 
 .sendbird-chat-header .sendbird-chat-header__right .sendbird-chat-header__right__info.sendbird-iconbutton{
