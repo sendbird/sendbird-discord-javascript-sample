@@ -70,6 +70,7 @@ export default function CustomizedApp({customizedPreviewItem, userId, appId}) {
                 <div className="community-app">
                     <div className="community-channel-list">
                         <CommunityChannelList
+                            userId={userId}
                             appId={appId}
                             currentChannelUrl={currentChannelUrl}
                             setCurrentChannel={setCurrentChannel}

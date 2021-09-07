@@ -11,7 +11,6 @@ import "./community.css";
 import CustomizedMessageItem from "./CustomizedMessageItems/CustomizedMessageItem";
 import communityOpenChannelConversation from "./OpenChannelConversation";
 
-
 export default function GroupChannelConversation(props){
     const {currentChannelUrl, setShowSettings, showSettings, userId} = props;
     const conversationWrap= document.getElementsByClassName('sendbird-app__conversation-wrap')[0];
