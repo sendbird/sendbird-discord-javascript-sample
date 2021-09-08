@@ -617,9 +617,20 @@ body {
     font-family: var(--sendbird-font-family-default);
 }
 
-.sendbird-message-input--edit-action__cancel.sendbird-button.sendbird-button--secondary.sendbird-button--small{
-  border: none !important;
-  background-color: var(--sendbird-light-primary-300);
+textarea,
+textarea:focus {
+  caret-color: white !important;
+}
+ 
+.sendbird-button.sendbird-button--secondary.sendbird-button--small:hover{
+  border: 1px solid var(--sendbird-light-onlight-03);
+}
+
+
+/* Make sure below is not for community channel btns */
+
+.sendbird-button__text.sendbird-label.sendbird-label--button-1.sendbird-label--color-oncontent-1{
+  color: white !important;
 }
 
 .sendbird-message-input--edit-action__cancel.sendbird-button.sendbird-button--secondary.sendbird-button--small:hover{
@@ -628,5 +639,5 @@ body {
 
 .sendbird-message-input--edit-action__cancel.sendbird-button.sendbird-button--secondary.sendbird-button--small:hover .sendbird-button__text.sendbird-label.sendbird-label--button-1.sendbird-label--color-oncontent-1,
 .sendbird-message-input .sendbird-button__text.sendbird-label.sendbird-label--button-1.sendbird-label--color-oncontent-1{
-  color: white;
+  color: white !important; 
 }

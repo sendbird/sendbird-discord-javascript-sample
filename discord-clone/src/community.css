@@ -264,3 +264,8 @@ div.sendbird-app__channellist-wrap {
 .sendbird-openchannel-user-message__context-menu--icon.sendbird-iconbutton {
   background-color: #2f3136 !important;
 }
+
+.sendbird-message-input--edit-action__cancel.sendbird-button.sendbird-button--secondary.sendbird-button--small{
+  border: none !important;
+  background-color: var(--sendbird-light-primary-300);
+}

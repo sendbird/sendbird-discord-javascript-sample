@@ -40,27 +40,27 @@ function CommunityChannelList({
     const [showingForm, setShowingForm] = useState(false);
     const showForm=()=>{
       setShowingForm(!showingForm);
-    }
+    };
 
     var newChannelName = '';
     var imageUrl= 'https://logos-world.net/wp-content/uploads/2020/12/Discord-Logo.png';
+    var operatorUserIds=[`${userId}`];
+    var customType = null;
+    var data = null;
+
     const openChannelFormSubmit = (event) => {
       newChannelName= event.target.channelName.value;
       CreatingNewChannel();
-    }
+    };
 
-    const CreatingNewChannel =()=> {
-      sdk.OpenChannel.createChannel(newChannelName, imageUrl, "data", "OPERATOR_IDS", "CUSTOM_TYPE", function(openChannel, error) {
+    const CreatingNewChannel = () => {
+      sdk.OpenChannel.createChannel(newChannelName, imageUrl, data, operatorUserIds, customType , function(openChannel, error) {
         if (error) {
           // Handle error.
         }
-      
-        // An open channel is successfully created.
-        // Through the "openChannel" parameter of the callback function,
-        // you can get the open channel's data from the result object that Sendbird server has passed to the callback function.
         const channelUrl = openChannel.channelUrl;
       }); 
-    } 
+    } ;
 
     return (
       <div className="community-channel-list">
