@@ -18,8 +18,12 @@ export default function UserMessage(props) {
   const [messageText, changeMessageText] = useState(message.message);
   const [messageOptions,setMessageOptions] = useState(false);
 
+  var bgOption = messageOptions ? "green" : "red";
+  // var displayOption = messageOptions ? "block" : "none";
+  // var highlightedMsgBgColor = messageOptions ? "rgb(63, 67, 73)" : "rgb(71, 74, 80)"
+
   return (
-    <div className="user-message">
+    <div className="user-message" >
       <Card>
         <CardHeader
           avatar={
@@ -44,10 +48,9 @@ export default function UserMessage(props) {
           {pressedUpdate && (
             <div className="user-message__text-area">
               <TextField
-                label="Edited text"
                 multiline
                 variant="filled"
-                rowsMax={4}
+                // rowsMax={4}
                 value={messageText}
                 onChange={event => {
                   changeMessageText(event.target.value);
