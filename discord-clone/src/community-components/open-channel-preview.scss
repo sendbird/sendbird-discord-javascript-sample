@@ -1,7 +1,7 @@
 .channel-preview {
     position: relative;
     cursor: pointer;
-    width: 264px;
+    width: 230px;
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
@@ -122,7 +122,7 @@
     .channel-preview__inner-right {
       position: relative;
       width: 230px;
-      padding-top: 10px;
+      padding-top: 8px;
       box-sizing: border-box;
     }
   }

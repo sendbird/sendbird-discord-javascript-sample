@@ -46,7 +46,6 @@ body {
   overflow: revert !important;
 }
 
-/* need specific */
 .customized-channelpreview-item .MuiPaper-root.MuiCard-root.MuiPaper-elevation1{
   background-color: #2f3136 ;
   color: rgb(155, 151, 151);
@@ -60,11 +59,10 @@ body {
   border-radius: 4px;
 }
 
-/* need specific */
+
 .customized-channelpreview-item .MuiCardHeader-root {
   height: 34px;
-  padding: 0px 14px !important;
-  margin-top: 10px !important;
+  padding: 0px 12px ;
 }
 
 .customized-channelpreview-item .MuiCardHeader-root:hover {
@@ -72,8 +70,7 @@ body {
   color: white;
   border-radius: 4px;
   cursor: pointer;
-  padding: 0px 14px !important;
-  margin-top: 10px;
+  padding: 0px 12px;
 }
 
 /* incoming message entire wrap on hover*/
@@ -92,7 +89,6 @@ body {
   color: white;
   padding: 5px;
 }
-
 
 /* user message's text */
 .user-message .MuiPaper-root.MuiCard-root.MuiPaper-elevation1.MuiPaper-rounded .MuiCardContent-root{
