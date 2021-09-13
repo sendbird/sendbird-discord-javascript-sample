@@ -3,13 +3,12 @@ import { withSendBird, sendBirdSelectors } from 'sendbird-uikit';
 import './community-channel-list.scss';
 import OpenChannelPreview from './OpenChannelPreview.jsx';
 import Profile from './Profile';
-import * as SendBird from "sendbird";
+import AddCommunityChannel from './create-community-channel/AddCommunityChannel';
 
 function CommunityChannelList({
     sdk,
     user,
     userId,
-    appId,
     currentChannelUrl,
     setCurrentChannel
   }) {
@@ -23,9 +22,7 @@ function CommunityChannelList({
       const openChannelListQuery = sdk.OpenChannel.createOpenChannelListQuery();
       // @ts-ignore: Unreachable code error
 
-        //filtered for specific customType 
       // openChannelListQuery.customTypes = ["SB_COMMUNITY_TYPE"];
-        //only renders up to 20
       openChannelListQuery.next(function (openChannels, error) {
         if (error) {
           return;
@@ -38,29 +35,11 @@ function CommunityChannelList({
     }, [sdk]);
 
     const [showingForm, setShowingForm] = useState(false);
+
     const showForm=()=>{
       setShowingForm(!showingForm);
+
     };
-
-    var newChannelName = '';
-    var imageUrl= 'https://logos-world.net/wp-content/uploads/2020/12/Discord-Logo.png';
-    var operatorUserIds=[`${userId}`];
-    var customType = null;
-    var data = null;
-
-    const openChannelFormSubmit = (event) => {
-      newChannelName= event.target.channelName.value;
-      CreatingNewChannel();
-    };
-
-    const CreatingNewChannel = () => {
-      sdk.OpenChannel.createChannel(newChannelName, imageUrl, data, operatorUserIds, customType , function(openChannel, error) {
-        if (error) {
-          // Handle error.
-        }
-        const channelUrl = openChannel.channelUrl;
-      }); 
-    } ;
 
     return (
       <div className="community-channel-list">
@@ -68,11 +47,12 @@ function CommunityChannelList({
         <button className="community-channel-create-iconbutton" onClick={showForm}>+</button>
         {
           showingForm && (
-            <form onSubmit={(e) => openChannelFormSubmit(e)}>
-              <label htmlFor="channelName">Channel name:</label>
-              <input type="text" id="channelName" name="channelName"/><br></br>
-              <input type="submit" value="submit" />
-            </form>
+
+             <AddCommunityChannel 
+                  setShowingForm={setShowingForm}
+                  sdk={sdk}
+                  userId={userId}
+            />
           )
         }
         <div className="community-channel-list__list">

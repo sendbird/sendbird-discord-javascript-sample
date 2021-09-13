@@ -38,6 +38,7 @@ export default function CustomizedApp({customizedPreviewItem, userId, appId}) {
         } 
     };
 
+
     return (
       <div className="customized-app">
         <div className="sendbird-app__wrap">
@@ -74,6 +75,7 @@ export default function CustomizedApp({customizedPreviewItem, userId, appId}) {
                             appId={appId}
                             currentChannelUrl={currentChannelUrl}
                             setCurrentChannel={setCurrentChannel}
+                         
                         /> 
                     </div>
                 </div>
