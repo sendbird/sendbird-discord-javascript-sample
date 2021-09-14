@@ -36,16 +36,17 @@ export default function AddCommunityChannel({
             onCancel={() => { setShowingForm(false); }}
             onSubmit={()=>{}}
           >
-            <div className="sendbird-add-channel__rectangle-wrap">
+            <div className="sendbird-add-channel__rectangle-wrap" >
               <div
                 className="sendbird-add-channel__rectangle"
                 role="button"
                 tabIndex={0}
+                style={{"height": "140px"}}
               >
-                <form onSubmit={(e) => openChannelFormSubmit(e)}>
+                <form className="sendbird-add-channel__form" onSubmit={(e) => openChannelFormSubmit(e)}>
                     <label htmlFor="channelName">Channel name:</label>
-                    <input type="text" id="channelName" name="channelName"/><br></br>
-                    <input type="submit" value="Save" />
+                    <input type="text" id="channelName" name="channelName" style={{"width": "100%"}}/><br></br>
+                    <input type="submit" value="Save" id="sendbird-icon__form-submit" />
                 </form>
               </div>
             </div>

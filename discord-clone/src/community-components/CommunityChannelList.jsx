@@ -47,7 +47,6 @@ function CommunityChannelList({
         <button className="community-channel-create-iconbutton" onClick={showForm}>+</button>
         {
           showingForm && (
-
              <AddCommunityChannel 
                   setShowingForm={setShowingForm}
                   sdk={sdk}

@@ -9,17 +9,40 @@
 
 .sendbird-add-channel__rectangle {
   width: 432px;
-  height: 72px;
+  height: 70px;
   border-radius: 4px;
   margin-bottom: 8px;
   padding: 25px 72px;
   position: relative;
   box-sizing: border-box;
   cursor: pointer;
-
+ 
   .sendbird-icon {
     position: absolute;
     left: 22px;
     top: 24px;
+  }
+}
+
+.sendbird-add-channel__form {
+  color: rgb(255, 255, 255);
+  font-family: var(--sendbird-font-family-default);
+  font-size: 20px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.4;
+  letter-spacing: -0.2px;
+  
+  #sendbird-icon__form-submit{
+    border: 1px solid var(--sendbird-light-onlight-03) !important;
+    background-color: var(--sendbird-light-primary-300);
+    margin-top: 10px;
+    border-radius: 4px;
+    padding: 5px;
+    font-family: var(--sendbird-font-family-default);
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    font-family: var(--sendbird-font-family-default);
   }
 }
