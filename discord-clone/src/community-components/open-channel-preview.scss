@@ -13,6 +13,8 @@
       background-color:var(--sendbird-light-background-50);
       color: white;
       border-radius: 4px;
+      width: 93%;
+      margin-top: 10px;
     }
   
     &.channel-preview--streaming {
@@ -70,8 +72,12 @@
     }
   
     &.channel-preview--selected {
-      background-color: var(--selected-bg-0);
-      color: var(--selected-text-0);
+      background-color: var(--sendbird-light-background-50);
+      color: white;
+      border-radius: 4px;
+      width: 93%;
+      margin-top: 10px;
+
       .channel-preview__selection {
         display: inline-block;
       }
@@ -89,8 +95,14 @@
   
     .channel-preview__avatar {
       height: 32px;
-      width: 32px;
-  
+      width: 10px;
+      -webkit-transform:scale(2.2,1.5);
+      -moz-transform:scale(2.2,1.5);
+      -ms-transform:scale(2.2,1.5);
+      -o-transform:scale(2.2,1.5);
+      transform:scale(2.2,1.5);
+      height: 20px;
+
       img {
         height: 100%;
         width: 100%;
@@ -102,7 +114,6 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      width: 210px;
       font-size: 14px;
       font-weight: 600;
       font-stretch: normal;
@@ -110,6 +121,7 @@
       line-height: 1.14;
       letter-spacing: -0.2px;
       padding-bottom: 10px;
+      padding-left: 5px;
     }
   
     .channel-preview__inner-left {
@@ -124,6 +136,7 @@
       width: 230px;
       padding-top: 8px;
       box-sizing: border-box;
+      padding-left: 5px !important;
     }
   }
   

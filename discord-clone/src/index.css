@@ -104,10 +104,6 @@ body {
   margin-top: 20px;
 }
 
-.admin-message .MuiPaper-root.MuiCard-root.MuiPaper-elevation1.MuiPaper-rounded .MuiCardContent-root{
-  padding: 0px;
-}
-
 .admin-message .MuiTypography-root.MuiTypography-body1.MuiTypography-colorTextSecondary{
   white-space: nowrap;
   overflow: hidden;
@@ -131,6 +127,7 @@ body {
   padding-left: 15px;
 }
 
+.user-message__options-btn,
 .sendbird-channel-list__body .MuiAvatar-img,
 .sendbird-channel-list__body .MuiTypography-root.MuiTypography-caption.MuiTypography-colorTextSecondary,
 .MuiButtonBase-root.MuiIconButton-root.MuiIconButton-sizeSmall,
@@ -246,13 +243,11 @@ body {
   overflow: visible !important;
 }
 
-/* wrap around avatar img tag */
 .MuiCardContent-root .MuiAvatar-root.MuiAvatar-circular,
 .MuiCardHeader-avatar .MuiAvatar-root.MuiAvatar-circular{
   display: revert;
 }
 
-/*  group channel's conversation header # */
 .sendbird-chat-header .sendbird-chat-header--avatar--group-channel.sendbird-avatar{
   color: #72767d;
   height: revert !important;
@@ -267,17 +262,14 @@ body {
   font-weight: 350;
 }
 
-/* chat header wrap */
 .sendbird-chat-header {
   border-bottom: 1px solid var(--sendbird-light-onlight-04) !important;
 }
 
-/* channel conversation header text */
 .sendbird-chat-header__left__title.sendbird-label.sendbird-label--h-2.sendbird-label--color-onbackground-1{
   padding-left: 8px;
 }
 
-/* private channel preview name  */
 .MuiTypography-root.MuiCardHeader-title.MuiTypography-body2.MuiTypography-displayBlock{
   white-space: nowrap;
   overflow: hidden;
@@ -299,7 +291,6 @@ body {
   margin-top: 15px;
 }
 
-/* channel text name in list & chat header channel text name*/
 .MuiCardHeader-root .MuiCardHeader-content .MuiTypography-root.MuiCardHeader-title.MuiTypography-body2.MuiTypography-displayBlock,
 .sendbird-chat-header__left__title.sendbird-label.sendbird-label--h-2.sendbird-label--color-onbackground-1{
   text-transform: lowercase;
@@ -309,7 +300,6 @@ body {
   width: 1186px;
 }
 
-/* settings sidebar */
 .sendbird-app__settingspanel-wrap{
   height: 100%;
   position: fixed;
@@ -320,13 +310,11 @@ body {
   overflow-x: hidden;  
 }
 
-/* private channel settings, member count */
 .sendbird-channel-settings__members-list.sendbird-accordion__panel-header .sendbird-badge{
   position: revert;
   margin-left: 10px;
 }
 
-/* private channel settings, options drop downs*/
 .sendbird-channel-settings__operators-list.sendbird-accordion__panel-header,
 .sendbird-channel-settings__members-list.sendbird-accordion__panel-header,
 .sendbird-channel-settings__muted-members-list.sendbird-accordion__panel-header,
@@ -338,7 +326,6 @@ body {
   padding: 12px 22px 10px 56px;
 }
 
-/* private channel settings, options drop down icons*/
 .sendbird-channel-settings__accordion-icon.sendbird-icon.sendbird-icon-color--primary .icon-members_svg__fill,
 .sendbird-channel-settings__accordion-icon.sendbird-icon.sendbird-icon-color--primary .icon-operator_svg__fill,
 .sendbird-channel-settings__accordion-icon.sendbird-icon.sendbird-icon-color--primary .icon-mute_svg__fill,
@@ -351,18 +338,15 @@ body {
   display: inline-block !important;
 }
 
-/* private channel settings sidebar, edit button */
 .sendbird-channel-profile__edit.sendbird-color--onbackground-1.sendbird-textbutton--not-underline .sendbird-label.sendbird-label--button-1.sendbird-label--color-primary{
   color: revert;
 }
 
-/*private channel settings sidebar, on click of edit button -> wrap with editing options */
 #sendbird-modal-root .sendbird-modal .sendbird-modal__content{
   background-color: var(--sendbird-light-background-50);;
   padding: 40px;
 }
 
-/*private channel settings sidebar, on click of edit button, background behind wrap with editing options  */
 #sendbird-modal-root .sendbird-modal{
   background-color: rgba(62, 63, 63, 0.9);
 }
@@ -452,13 +436,6 @@ body {
   font-size: revert;
 }
 
-/* # people selected to create new channel *//* Settings sidebar:  Dropdown options -> Text color */
-.sendbird-accordion .sendbird-accordion__list .sendbird-channel-settings__empty-list.sendbird-label.sendbird-label--subtitle-2.sendbird-label--color-onbackground-3,
-.sendbird-modal__body .sendbird-label.sendbird-label--caption-1,
-.sendbird-theme--light .sendbird-label--color-primary {
-  color: white !important;
-}
-
 .sendbird-theme--light .sendbird-checkbox input:checked ~ .sendbird-checkbox--checkmark,
 .sendbird-theme--light .sendbird-checkbox .sendbird-checkbox--checkmark:after{
   background-color: white !important;
@@ -471,11 +448,6 @@ body {
   background-color: rgb(47, 49, 54) !important;
 }
 
-.sendbird-iconbutton {
-  padding: 0px;
-}
-
-/* input message field: attachment icon bttn */
 .sendbird-message-input--attach.sendbird-iconbutton  {
   left: 12px;
   top: 14px;
@@ -484,20 +456,12 @@ body {
   padding: 2px 0px !important;
 }
 
-/* text area around msg text */
 .sendbird-message-input .sendbird-message-input--textarea{
   border-radius: 15px !important;
 }
 
-/* msg text for input field */
 .sendbird-message-input .sendbird-message-input--placeholder{
   left: 50px !important;
-}
-
-
-
-.user-message__options-btn{
-  display: none;
 }
 
 .user-message .MuiPaper-root.MuiCard-root.MuiPaper-elevation1.MuiPaper-rounded:hover .user-message__options-btn,
@@ -521,7 +485,6 @@ body {
   fill: var(--sendbird-light-onlight-01);
 }
 
-/* edit/ delete btn wrapper */
 .MuiCardActions-root.MuiCardActions-spacing{
   cursor: pointer;
 }
@@ -530,7 +493,11 @@ body {
   position: relative;
 }
 
-/* UL menu wrap */
+.sendbird-iconbutton,
+.admin-message .MuiPaper-root.MuiCard-root.MuiPaper-elevation1.MuiPaper-rounded .MuiCardContent-root{
+  padding: 0px;
+}
+
 .sendbird_dropdown_menu {
   float: right;
   padding: 0px;
@@ -546,7 +513,6 @@ body {
   list-style: none;
 }
 
-/* LI */
 .dropdown__menu-item {
   cursor: pointer;
   white-space: nowrap;
@@ -563,21 +529,13 @@ body {
   font-family: var(--sendbird-font-family-default);
 }
 
-/* Text when editing msg, */
-.MuiInputBase-input.MuiFilledInput-input.MuiInputBase-inputMultiline.MuiFilledInput-inputMultiline,
-.MuiFormLabel-root.MuiInputLabel-root.MuiInputLabel-formControl.MuiInputLabel-animated.MuiInputLabel-shrink.MuiInputLabel-filled.MuiFormLabel-filled{
-  color:white;
-}
-
 .MuiFormControl-root.MuiTextField-root{
   border-radius: 4px;
 }
 
 .user-message__text-area .MuiInputBase-root.MuiFilledInput-root.MuiFilledInput-underline.MuiInputBase-formControl.MuiInputBase-multiline.MuiFilledInput-multiline{
-  /* padding: 10px 20px; */
   padding: 18px 64px 18px 16px;
   margin-top: 10px;
-
   border-radius: 15px;
   width: 100%;
   background-color: rgba(84, 84, 90, 0.767);
@@ -591,26 +549,18 @@ body {
   border-bottom: none !important;
 }
 
-/* 
-.sendbird-message-input .sendbird-message-input--textarea {
-  padding-left: 50px !important;
-} */
-
-/* textarea tag */
-
 .user-message__text-area .MuiInputBase-input.MuiFilledInput-input.MuiInputBase-inputMultiline.MuiFilledInput-inputMultiline{
   font-size: 14px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.43;
-    height: 56px;
-    overflow-y: hidden;
-    letter-spacing: normal;
-    /* padding: 18px 64px 18px 16px; */
-    box-sizing: border-box;
-    resize: none;
-    font-family: var(--sendbird-font-family-default);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  height: 56px;
+  overflow-y: hidden;
+  letter-spacing: normal;
+  box-sizing: border-box;
+  resize: none;
+  font-family: var(--sendbird-font-family-default);
 }
 
 textarea,
@@ -622,18 +572,25 @@ textarea:focus {
   border: 1px solid var(--sendbird-light-onlight-03);
 }
 
-
-/* Make sure below is not for community channel btns */
-
-.sendbird-button__text.sendbird-label.sendbird-label--button-1.sendbird-label--color-oncontent-1{
-  color: white !important;
-}
-
 .sendbird-message-input--edit-action__cancel.sendbird-button.sendbird-button--secondary.sendbird-button--small:hover{
   background-color: var(--sendbird-light-primary-400);
 }
 
+.sendbird-accordion .sendbird-accordion__list .sendbird-channel-settings__empty-list.sendbird-label.sendbird-label--subtitle-2.sendbird-label--color-onbackground-3,
+.sendbird-modal__body .sendbird-label.sendbird-label--caption-1,
+.sendbird-theme--light .sendbird-label--color-primary,
+.MuiInputBase-input.MuiFilledInput-input.MuiInputBase-inputMultiline.MuiFilledInput-inputMultiline,
+.MuiFormLabel-root.MuiInputLabel-root.MuiInputLabel-formControl.MuiInputLabel-animated.MuiInputLabel-shrink.MuiInputLabel-filled.MuiFormLabel-filled,
 .sendbird-message-input--edit-action__cancel.sendbird-button.sendbird-button--secondary.sendbird-button--small:hover .sendbird-button__text.sendbird-label.sendbird-label--button-1.sendbird-label--color-oncontent-1,
 .sendbird-message-input .sendbird-button__text.sendbird-label.sendbird-label--button-1.sendbird-label--color-oncontent-1{
   color: white !important; 
 }
+
+/* .MuiInputBase-input.MuiFilledInput-input.MuiInputBase-inputMultiline.MuiFilledInput-inputMultiline,
+.MuiFormLabel-root.MuiInputLabel-root.MuiInputLabel-formControl.MuiInputLabel-animated.MuiInputLabel-shrink.MuiInputLabel-filled.MuiFormLabel-filled{
+  color:white;
+} */
+
+.sendbird-modal__footer .sendbird-button.sendbird-button--secondary.sendbird-button--big{
+  margin-right: 15px;
+} 
