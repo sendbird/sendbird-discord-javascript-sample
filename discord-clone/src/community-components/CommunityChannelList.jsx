@@ -43,7 +43,7 @@ function CommunityChannelList({
 
     return (
       <div className="community-channel-list">
-        <div className="community-channel-list__title" >Community Channels</div>
+        <div className="community-channel-list__title" >Open Channels</div>
         <button className="community-channel-create-iconbutton" onClick={showForm}>+</button>
         {
           showingForm && (
@@ -87,4 +87,3 @@ function CommunityChannelList({
       user: store.stores.userStore.user
     };
   });
-  

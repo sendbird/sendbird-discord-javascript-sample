@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import {
   Card,
   CardHeader,
@@ -14,32 +13,12 @@ export default function UserMessage(props) {
   const { message, userId, onDeleteMessage, onUpdateMessage } = props;
 
   // useState
-  const [pressedUpdate, setPressedUpdate] = useState(false);
   const [messageText, changeMessageText] = useState(message.message);
   const [messageOptions,setMessageOptions] = useState(false);
+  const [pressedUpdate, setPressedUpdate] = useState(false);
 
-  var bgOption = messageOptions ? "green" : "red";
-  // var displayOption = messageOptions ? "block" : "none";
-//if messageOptions menu dropdown is open, have pointer events: none ?
-  var pointerEventOption = messageOptions ? "none" : "auto";
-  // var highlightedMsgBgColor = messageOptions ? "rgb(63, 67, 73)" : "rgb(71, 74, 80)"
-
-
-  //onClick of button, open dropdown -> update state to messageOptions(true)
-    //grab element's className & add 'active'
-      //if className.includes('active'), 
-        //then all buttons have pointerEvents:none EXCEPT (:not) element w/ className ('active')
   const openDropdown=(e)=> {
     setMessageOptions(!messageOptions);
-    if(messageOptions){
-      var currentButton = e.currentTarget;
-      currentButton.classList.add('active');
-      // currentButton.style.display = "block";
-      console.log(e.currentTarget.className)
-      console.log(e.currentTarget.style)
-    }
-   
-
   }
 
   return (
@@ -115,6 +94,17 @@ export default function UserMessage(props) {
                 )}
               </ul>
           </div>
+
+
+          // <MenuItem 
+          // message={message}
+          // onUpdateMessage={onUpdateMessage}
+          // pressedUpdate={pressedUpdate}
+          // setPressedUpdate={setPressedUpdate}
+          // messageText={messageText}
+          // onDeleteMessage={onDeleteMessage}
+          // messageOptions={messageOptions}/>
+
         ) 
       }           
       </Card>

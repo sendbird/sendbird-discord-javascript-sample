@@ -22,14 +22,14 @@ export default function CustomizedApp({customizedPreviewItem, userId, appId}) {
     const lowerCaseServerName = serverName.toLowerCase();
 
     const conversationChatWindow = () => {
-        if(currentChannel && currentChannel.url.includes('group_channel')){ 
+        if (currentChannel && currentChannel.url.includes('group_channel')){ 
             return <GroupChannelConversation
                         currentChannelUrl={currentChannelUrl}
                         setShowSettings={setShowSettings}
                         showSettings={showSettings}
                         userId={USER_ID}
                     />
-        } else if (currentChannel && currentChannel.url.includes('open_channel') ){
+        } else if (currentChannel && currentChannel.url.includes('open_channel')){
             return <OpenChannelConversation 
                         currentChannelUrl={currentChannelUrl}
                         setShowSettings={setShowSettings}
@@ -38,35 +38,33 @@ export default function CustomizedApp({customizedPreviewItem, userId, appId}) {
         } 
     };
 
-
     return (
       <div className="customized-app">
         <div className="sendbird-app__wrap">
             <div className="sendbird-app__channellist-wrap">
                 <h1 className="server-headline">{lowerCaseServerName}</h1>
                 <div className="private-channel-list">
-                        <SBChannelList
-                            onChannelSelect={(channel) => {
-                                if (channel && channel.url) {                                 
-                                    // setCurrentPrivateChannelUrl(currentPrivateChannelUrl);
-                                    //gives errors
-                                    setCurrentChannel(channel);                
-                                } 
-                            }}                           
-                            renderChannelPreview={                               
-                                customizedPreviewItem
-                                ? ({ channel, onLeaveChannel }) => (
-                                    <CustomizedChannelPreviewItem
-                                        userId={userId}
-                                        channel={channel}
-                                        onLeaveChannel={onLeaveChannel}
-                                        currentChannelUrl={currentChannelUrl}                                        
-                                    />                                 
-                                )
-                                : null
-                            }
-                            
-                        /> 
+                    <SBChannelList
+                        onChannelSelect={(channel) => {
+                            if (channel && channel.url) {                                 
+                                // setCurrentPrivateChannelUrl(currentPrivateChannelUrl);
+                                //gives errors
+                                setCurrentChannel(channel);                
+                            } 
+                        }}                           
+                        renderChannelPreview={                               
+                            customizedPreviewItem
+                            ? ({ channel, onLeaveChannel }) => (
+                                <CustomizedChannelPreviewItem
+                                    userId={userId}
+                                    channel={channel}
+                                    onLeaveChannel={onLeaveChannel}
+                                    currentChannelUrl={currentChannelUrl}                                        
+                                />                                 
+                            )
+                            : null
+                        }
+                    /> 
                 </div>
                 <div className="community-app">
                     <div className="community-channel-list">
@@ -75,7 +73,6 @@ export default function CustomizedApp({customizedPreviewItem, userId, appId}) {
                             appId={appId}
                             currentChannelUrl={currentChannelUrl}
                             setCurrentChannel={setCurrentChannel}
-                         
                         /> 
                     </div>
                 </div>

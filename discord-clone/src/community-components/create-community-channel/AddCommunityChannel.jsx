@@ -1,5 +1,5 @@
 import { M as Modal } from 'sendbird-uikit/index-bd743b97';
-import React from 'react';
+import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import './add-channel.scss';
 
@@ -21,12 +21,12 @@ export default function AddCommunityChannel({
       }
       const channelUrl = openChannel.channelUrl;
     }); 
-  } ;
+  };
 
-    const openChannelFormSubmit = (event) => {
-      newChannelName= event.target.channelName.value;
-      CreatingNewChannel();
-    };
+  const openChannelFormSubmit = (event) => {
+    newChannelName= event.target.channelName.value;
+    CreatingNewChannel();
+  };
 
   return (
     <>

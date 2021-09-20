@@ -383,7 +383,7 @@ body {
 }
 
 .sendbird-channel-header__title__right::after{
-  content: "Private Channels";
+  content: "Group Channels";
   box-sizing: border-box;
   font-size: 13px;
   font-weight: 900;
@@ -594,3 +594,7 @@ textarea:focus {
 .sendbird-modal__footer .sendbird-button.sendbird-button--secondary.sendbird-button--big{
   margin-right: 15px;
 } 
+
+.sendbird-openchannel-user-message__right__top__sent-at.sendbird-label.sendbird-label--caption-3.sendbird-label--color-onbackground-3{
+  color: #979ca5;
+}
