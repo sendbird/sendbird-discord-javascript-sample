@@ -1,5 +1,5 @@
 import { M as Modal } from 'sendbird-uikit/index-bd743b97';
-import React, {useState} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import './add-channel.scss';
 
@@ -14,7 +14,8 @@ export default function AddCommunityChannel({
   var customType = null;
   var data = null;
 
-  const CreatingNewChannel = () => {
+  const openChannelFormSubmit = (event) => {
+    newChannelName = event.target.channelName.value;
     sdk.OpenChannel.createChannel(newChannelName, imageUrl, data, operatorUserIds, customType , function(openChannel, error) {
       if (error) {
         // Handle error.
@@ -23,34 +24,29 @@ export default function AddCommunityChannel({
     }); 
   };
 
-  const openChannelFormSubmit = (event) => {
-    newChannelName= event.target.channelName.value;
-    CreatingNewChannel();
-  };
-
   return (
     <>
-          <Modal
-            titleText="New channel"
-            hideFooter
-            onCancel={() => { setShowingForm(false); }}
-            onSubmit={()=>{}}
+      <Modal
+        titleText="New channel"
+        hideFooter
+        onCancel={() => { setShowingForm(false); }}
+        onSubmit={()=>{}}
+      >
+        <div className="sendbird-add-channel__rectangle-wrap" >
+          <div
+            className="sendbird-add-channel__rectangle"
+            role="button"
+            tabIndex={0}
+            style={{"height": "140px"}}
           >
-            <div className="sendbird-add-channel__rectangle-wrap" >
-              <div
-                className="sendbird-add-channel__rectangle"
-                role="button"
-                tabIndex={0}
-                style={{"height": "140px"}}
-              >
-                <form className="sendbird-add-channel__form" onSubmit={(e) => openChannelFormSubmit(e)}>
-                    <label htmlFor="channelName">Channel name:</label>
-                    <input type="text" id="channelName" name="channelName" style={{"width": "100%"}}/><br></br>
-                    <input type="submit" value="Save" id="sendbird-icon__form-submit" />
-                </form>
-              </div>
-            </div>
-          </Modal>
+            <form className="sendbird-add-channel__form" onSubmit={(e) => openChannelFormSubmit(e)} >
+              <label htmlFor="channelName">Channel name:</label>
+              <input type="text" id="channelName" name="channelName" style={{"width": "100%"}}/><br></br>
+              <input type="submit" value="Save" id="sendbird-icon__form-submit"/>
+            </form>   
+          </div>
+        </div>
+      </Modal>
     </>
   );
 }
