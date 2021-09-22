@@ -7,7 +7,7 @@ import "sendbird-uikit/dist/index.css";
 import "./index.css";
 import "./community.css";
 
-export default function communityOpenChannelConversation(props){
+export default function OpenChannelConversation(props){
     const {currentChannelUrl, setShowSettings, showSettings} = props;
     const conversationWrap= document.getElementsByClassName('sendbird-app__conversation-wrap')[0];
     const renderSettingsBar =()=>{    

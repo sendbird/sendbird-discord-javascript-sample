@@ -17,8 +17,7 @@ function CommunityChannelList({
       if (!sdk || !sdk.OpenChannel) {
         return;
       }
-      //be able to filter the channels in later step     
-          //return empty channels
+      
       const openChannelListQuery = sdk.OpenChannel.createOpenChannelListQuery();
       // @ts-ignore: Unreachable code error
 
@@ -38,7 +37,6 @@ function CommunityChannelList({
 
     const showForm=()=>{
       setShowingForm(!showingForm);
-
     };
 
     return (

@@ -29,7 +29,7 @@ export default function CustomizedApp({customizedPreviewItem, userId, appId}) {
                         showSettings={showSettings}
                         userId={USER_ID}
                     />
-        } else if (currentChannel && currentChannel.url.includes('open_channel')){
+        } else if (currentChannel && currentChannel.url.includes('open_channel') ){
             return <OpenChannelConversation 
                         currentChannelUrl={currentChannelUrl}
                         setShowSettings={setShowSettings}
