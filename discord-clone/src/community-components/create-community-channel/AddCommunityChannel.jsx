@@ -1,4 +1,4 @@
-import { M as Modal } from 'sendbird-uikit/index-bd743b97';
+import { M as Modal } from './Modal';
 import React from 'react';
 import PropTypes from 'prop-types';
 import './add-channel.scss';
@@ -55,7 +55,7 @@ AddCommunityChannel.propTypes = {
   sdk: PropTypes.shape({
     getErrorFirstCallback: PropTypes.func
   }).isRequired,
-  disabled: PropTypes.bool,
+  // disabled: PropTypes.bool,'./LocalizationContext-5502b61d.js'
   userId: PropTypes.string.isRequired
 };
 

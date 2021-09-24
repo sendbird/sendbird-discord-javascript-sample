@@ -7,29 +7,24 @@ import "./community.css";
 import "./index.css";
 import GroupChannelConversation from "./GroupChannelConversation";
 import OpenChannelConversation from './OpenChannelConversation';
-import { NICKNAME, USER_ID } from "./const";
 
-export default function CustomizedApp({customizedPreviewItem, userId, appId}) {    
+export default function CustomizedApp({customizedPreviewItem, userId, appId, nickname}) {    
     const [showSettings, setShowSettings] = useState(false);
     const [currentChannel, setCurrentChannel] = useState(null);
-    // const [channels, setChannels] = useState([""]);
-    
-    //changed from currentChannelUrl - Used only in private channel SBChannelList
-    // const [currentPrivateChannelUrl, setCurrentPrivateChannelUrl] = useState("");
     const currentChannelUrl = currentChannel ? currentChannel.url : "";
 
-    const serverName = `${NICKNAME}'s server`;
+    const serverName = `${nickname}'s server`;
     const lowerCaseServerName = serverName.toLowerCase();
 
     const conversationChatWindow = () => {
-        if (currentChannel && currentChannel.url.includes('group_channel')){ 
+        if(currentChannel && currentChannel.url.includes('group_channel')){ 
             return <GroupChannelConversation
                         currentChannelUrl={currentChannelUrl}
                         setShowSettings={setShowSettings}
                         showSettings={showSettings}
-                        userId={USER_ID}
+                        userId={userId}
                     />
-        } else if (currentChannel && currentChannel.url.includes('open_channel') ){
+        } else if(currentChannel && currentChannel.url.includes('open_channel')){
             return <OpenChannelConversation 
                         currentChannelUrl={currentChannelUrl}
                         setShowSettings={setShowSettings}

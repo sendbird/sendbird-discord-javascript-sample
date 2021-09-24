@@ -1,8 +1,6 @@
-import React, { useMemo } from "react"; //ReactElement
+import React, { useMemo } from "react";
 import "./open-channel-preview.scss";
-// import { ChannelMeta } from "./DummyStream";
 
-//setting var to display to show inthousands using 'k'
 const kFormat = (num) => {
   if (num < 1000) {
     return num;

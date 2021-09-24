@@ -3,10 +3,15 @@ import React from "react";
 import { SendBirdProvider as SBProvider } from "sendbird-uikit";
 import "sendbird-uikit/dist/index.css";
 import CustomizedApp from "./CustomizedApp.jsx";
-import { APP_ID, USER_ID, NICKNAME, ACCESS_TOKEN } from "./const";
 import "./index.css";
 
 export default function App() {
+
+  const APP_ID = process.env.REACT_APP_APP_ID
+  const USER_ID = process.env.REACT_APP_USER_ID
+  const NICKNAME = process.env.REACT_APP_NICKNAME
+  const ACCESS_TOKEN = process.env.REACT_APP_ACCESS_TOKEN
+
   const myColorSet ={
     //background color
     '--sendbird-light-background-50':  '#474a50',
@@ -24,7 +29,6 @@ export default function App() {
     '--sendbird-light-primary-200': 'rgba(0, 0, 0, 0.32)',
           
     //selected chat & EMOJI Background
-      //how to seperate the 2 from both sharing this property?????
     '--sendbird-light-primary-100'	:' #474a50',
       
     //all numbers / dates / names in chat
