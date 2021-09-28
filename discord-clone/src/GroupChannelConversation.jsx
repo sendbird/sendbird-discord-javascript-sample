@@ -9,7 +9,6 @@ import "./community.css";
 
 //testing this 
 import CustomizedMessageItem from "./CustomizedMessageItems/CustomizedMessageItem";
-import communityOpenChannelConversation from "./OpenChannelConversation";
 
 export default function GroupChannelConversation(props){
     const {currentChannelUrl, setShowSettings, showSettings, userId} = props;

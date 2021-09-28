@@ -1,4 +1,4 @@
-import { M as Modal } from './Modal';
+import Modal from './modal/Modal';
 import React from 'react';
 import PropTypes from 'prop-types';
 import './add-channel.scss';
