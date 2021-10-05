@@ -92,13 +92,16 @@ body {
 
 /* user message's text */
 .user-message .MuiPaper-root.MuiCard-root.MuiPaper-elevation1.MuiPaper-rounded .MuiCardContent-root{
-  padding: 0px 40px;
+  padding: 0px 50px;
 }
 
 /* user message's name */
 .user-message .MuiPaper-root.MuiCard-root.MuiPaper-elevation1.MuiPaper-rounded .MuiCardHeader-root{
   margin-bottom: 2px;
   padding: 0;
+  display: inline-block;
+  margin-left: 50px;
+  width: 100%;
 }
 .admin-message .MuiPaper-root.MuiCard-root.MuiPaper-elevation1.MuiPaper-rounded{
   margin-top: 20px;
@@ -109,18 +112,22 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   width: 210px;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.14;
   letter-spacing: -0.2px;
   color: white;
-  margin-left: 40px;
+  margin-left: 50px;
 }
 
 .admin-message .MuiTypography-root.MuiTypography-body2{
-  margin-left: 40px;
+  margin-left: 50px;
+}
+
+.user-message .MuiPaper-root.MuiCard-root.MuiPaper-elevation1.MuiPaper-rounded .MuiCardContent-root .MuiTypography-root.MuiTypography-body2{
+  font-size: 15px;
 }
 
 .sendbird-conversation__messages .sendbird-conversation__scroll-container .sendbird-conversation__messages-padding {
@@ -138,8 +145,12 @@ body {
   display: none;
 }
 
-.user-message .MuiPaper-root.MuiCard-root.MuiPaper-elevation1.MuiPaper-rounded .MuiCardHeader-root .MuiCardHeader-avatar ,
 .sendbird-channel-list__body .MuiCardHeader-avatar{
+  margin-right: 0 !important;
+}
+
+.user-message .MuiPaper-root.MuiCard-root.MuiPaper-elevation1.MuiPaper-rounded .MuiCardHeader-root .MuiCardHeader-avatar{
+  margin-left: -50px;
   margin-right: 0 !important;
 }
 
@@ -229,14 +240,15 @@ body {
 .admin-message .MuiCardContent-root .MuiAvatar-root.MuiAvatar-circular .MuiAvatar-img,
 .user-message .MuiCardHeader-avatar .MuiAvatar-root.MuiAvatar-circular .MuiAvatar-img{
   display: table-cell;
-  width: 28px;
-  height: 28px;
+  width: 35px;
+  height: 35px;
   position: absolute;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   border-radius: 20px;
 }
+
 
 .MuiPaper-root.MuiCard-root.MuiPaper-elevation1 .MuiAvatar-root {
   height: revert;

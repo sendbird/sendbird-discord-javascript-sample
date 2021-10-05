@@ -46,7 +46,7 @@ export default function App() {
   return (
       <div  className="app-wrapper">
         <SBProvider appId={APP_ID} userId={USER_ID} nickname={NICKNAME} accessToken={ACCESS_TOKEN} colorSet={myColorSet}>
-          <CustomizedApp  appId={APP_ID} userId={USER_ID} nickname={NICKNAME} accessToken={ACCESS_TOKEN} customizedPreviewItem={customizedPreviewItem} />
+          <CustomizedApp  appId={APP_ID} userId={USER_ID} nickname={NICKNAME} customizedPreviewItem={customizedPreviewItem} />
         </SBProvider>
       </div>
     );
