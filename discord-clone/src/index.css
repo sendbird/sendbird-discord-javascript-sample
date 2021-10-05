@@ -245,6 +245,7 @@ body {
   background-position: center center;
   background-size: cover;
   border-radius: 20px;
+  background-color: white;
 }
 
 
@@ -464,6 +465,7 @@ body {
   height: 28px !important;
   width: 28px !important;
   padding: 2px 0px !important;
+
 }
 
 .sendbird-message-input .sendbird-message-input--textarea{

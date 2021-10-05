@@ -34,6 +34,7 @@ div.sendbird-app__channellist-wrap {
 .sendbird-openchannel-user-message__left__avatar.sendbird-avatar .sendbird-avatar-img.sendbird-image-renderer .sendbird-image-renderer__image {
   height: 38px !important;
   width: 38px !important;
+  background-color: white;
 }
 
 .sendbird-openchannel-user-message .sendbird-openchannel-user-message__left{
