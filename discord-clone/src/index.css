@@ -97,7 +97,6 @@ body {
 
 /* user message's name */
 .user-message .MuiPaper-root.MuiCard-root.MuiPaper-elevation1.MuiPaper-rounded .MuiCardHeader-root{
-  margin-bottom: 2px;
   padding: 0;
   display: inline-block;
   margin-left: 50px;
@@ -240,8 +239,8 @@ body {
 .admin-message .MuiCardContent-root .MuiAvatar-root.MuiAvatar-circular .MuiAvatar-img,
 .user-message .MuiCardHeader-avatar .MuiAvatar-root.MuiAvatar-circular .MuiAvatar-img{
   display: table-cell;
-  width: 35px;
-  height: 35px;
+  width: 38px;
+  height: 38px;
   position: absolute;
   background-repeat: no-repeat;
   background-position: center center;

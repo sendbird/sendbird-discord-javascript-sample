@@ -32,15 +32,13 @@ div.sendbird-app__channellist-wrap {
 .sendbird-context-menu .sendbird-openchannel-user-message__left__avatar.sendbird-avatar,
 .sendbird-openchannel-user-message__left__avatar.sendbird-avatar .sendbird-avatar-img.sendbird-image-renderer,
 .sendbird-openchannel-user-message__left__avatar.sendbird-avatar .sendbird-avatar-img.sendbird-image-renderer .sendbird-image-renderer__image {
-  height: 35px !important;
-  width: 35px !important;
+  height: 38px !important;
+  width: 38px !important;
 }
 
 .sendbird-openchannel-user-message .sendbird-openchannel-user-message__left{
  width: 70px;
 }
-
-
 
 .sendbird-app__conversation-wrap{
   display: flex;
