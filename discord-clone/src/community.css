@@ -29,6 +29,19 @@ div.sendbird-app__channellist-wrap {
   display: none !important;
 }
 
+.sendbird-context-menu .sendbird-openchannel-user-message__left__avatar.sendbird-avatar,
+.sendbird-openchannel-user-message__left__avatar.sendbird-avatar .sendbird-avatar-img.sendbird-image-renderer,
+.sendbird-openchannel-user-message__left__avatar.sendbird-avatar .sendbird-avatar-img.sendbird-image-renderer .sendbird-image-renderer__image {
+  height: 35px !important;
+  width: 35px !important;
+}
+
+.sendbird-openchannel-user-message .sendbird-openchannel-user-message__left{
+ width: 70px;
+}
+
+
+
 .sendbird-app__conversation-wrap{
   display: flex;
   flex-flow: column;
@@ -148,7 +161,7 @@ div.sendbird-app__channellist-wrap {
 }
 
 .sendbird-openchannel-user-message__right .sendbird-openchannel-user-message__right__bottom .sendbird-openchannel-user-message__right__bottom__message.sendbird-label.sendbird-label--body-1 {
-  font-size: 0.875rem;
+  font-size: 15px;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-weight: 400;
   line-height: 1.43;
