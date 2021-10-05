@@ -41,7 +41,7 @@ function CommunityChannelList({
 
     return (
       <div className="community-channel-list">
-        <div className="community-channel-list__title" >Open Channels</div>
+        <div className="community-channel-list__title" >Text Channels</div>
         <button className="community-channel-create-iconbutton" onClick={showForm}>+</button>
         {
           showingForm && (

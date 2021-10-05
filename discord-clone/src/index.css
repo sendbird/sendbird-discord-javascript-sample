@@ -59,7 +59,6 @@ body {
   border-radius: 4px;
 }
 
-
 .customized-channelpreview-item .MuiCardHeader-root{
   height: 34px;
   padding: 0px 18px;
@@ -394,7 +393,7 @@ body {
 }
 
 .sendbird-channel-header__title__right::after{
-  content: "Group Channels";
+  content: "Direct Chats";
   box-sizing: border-box;
   font-size: 13px;
   font-weight: 900;
