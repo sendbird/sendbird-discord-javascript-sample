@@ -60,9 +60,9 @@ body {
 }
 
 
-.customized-channelpreview-item .MuiCardHeader-root {
+.customized-channelpreview-item .MuiCardHeader-root{
   height: 34px;
-  padding: 0px 12px ;
+  padding: 0px 18px;
 }
 
 .customized-channelpreview-item .MuiCardHeader-root:hover {
@@ -70,7 +70,7 @@ body {
   color: white;
   border-radius: 4px;
   cursor: pointer;
-  padding: 0px 12px;
+  padding: 0px 18px;
 }
 
 /* incoming message entire wrap on hover*/
