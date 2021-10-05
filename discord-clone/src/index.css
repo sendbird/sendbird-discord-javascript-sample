@@ -389,8 +389,8 @@ body {
 /* private channel header */
 .sendbird-channel-list .sendbird-channel-list__header{
   display: revert;
-  height: 45px;
-  min-height: 45px;
+  height: 40px;
+  min-height: 40px;
 }
 
 .sendbird-channel-header__title__right::after{
@@ -413,8 +413,8 @@ body {
   background-color: revert !important;
 }
 
-.sendbird-channel-list .sendbird-channel-list__header .sendbird-channel-header  {
-  padding: 20px ;
+.sendbird-channel-list .sendbird-channel-list__header .sendbird-channel-header{
+  padding: 20px;
   background-color: revert;
   width: revert;
   border-bottom: none !important;
