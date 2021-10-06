@@ -48,7 +48,7 @@ body {
 
 .customized-channelpreview-item .MuiPaper-root.MuiCard-root.MuiPaper-elevation1{
   background-color: #2f3136 ;
-  color: rgb(155, 151, 151);
+  color: #8e9297; 
   width: 90%;
   margin: 10px;
 }
@@ -162,7 +162,7 @@ body {
   font-style: normal;
   font-weight :600;
   background-color: #2f3136;
-  color:  rgb(155, 151, 151);
+  color: #8e9297; 
   flex: 1;
 }
 
@@ -285,8 +285,8 @@ body {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 15px;
+  font-weight: 550;
   width: 80%;
   font-stretch: normal;
   font-style: normal;
@@ -398,7 +398,7 @@ body {
   box-sizing: border-box;
   font-size: 13px;
   font-weight: 900;
-  color: rgb(155, 151, 151) !important;
+  color: #8e9297!important;
   background-color: #2f3136;
   text-transform: uppercase;
 }
