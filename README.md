@@ -7,7 +7,8 @@ When you’re looking at implementing a service like Sendbird, one of the things
 You may be familiar with Discord, it’s becoming increasingly popular as an online communication platform. With it’s distinguished look and feel, it’s a great example to show how we are able to tailor the UIKit to go with its theme. If you’ve used Discord then you know there are chats based around a large topic or chats that contain a small group of individuals. In Sendbird, we call those an open channel and a group channel. While there are many similarities between Sendbird and Discord, there are also differences that make them unique. Being able to understand the possibilities in customizing the UIKit is a wonderful additive that will allow you to expand on its adaptable capabilities. You’ll be able to go beyond what’s provided to you and build a chat that will complement your creative vision. 
 
 # UIKit default vs. Discord example
-
+![Sendbird Layout](https://github.com/sendbird/sendbird-discord-javascript-demo/blob/main/sendbird-original-layout.png)
+![Discord Example](https://github.com/sendbird/sendbird-discord-javascript-demo/blob/main/discord-example-outcome.png)
 It’s important to understand what UIKit features you would like to include for users to have access to, what components you do not need, and the visual theme you are looking to implement. After you know what’s necessary for your desired application and have a layout to reference to, you can find the specific UIKit components that provide you with each feature. 
 
 For this Discord example, there will be a Channels List with both Group Channels and Open Channels. Depending on the type of channel being clicked on, the conversation window will render the Open Channel or Group Channel view. Since these are two separate components that have distinct default formats, we have to take different approaches depending on the component we are working with in order to produce the same output. 
