@@ -1,5 +1,3 @@
-# sendbird-discord-javascript-demo
-
 # Creating a Discord Clone using Sendbird UIKit
 
 When you’re looking at implementing a service like Sendbird, one of the things you’ll be looking for is flexibility in shaping the design to match your application. With that in mind, the Sendbird UIKit is constructed to fit your custom needs and work seamlessly in your application.
@@ -9,6 +7,7 @@ You may be familiar with Discord, it’s becoming increasingly popular as an onl
 # UIKit default vs. Discord example
 ![Sendbird Layout](https://github.com/sendbird/sendbird-discord-javascript-demo/blob/main/sendbird-original-layout.png)
 ![Discord Example](https://github.com/sendbird/sendbird-discord-javascript-demo/blob/main/discord-example-outcome.png)
+
 It’s important to understand what UIKit features you would like to include for users to have access to, what components you do not need, and the visual theme you are looking to implement. After you know what’s necessary for your desired application and have a layout to reference to, you can find the specific UIKit components that provide you with each feature. 
 
 For this Discord example, there will be a Channels List with both Group Channels and Open Channels. Depending on the type of channel being clicked on, the conversation window will render the Open Channel or Group Channel view. Since these are two separate components that have distinct default formats, we have to take different approaches depending on the component we are working with in order to produce the same output. 
