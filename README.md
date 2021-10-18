@@ -12,12 +12,18 @@ It’s important to understand what UIKit features you would like to include for
 
 For this Discord example, there will be a Channels List with both Group Channels and Open Channels. Depending on the type of channel being clicked on, the conversation window will render the Open Channel or Group Channel view. Since these are two separate components that have distinct default formats, we have to take different approaches depending on the component we are working with in order to produce the same output. 
 
+## Getting started
+
+First you want to create a new application in your Sendbird dashboard. Within that application, create a user, an open channel and a group channel. Under the 'Overview' tab, you can find the application ID and under 'Users' you can click on the user you created and find the user's ID, nickname and access token which you will need to have in your application in order to make it run. 
+
+Open your application and install the Sendbird-UIKit with 'npm install sendbird-uikit --save'. For additional information, the documentation on installation can be found [here](https://github.com/sendbird/SendBird-UIKIT-JavaScript#sendbird-uikit-for-react). Upon installing the UIKit, create a .env file where you will export your application ID, user ID, nickname, and access token provided from the dashboard. These variable names must start with "REACT_APP" (e.g. REACT_APP_APP_ID).
+
 ## Let's Dive In
-The three overarching components that will be focused on are the channel list, conversation window, and channel settings. 
+In App.js, we’re going to import the SendBirdProvider and have that component wrapped around our CustomizedApp component. CustomizedApp will be the wrapper for our entire application and hold the channel lists as well as the conversation window. Using the variables in our .env file, we'll import them into App.js and pass them as arguments to our SendBirdProvider and CustomizedApp components.
+
+Within CustomizedApp, we'll have three overarching components that will be focused on: channel list, channel, and channel settings. Please refer to aditional information on these components [here](https://github.com/sendbird/SendBird-UIKIT-JavaScript#uikit-at-a-glance).
 
 ### CHANNEL LIST
-In App.js, we’re going to import the SendBirdProvider and have that component wrapped around our CustomizedApp component. CustomizedApp will be the wrapper for our entire application and hold the channel lists as well as the conversation window.
-
 For the channel list sidebar, on the top we want a header to display the current user’s server followed by the list of channels. Using the ‘nickname’ prop being passed through, we can insert an h1 tag inside of the sidebar wrapper being returned and display the current user’s nickname on the top of the channel list. 
 
 Following the server name, we want to display our two types of channels: Group Channels and Open Channels. The CustomizedApp component will return the Group Channel List component (referred to as ChannelList from the senbird-uikit or SBChannelList in our example), where you can see the list of Group Channels the user is a part of. Please see the documentation on ChannelList here with additional information here. Following the Group Channel List, the custom made Open Channel List component (referred to as the CommunityChannelList) will appear with the list of the open channels that the current user is able to access. Please see the documentation on CommunityChannelList here. Below is the layout of the two components being returned within CustomizedApp.
