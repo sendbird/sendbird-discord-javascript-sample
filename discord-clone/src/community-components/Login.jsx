@@ -13,7 +13,7 @@ export default function Login({ setValues }) {
           setValues({
             userId,
             nickName,
-            darkTheme
+            darkTheme,
           });
         }}
       >

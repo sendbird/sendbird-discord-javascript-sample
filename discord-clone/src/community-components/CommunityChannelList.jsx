@@ -1,87 +1,89 @@
-import React , { useEffect, useState }  from 'react';
-import { withSendBird, sendBirdSelectors } from 'sendbird-uikit';
-import './community-channel-list.scss';
-import OpenChannelPreview from './OpenChannelPreview.jsx';
-import Profile from './Profile';
-import AddCommunityChannel from './create-community-channel/AddCommunityChannel';
+import React, { useEffect, useState } from "react";
+import { withSendBird, sendBirdSelectors } from "sendbird-uikit";
+import "./community-channel-list.scss";
+import OpenChannelPreview from "./OpenChannelPreview.jsx";
+import Profile from "./Profile";
+import AddCommunityChannel from "./create-community-channel/AddCommunityChannel";
 
 function CommunityChannelList({
-    sdk,
-    user,
-    userId,
-    currentChannelUrl,
-    setCurrentChannel
-  }) {
-    const [channels, setChannels] = useState([]);
-    useEffect(() => {
-      if (!sdk || !sdk.OpenChannel) {
+  sdk,
+  user,
+  userId,
+  currentChannelUrl,
+  setCurrentChannel,
+}) {
+  const [channels, setChannels] = useState([]);
+  useEffect(() => {
+    if (!sdk || !sdk.OpenChannel) {
+      return;
+    }
+
+    const openChannelListQuery = sdk.OpenChannel.createOpenChannelListQuery();
+    // @ts-ignore: Unreachable code error
+
+    openChannelListQuery.next(function (openChannels, error) {
+      if (error) {
         return;
       }
-      
-      const openChannelListQuery = sdk.OpenChannel.createOpenChannelListQuery();
-      // @ts-ignore: Unreachable code error
+      setChannels(openChannels);
+      if (openChannels.length > 0) {
+        setCurrentChannel(openChannels[0]);
+      }
+    });
+  }, [sdk]);
 
-      // openChannelListQuery.customTypes = ["SB_COMMUNITY_TYPE"];
-      openChannelListQuery.next(function (openChannels, error) {
-        if (error) {
-          return;
-        }
-        setChannels(openChannels);
-        if (openChannels.length > 0) {
-          setCurrentChannel(openChannels[0]);
-        }
-      });
-    }, [sdk]);
+  const [showingForm, setShowingForm] = useState(false);
 
-    const [showingForm, setShowingForm] = useState(false);
+  const showForm = () => {
+    setShowingForm(!showingForm);
+  };
 
-    const showForm=()=>{
-      setShowingForm(!showingForm);
-    };
-
-    return (
-      <div className="community-channel-list">
-        <div className="community-channel-list__title" >Text Channels</div>
-        <button className="community-channel-create-iconbutton" onClick={showForm}>+</button>
-        {
-          showingForm && (
-             <AddCommunityChannel 
-                  setShowingForm={setShowingForm}
-                  sdk={sdk}
-                  userId={userId}
-            />
-          )
-        }
-        <div className="community-channel-list__list">
-          {channels.length === 0 ? (
-            "No Channels"
-          ) : (
-            <div className="community-channel-list__scroll-wrap">
-              <div>
-                {channels.map((c) => (
-                  <OpenChannelPreview
-                    key={c.url}
-                    channel={c}
-                    selected={c.url === currentChannelUrl}
-                    onClick={() => {
-                      setCurrentChannel(c);
-                    }}
-                  />
-                ))}
-              </div>
+  return (
+    <div className="community-channel-list">
+      <div className="community-channel-list__title">Text Channels</div>
+      <button
+        className="community-channel-create-iconbutton"
+        onClick={showForm}
+      >
+        +
+      </button>
+      {showingForm && (
+        <AddCommunityChannel
+          setShowingForm={setShowingForm}
+          sdk={sdk}
+          userId={userId}
+        />
+      )}
+      <div className="community-channel-list__list">
+        {channels.length === 0 ? (
+          "No Channels"
+        ) : (
+          <div className="community-channel-list__scroll-wrap">
+            <div>
+              {channels.map((c) => (
+                <OpenChannelPreview
+                  key={c.url}
+                  channel={c}
+                  selected={c.url === currentChannelUrl}
+                  onClick={() => {
+                    setCurrentChannel(c);
+                  }}
+                />
+              ))}
             </div>
-          )}
-        </div>
-        <div className="community-channel-list__footer">
-          <Profile user={user} />
-        </div>
+          </div>
+        )}
       </div>
-    );
-  }
-  
-  export default withSendBird(CommunityChannelList, (store) => {
-    return {
-      sdk: sendBirdSelectors.getSdk(store),
-      user: store.stores.userStore.user
-    };
-  });
+      <div className="community-channel-list__footer">
+        <Profile user={user} />
+      </div>
+    </div>
+  );
+}
+
+export default withSendBird(CommunityChannelList, (store) => {
+  return {
+    sdk: sendBirdSelectors.getSdk(store),
+    user: store.stores.userStore.user,
+  };
+});

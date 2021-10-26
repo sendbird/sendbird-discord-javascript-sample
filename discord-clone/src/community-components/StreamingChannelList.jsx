@@ -9,7 +9,7 @@ function StreamingChannelList({
   sdk,
   user,
   currentChannelUrl,
-  setCurrentChannel
+  setCurrentChannel,
 }) {
   const [channels, setChannels] = useState([]);
   useEffect(() => {
@@ -68,6 +68,6 @@ export default withSendBird(StreamingChannelList, (store) => {
   console.warn(store);
   return {
     sdk: sendBirdSelectors.getSdk(store),
-    user: store.stores.userStore.user
+    user: store.stores.userStore.user,
   };
 });

@@ -13,20 +13,14 @@ export default function OpenChannelPreview({
   channel,
   selected = false,
   onClick,
-  isStreaming = false
+  isStreaming = false,
 }) {
-    //react code can test - setting channelMeta variable 
-    //if it's streaming then try to parse the channel data & set = to channelMeta, else no channelMeta
-        //return the channelMeta (data) & keep running if isStreaming is there
-
   const streamInfo = useMemo(() => {
-    let channelMeta = null ;
+    let channelMeta = null;
     if (isStreaming) {
       try {
         channelMeta = JSON.parse(channel.data);
-      } catch (error) {
- 
-      }
+      } catch (error) {}
     }
     return channelMeta;
   }, [isStreaming]);
