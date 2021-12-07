@@ -17,7 +17,6 @@ export default function CustomizedApp({
   const [showSettings, setShowSettings] = useState(false);
   const [currentChannel, setCurrentChannel] = useState(null);
   const currentChannelUrl = currentChannel ? currentChannel.url : "";
-
   const serverName = `${nickname}'s server`;
   const lowerCaseServerName = serverName.toLowerCase();
 

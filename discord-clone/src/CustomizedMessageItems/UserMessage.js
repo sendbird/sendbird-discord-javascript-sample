@@ -5,7 +5,7 @@ import {
   Avatar,
   CardContent,
   Typography,
-  TextField
+  TextField,
 } from "@material-ui/core";
 
 export default function UserMessage(props) {
@@ -14,15 +14,15 @@ export default function UserMessage(props) {
 
   // useState
   const [messageText, changeMessageText] = useState(message.message);
-  const [messageOptions,setMessageOptions] = useState(false);
+  const [messageOptions, setMessageOptions] = useState(false);
   const [pressedUpdate, setPressedUpdate] = useState(false);
 
-  const openDropdown=(e)=> {
+  const openDropdown = (e) => {
     setMessageOptions(!messageOptions);
-  }
+  };
 
   return (
-    <div className="user-message" >
+    <div className="user-message">
       <Card>
         <CardHeader
           avatar={
@@ -51,62 +51,75 @@ export default function UserMessage(props) {
                 variant="filled"
                 rowsMax={4}
                 value={messageText}
-                onChange={event => {
+                onChange={(event) => {
                   changeMessageText(event.target.value);
                 }}
               />
             </div>
           )}
         </CardContent>
-        <button className="user-message__options-btn" onClick={(e) => openDropdown(e)} >
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path className="icon-more_svg__fill" d="M32 45.333a5.333 5.333 0 110 10.666 5.333 5.333 0 010-10.666zM32 28a5.333 5.333 0 110 10.668A5.333 5.333 0 0132 28zm0-17.333c2.946 0 5.333 2.387 5.333 5.333S34.946 21.333 32 21.333 26.667 18.946 26.667 16s2.387-5.333 5.333-5.333z" fill="#000" fillRule="evenodd"></path></svg>
-        </button>    
-      {
-        messageOptions && (
-          <div className="message-options-wrap" >
-            <ul className="sendbird_dropdown_menu"> 
-                {message.sender && message.sender.userId === userId && (
-                  <div> 
-                      {pressedUpdate && (
-                        <li className="dropdown__menu-item" onClick={() => setPressedUpdate(false)}>
-                          <span className="dropdown__menu-item-text">Cancel</span>
-                        </li>
-                      )}
+        <button
+          className="user-message__options-btn"
+          onClick={(e) => openDropdown(e)}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+            <path
+              className="icon-more_svg__fill"
+              d="M32 45.333a5.333 5.333 0 110 10.666 5.333 5.333 0 010-10.666zM32 28a5.333 5.333 0 110 10.668A5.333 5.333 0 0132 28zm0-17.333c2.946 0 5.333 2.387 5.333 5.333S34.946 21.333 32 21.333 26.667 18.946 26.667 16s2.387-5.333 5.333-5.333z"
+              fill="#000"
+              fillRule="evenodd"
+            ></path>
+          </svg>
+        </button>
+        {messageOptions && (
+          <div className="message-options-wrap">
+            <ul className="sendbird_dropdown_menu">
+              {message.sender && message.sender.userId === userId && (
+                <div>
+                  {pressedUpdate && (
+                    <li
+                      className="dropdown__menu-item"
+                      onClick={() => setPressedUpdate(false)}
+                    >
+                      <span className="dropdown__menu-item-text">Cancel</span>
+                    </li>
+                  )}
 
-                      {!pressedUpdate && (
-                        <li className="dropdown__menu-item" onClick={() => {setPressedUpdate(true)}}>
-                          <span className="dropdown__menu-item-text">Edit</span>
-                        </li>
-                      )}
+                  {!pressedUpdate && (
+                    <li
+                      className="dropdown__menu-item"
+                      onClick={() => {
+                        setPressedUpdate(true);
+                      }}
+                    >
+                      <span className="dropdown__menu-item-text">Edit</span>
+                    </li>
+                  )}
 
-                      {pressedUpdate && (
-                        <li className="dropdown__menu-item" onClick={() => onUpdateMessage(message.messageId, messageText)}>
-                          <span className="dropdown__menu-item-text">Save</span>
-                        </li>
-                      )}
+                  {pressedUpdate && (
+                    <li
+                      className="dropdown__menu-item"
+                      onClick={() =>
+                        onUpdateMessage(message.messageId, messageText)
+                      }
+                    >
+                      <span className="dropdown__menu-item-text">Save</span>
+                    </li>
+                  )}
 
-                      {!pressedUpdate && (
-                        <li className="dropdown__menu-item" onClick={() => onDeleteMessage(message)}>
-                          <span className="dropdown__menu-item-text">Delete</span>
-                        </li>
-                      )}
-                  </div>
-                )}
-              </ul>
+                  {!pressedUpdate && (
+                    <li
+                      className="dropdown__menu-item"
+                      onClick={() => onDeleteMessage(message)}
+                    >
+                      <span className="dropdown__menu-item-text">Delete</span>
+                    </li>
+                  )}
+                </div>
+              )}
+            </ul>
           </div>
-
-
-          // <MenuItem 
-          // message={message}
-          // onUpdateMessage={onUpdateMessage}
-          // pressedUpdate={pressedUpdate}
-          // setPressedUpdate={setPressedUpdate}
-          // messageText={messageText}
-          // onDeleteMessage={onDeleteMessage}
-          // messageOptions={messageOptions}/>
-
-        ) 
-      }           
+        )}
       </Card>
     </div>
   );

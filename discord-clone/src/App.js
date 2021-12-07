@@ -1,4 +1,3 @@
-// import './App.css';    -> delete if never use
 import React from "react";
 import { SendBirdProvider as SBProvider } from "sendbird-uikit";
 import "sendbird-uikit/dist/index.css";
