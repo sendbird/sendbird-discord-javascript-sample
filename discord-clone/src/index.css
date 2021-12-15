@@ -21,6 +21,7 @@ body {
 }
 
 .customized-app {
+  position: relative;
   height: 100%;
   width: 100%;
 }
@@ -336,6 +337,7 @@ body {
 
 .sendbird-conversation__footer {
   margin-top: 15px;
+  z-index: 1;
 }
 
 .MuiCardHeader-root
@@ -593,8 +595,10 @@ body {
   float: right;
   display: flex;
   margin: 0px;
+  /* position: absolute; */
   position: relative;
-  z-index: 4;
+  right: 10px;
+  z-index: 2;
   box-shadow: var(--sendbird-light-shadow-02);
   background-color: var(--sendbird-light-background-50);
   min-width: 140px;
