@@ -17,7 +17,7 @@ export default function UserMessage(props) {
   const [messageOptions, setMessageOptions] = useState(false);
   const [pressedUpdate, setPressedUpdate] = useState(false);
 
-  const openDropdown = (e) => {
+  const renderDropdown = (e) => {
     setMessageOptions(!messageOptions);
   };
 
@@ -60,7 +60,7 @@ export default function UserMessage(props) {
         </CardContent>
         <button
           className="user-message__options-btn"
-          onClick={(e) => openDropdown(e)}
+          onClick={(e) => renderDropdown(e)}
         >
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
             <path
@@ -71,6 +71,21 @@ export default function UserMessage(props) {
             ></path>
           </svg>
         </button>
+        {messageOptions && (
+          <button
+            className="user-message__options-dropdown-btn"
+            onClick={(e) => renderDropdown(e)}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+              <path
+                className="icon-more_svg__fill"
+                d="M32 45.333a5.333 5.333 0 110 10.666 5.333 5.333 0 010-10.666zM32 28a5.333 5.333 0 110 10.668A5.333 5.333 0 0132 28zm0-17.333c2.946 0 5.333 2.387 5.333 5.333S34.946 21.333 32 21.333 26.667 18.946 26.667 16s2.387-5.333 5.333-5.333z"
+                fill="#000"
+                fillRule="evenodd"
+              ></path>
+            </svg>
+          </button>
+        )}
         {messageOptions && (
           <div className="message-options-wrap">
             <ul className="sendbird_dropdown_menu">

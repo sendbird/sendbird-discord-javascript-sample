@@ -25,14 +25,12 @@ body {
   width: 100%;
 }
 
-#root.sendbird_conversation{
+#root.sendbird_conversation {
   box-sizing: content-box !important;
 }
-#root .sendbird-app__channellist-wrap{
+#root .sendbird-app__channellist-wrap {
   border: 0;
-
 }
-
 
 .channel-selector {
   height: 10%;
@@ -83,6 +81,10 @@ body {
   padding: 0px 18px;
 }
 
+.user-message {
+  position: relative;
+}
+
 .admin-message
   .MuiPaper-root.MuiCard-root.MuiPaper-elevation1.MuiPaper-rounded:hover,
 .user-message
@@ -100,6 +102,7 @@ body {
   background-color: rgb(71, 74, 80);
   color: white;
   padding: 5px;
+  position: relative;
 }
 
 .user-message
@@ -538,32 +541,35 @@ body {
   left: 50px !important;
 }
 
+.message-options-wrap {
+  position: absolute;
+  display: inline-block;
+  right: 10px;
+}
 .user-message
   .MuiPaper-root.MuiCard-root.MuiPaper-elevation1.MuiPaper-rounded:hover
   .user-message__options-btn,
 .user-message
   .MuiPaper-root.MuiCard-root.MuiPaper-elevation1.MuiPaper-rounded:active
-  .user-message__options-btn {
+  .user-message__options-btn,
+.user-message__options-dropdown-btn {
   background-color: #2f3136;
   height: 32px;
   width: 32px;
   border-radius: 25px;
   border: none;
-  float: right;
   position: absolute;
   display: inline-block;
-  position: absolute;
   right: 10px;
   top: 8px;
   font-weight: bold;
   cursor: pointer;
 }
 
-
 .user-message
-  .MuiPaper-root.MuiCard-root.MuiPaper-elevation1.MuiPaper-rounded:active{
-    display: block;
-  }
+  .MuiPaper-root.MuiCard-root.MuiPaper-elevation1.MuiPaper-rounded:active {
+  display: block;
+}
 .icon-more_svg__fill {
   fill: var(--sendbird-light-onlight-01);
 }
