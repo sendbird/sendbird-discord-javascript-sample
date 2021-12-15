@@ -30,7 +30,7 @@ function CommunityChannelList({
         setCurrentChannel(openChannels[0]);
       }
     });
-  }, [sdk]);
+  }, [sdk,setCurrentChannel]);
 
   const [showingForm, setShowingForm] = useState(false);
 

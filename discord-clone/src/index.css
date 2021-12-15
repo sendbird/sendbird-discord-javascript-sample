@@ -25,6 +25,15 @@ body {
   width: 100%;
 }
 
+#root.sendbird_conversation{
+  box-sizing: content-box !important;
+}
+#root .sendbird-app__channellist-wrap{
+  border: 0;
+
+}
+
+
 .channel-selector {
   height: 10%;
   display: flex;
@@ -175,7 +184,6 @@ body {
 
 .private-channel-list {
   display: flex;
-  height: 99vh;
   flex-direction: column;
   font-family: "Ginto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-size: 12px;
@@ -551,6 +559,11 @@ body {
   cursor: pointer;
 }
 
+
+.user-message
+  .MuiPaper-root.MuiCard-root.MuiPaper-elevation1.MuiPaper-rounded:active{
+    display: block;
+  }
 .icon-more_svg__fill {
   fill: var(--sendbird-light-onlight-01);
 }
@@ -572,15 +585,15 @@ body {
 
 .sendbird_dropdown_menu {
   float: right;
-  padding: 0px;
-  display: inline;
+  display: flex;
   margin: 0px;
   position: relative;
   z-index: 4;
   box-shadow: var(--sendbird-light-shadow-02);
   background-color: var(--sendbird-light-background-50);
   min-width: 140px;
-  padding: 8px 0px;
+  padding: 4px 0px;
+  margin-bottom: 4px;
   border-radius: 4px;
   list-style: none;
 }

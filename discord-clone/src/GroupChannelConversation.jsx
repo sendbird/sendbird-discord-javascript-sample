@@ -28,16 +28,21 @@ export default function GroupChannelConversation(props) {
           setShowSettings(true);
           renderSettingsBar();
         }}
-        renderChatItem={({ message, onDeleteMessage, onUpdateMessage }) => (
+        renderChatItem={({ 
+          message, 
+          onDeleteMessage, 
+          onUpdateMessage, 
+          emojiContainer,
+        }) => (
           <CustomizedMessageItem
             message={message}
             onDeleteMessage={onDeleteMessage}
             onUpdateMessage={onUpdateMessage}
+            emojiContainer={emojiContainer}
             userId={userId}
           />
         )}
       />
-
       {showSettings && (
         <div className="sendbird-app__settingspanel-wrap">
           <SBChannelSettings

@@ -23,7 +23,6 @@ export default function AddCommunityChannel({ sdk, userId, setShowingForm }) {
         if (error) {
           // Handle error.
         }
-        const channelUrl = openChannel.channelUrl;
       }
     );
   };

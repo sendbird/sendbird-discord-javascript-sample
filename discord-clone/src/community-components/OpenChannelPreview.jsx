@@ -23,7 +23,7 @@ export default function OpenChannelPreview({
       } catch (error) {}
     }
     return channelMeta;
-  }, [isStreaming]);
+  }, [isStreaming, channel.data]);
   return (
     <div
       className={`
