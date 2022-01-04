@@ -8,10 +8,6 @@
   flex: 1;
 }
 
-.community-app{
-  flex: 0 1 auto;
-}
-
 div.sendbird-app__channellist-wrap {
   display: flex;
   flex-flow: column;

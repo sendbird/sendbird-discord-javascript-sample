@@ -7,7 +7,6 @@ import AddCommunityChannel from "./create-community-channel/AddCommunityChannel"
 
 function CommunityChannelList({
   sdk,
-  user,
   userId,
   currentChannelUrl,
   setCurrentChannel,
@@ -74,16 +73,12 @@ function CommunityChannelList({
           </div>
         )}
       </div>
-      <div className="community-channel-list__footer">
-        <Profile user={user} />
-      </div>
     </div>
   );
 }
 
 export default withSendBird(CommunityChannelList, (store) => {
   return {
-    sdk: sendBirdSelectors.getSdk(store),
-    user: store.stores.userStore.user,
+    sdk: sendBirdSelectors.getSdk(store)
   };
 });

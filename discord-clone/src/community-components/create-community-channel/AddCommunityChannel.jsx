@@ -73,9 +73,10 @@ AddCommunityChannel.propTypes = {
   sdk: PropTypes.shape({
     getErrorFirstCallback: PropTypes.func,
   }).isRequired,
+  disabled: PropTypes.bool,
   userId: PropTypes.string.isRequired,
 };
 
 AddCommunityChannel.defaultProps = {
-  disabled: false,
+  disabled: false
 };

@@ -337,7 +337,6 @@ body {
 
 .sendbird-conversation__footer {
   margin-top: 15px;
-  z-index: 1;
 }
 
 .MuiCardHeader-root
@@ -694,4 +693,33 @@ textarea:focus {
 
 .sendbird-openchannel-user-message__right__top__sent-at.sendbird-label.sendbird-label--caption-3.sendbird-label--color-onbackground-3 {
   color: #979ca5;
+}
+
+.channel-list__footer {
+  padding: 16px;
+  box-sizing: border-box;
+  display: flex;
+  background-color: rgb(41, 43, 47) !important;
+  font-family: "Whitney", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+.voice-channel-list{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(47, 49, 54) ;
+}
+
+.voice-channel-list__title{
+  padding: 20px;
+  box-sizing: border-box;
+  font-size: 13px;
+  font-weight: 900;
+  font-family: "Whitney", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  color: #8e9297 !important;
+  text-transform: uppercase;
+  position: absolute;
+  display: block;
+  width: 240px;
 }
