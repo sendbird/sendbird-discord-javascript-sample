@@ -8,6 +8,7 @@ import "./index.css";
 import GroupChannelConversation from "./GroupChannelConversation";
 import OpenChannelConversation from "./OpenChannelConversation";
 import Profile from "./community-components/Profile";
+import VoiceCallForm from "./VoiceCallForm";
 // import SendBirdCall from "sendbird-calls";
 
 function CustomizedApp({
@@ -18,6 +19,7 @@ function CustomizedApp({
   nickname,
 }) {
   const [showSettings, setShowSettings] = useState(false);
+  const [showVoiceCallForm, setShowVoiceCallForm] = useState(false);
   const [currentChannel, setCurrentChannel] = useState(null);
   const currentChannelUrl = currentChannel ? currentChannel.url : "";
   const serverName = `${nickname}'s server`;
@@ -68,6 +70,11 @@ function CustomizedApp({
   //DirectCallListener/DirectCallDelegate fires an event
   // onEnded(DirectCall call)
   //release or destroy call view
+
+  const renderVoiceCallForm = () => {
+    setShowVoiceCallForm(!showVoiceCallForm);
+  };
+
   return (
     <div className="customized-app">
       <div className="sendbird-app__wrap">
@@ -105,8 +112,13 @@ function CustomizedApp({
             </div>
           </div>
           <div className="voice-channel-list">
-            <div className="voice-channel-list__title">Voice Call</div>
-
+            <div
+              className="voice-channel-list__title"
+              onClick={renderVoiceCallForm}
+            >
+              Voice Call
+            </div>
+            {showVoiceCallForm && <VoiceCallForm />}
           </div>
           <div className="channel-list__footer">
             <Profile user={user} />
