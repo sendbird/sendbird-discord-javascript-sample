@@ -8,7 +8,9 @@ import "./index.css";
 import GroupChannelConversation from "./GroupChannelConversation";
 import OpenChannelConversation from "./OpenChannelConversation";
 import Profile from "./community-components/Profile";
-import VoiceCallForm from "./VoiceCallForm";
+import VoiceCallForm from "./VoiceCallForms/VoiceCallForm";
+import DirectCallForm from "./VoiceCallForms/DirectCallForm";
+import GroupCallForm from "./VoiceCallForms/GroupCallForm";
 // import SendBirdCall from "sendbird-calls";
 
 function CustomizedApp({
@@ -19,6 +21,8 @@ function CustomizedApp({
   nickname,
 }) {
   const [showSettings, setShowSettings] = useState(false);
+  const [showGroupCallForm, setShowGroupCallForm] = useState(false);
+  const [showDirectCallForm, setShowDirectCallForm] = useState(false);
   const [showVoiceCallForm, setShowVoiceCallForm] = useState(false);
   const [currentChannel, setCurrentChannel] = useState(null);
   const currentChannelUrl = currentChannel ? currentChannel.url : "";
@@ -73,6 +77,8 @@ function CustomizedApp({
 
   const renderVoiceCallForm = () => {
     setShowVoiceCallForm(!showVoiceCallForm);
+    // setShowGroupCallForm(!showGroupCallForm);
+    // setShowDirectCallForm(!showDirectCallForm);
   };
 
   return (
@@ -118,7 +124,21 @@ function CustomizedApp({
             >
               Voice Call
             </div>
-            {showVoiceCallForm && <VoiceCallForm />}
+            {showVoiceCallForm && (
+              <VoiceCallForm
+                setShowVoiceCallForm={setShowVoiceCallForm}
+                setShowGroupCallForm={setShowGroupCallForm}
+                setShowDirectCallForm={setShowDirectCallForm}
+              />
+            )}
+
+            {showDirectCallForm && (
+              <DirectCallForm setShowDirectCallForm={setShowDirectCallForm} />
+            )}
+
+            {showGroupCallForm && (
+              <GroupCallForm setShowGroupCallForm={setShowGroupCallForm} />
+            )}
           </div>
           <div className="channel-list__footer">
             <Profile user={user} />

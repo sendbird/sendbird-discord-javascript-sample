@@ -45,3 +45,70 @@
     font-family: var(--sendbird-font-family-default);
   }
 }
+
+.bg-modal {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(62, 63, 63, 0.9);;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  width: 300px;
+  height: 200px;
+  background-color: var(--sendbird-light-background-50);
+  border-radius: 4px;
+  text-align: center;
+  padding: 20px;
+  position: absolute;
+}
+
+#suggestion_form_input {
+  width: 80%;
+  display: block;
+  margin: 0 auto;
+}
+
+.add_suggested_task_close_btn {
+  position: absolute;
+  top: 0;
+  right: 14px;
+  font-size: 42px;
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+
+#add_suggested_task_save_btn {
+  margin-top: 15px;
+  width: 80px;
+  height: 40px;
+  border: 1px solid var(--sendbird-light-onlight-03);
+  background-color: transparent;
+  border-radius: 4px;
+  color: var(--sendbird-light-ondark-01);
+  font-family: var(--sendbird-font-family-default);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+}
+
+#suggestion-task-form-title {
+  padding-top: 30px;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.4;
+  letter-spacing: -0.2px;
+}

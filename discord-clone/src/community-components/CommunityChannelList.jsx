@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { withSendBird, sendBirdSelectors } from "sendbird-uikit";
 import "./community-channel-list.scss";
 import OpenChannelPreview from "./OpenChannelPreview.jsx";
-import Profile from "./Profile";
 import AddCommunityChannel from "./create-community-channel/AddCommunityChannel";
 
 function CommunityChannelList({
@@ -12,6 +11,7 @@ function CommunityChannelList({
   setCurrentChannel,
 }) {
   const [channels, setChannels] = useState([]);
+  const [showingForm, setShowingForm] = useState(false);
   useEffect(() => {
     if (!sdk || !sdk.OpenChannel) {
       return;
@@ -30,8 +30,6 @@ function CommunityChannelList({
       }
     });
   }, [sdk,setCurrentChannel]);
-
-  const [showingForm, setShowingForm] = useState(false);
 
   const showForm = () => {
     setShowingForm(!showingForm);
