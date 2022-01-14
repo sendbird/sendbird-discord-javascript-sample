@@ -16,6 +16,7 @@ export default function UserMessage(props) {
   const [messageText, changeMessageText] = useState(message.message);
   const [messageOptions, setMessageOptions] = useState(false);
   const [pressedUpdate, setPressedUpdate] = useState(false);
+  const avatar = message.sender.plainProfileUrl ?  message.sender.plainProfileUrl : 'https://yt3.ggpht.com/ytc/AKedOLQc1OCf9gztVmcVnmI_41uN9axrRP8wd4a-GflFRQ=s900-c-k-c0x00ffffff-no-rj';
 
   const renderDropdown = (e) => {
     setMessageOptions(!messageOptions);
@@ -27,7 +28,7 @@ export default function UserMessage(props) {
         <CardHeader
           avatar={
             message.sender ? (
-              <Avatar alt="Us" src={message.sender.plainProfileUrl} />
+              <Avatar alt="Us" src={avatar} />
             ) : (
               <Avatar className="user-message__avatar">Us</Avatar>
             )

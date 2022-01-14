@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useState, useEffect} from "react";
 import { SendBirdProvider as SBProvider } from "sendbird-uikit";
 import "sendbird-uikit/dist/index.css";
 import CustomizedApp from "./CustomizedApp.jsx";
 import "./index.css";
 import SendBirdCall from "sendbird-calls";
+import  useSbCalls  from './OnCall/GroupCall/SbCalls/SbCallsContext/useSbCalls'
+import GroupCall from "./OnCall/GroupCall/GroupCall.js";
+import RoomCreated from "./OnCall/GroupCall/RoomCreated.js";
 
 export default function App() {
   const APP_ID = process.env.REACT_APP_APP_ID;
   const USER_ID = process.env.REACT_APP_USER_ID;
   const NICKNAME = process.env.REACT_APP_NICKNAME;
   const ACCESS_TOKEN = process.env.REACT_APP_ACCESS_TOKEN;
-
   const myColorSet = {
     "--sendbird-light-background-50": "#474a50",
     "--sendbird-light-primary-500": "#33353a",
@@ -22,29 +24,29 @@ export default function App() {
     "--sendbird-light-onlight-01": "#FFFFFF",
     "--sendbird-light-background-100": "#474a50",
   };
-
   const customizedPreviewItem = true;
 
-  // //https://github.com/sendbird/sendbird-calls-javascript
-  // //initialize call instance
-  // SendBirdCall.init(APP_ID);
+  const sbCalls = useSbCalls();
+  const { rooms } = sbCalls;
+  const [showRoomCreated, setShowRoomCreated] = useState(false);
+  const [passedRoom , setPassedRoom] = useState({});
+  const [onCall, setOnCall] = useState(false);
+  SendBirdCall.init(APP_ID);
 
   // //function to retrieve a list of available media devices or to retrieve any actual media streams
-  // //SendBirdCall.useMedia();
-  // const authOption = { userId: USER_ID, accessToken: ACCESS_TOKEN };
-  // SendBirdCall.authenticate(authOption, (result, error) => {
-  //   if (error) {
-  //   } else {
-  //     // user has been successfully authenticated & is connected to Sendbird server
-  //     // establish websocket connection
-  //     SendBirdCall.connectWebSocket()
-  //       .then(/* Succeeded to connect */)
-  //       .catch(/* Failed to connect */);
-  //   }
-  // });
+  // SendBirdCall.useMedia();
 
+  const authOption = { userId: USER_ID, accessToken: ACCESS_TOKEN };
+  SendBirdCall.authenticate(authOption, (result, error) => {
+    if (error) {
+    } else {
+      SendBirdCall.connectWebSocket()
+        .then(/* Succeeded to connect */)
+        .catch(/* Failed to connect */);
+    }
+  });
 
-  // //Register event handlers: device-specific listener; 
+  // //Register event handlers: device-specific listener;
   //   //event handler for client app to respond to diff events
   // //UNIQUE_HANDLER_ID is any unique string value such as UUID
   // SendBirdCall.addListener(UNIQUE_HANDLER_ID, {
@@ -53,7 +55,6 @@ export default function App() {
   //   onAudioOutputDeviceChanged: (currentDevice, availableDevices) => {},
   //   onVideoInputDeviceChanged: (currentDevice, availableDevices) => {},
   // });
-
 
   // //Make a call -> dialParams to initiate a call
   // const dialParams = {
@@ -92,7 +93,6 @@ export default function App() {
   // let localElement = dialParams.callOption.localMediaView;
   // call.setLocalMediaView(localElement);
 
-
   // //Receiving a call -> register a listener to receive incoming calls
   // //UNIQUE_HANDLER_ID ??
   // SendBirdCall.addListener(UNIQUE_HANDLER_ID, {
@@ -124,7 +124,6 @@ export default function App() {
   //   },
   // });
 
-
   // //Handling current call
   // call.muteMicrophone();
   // call.unmuteMicrophone();
@@ -154,7 +153,6 @@ export default function App() {
   //   }
   // };
 
-
   // // End a call
   // call.end();
 
@@ -162,9 +160,23 @@ export default function App() {
   // call.onEnded = (call) => {
   //   // Ccnsider releasing or destroying call-related view from here.
   // };
+  
+  useEffect(() => {
+    const room = rooms[rooms.length - 1];
+  }, [rooms]);
 
   return (
     <div className="app-wrapper">
+      {onCall && (
+        <>
+        <GroupCall room={passedRoom} />
+        <RoomCreated
+         isOpen={showRoomCreated}
+         room={passedRoom}
+         close={() => setShowRoomCreated(false)}
+        />
+        </>
+      )}
       <SBProvider
         appId={APP_ID}
         userId={USER_ID}
@@ -177,6 +189,10 @@ export default function App() {
           userId={USER_ID}
           nickname={NICKNAME}
           customizedPreviewItem={customizedPreviewItem}
+
+          setShowRoomCreated={setShowRoomCreated}
+          setPassedRoom={setPassedRoom}
+          setOnCall={setOnCall}
         />
       </SBProvider>
     </div>

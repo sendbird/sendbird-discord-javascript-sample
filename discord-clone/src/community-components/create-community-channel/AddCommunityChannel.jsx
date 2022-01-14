@@ -33,7 +33,7 @@ export default function AddCommunityChannel({ sdk, userId, setShowingForm }) {
       <div className="modal-content">
         <div className="add_suggested_task_close_btn" onClick={() => setShowingForm(false)} >+</div>
         <h3 id="suggestion-task-form-title">Open Channel Name:</h3>
-        <form onSubmit={openChannelFormSubmit} >
+        <form onSubmit={() => openChannelFormSubmit()} >
           <input
             type="text"
             id="channelName"

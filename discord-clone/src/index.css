@@ -4,6 +4,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* #root {
+  position: absolute;
+} */
+
 .server-headline {
   font-family: "Ginto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-size: 15px;
@@ -722,4 +726,5 @@ textarea:focus {
   position: absolute;
   display: block;
   width: 240px;
+  cursor: pointer;
 }

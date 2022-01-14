@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./voice-call.css";
 
 export default function VoiceCallForm( props ) {
