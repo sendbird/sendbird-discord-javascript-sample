@@ -4,7 +4,7 @@ import "sendbird-uikit/dist/index.css";
 import CustomizedApp from "./CustomizedApp.jsx";
 import "./index.css";
 import SendBirdCall from "sendbird-calls";
-import  useSbCalls  from './OnCall/GroupCall/SbCalls/SbCallsContext/useSbCalls'
+import useSbCalls from './OnCall/GroupCall/SbCalls/SbCallsContext/useSbCalls'
 import GroupCall from "./OnCall/GroupCall/GroupCall.js";
 import RoomCreated from "./OnCall/GroupCall/RoomCreated.js";
 
@@ -25,7 +25,6 @@ export default function App() {
     "--sendbird-light-background-100": "#474a50",
   };
   const customizedPreviewItem = true;
-
   const sbCalls = useSbCalls();
   const { rooms } = sbCalls;
   const [showRoomCreated, setShowRoomCreated] = useState(false);
@@ -33,133 +32,13 @@ export default function App() {
   const [onCall, setOnCall] = useState(false);
   SendBirdCall.init(APP_ID);
 
-  // //function to retrieve a list of available media devices or to retrieve any actual media streams
-  // SendBirdCall.useMedia();
-
   const authOption = { userId: USER_ID, accessToken: ACCESS_TOKEN };
   SendBirdCall.authenticate(authOption, (result, error) => {
     if (error) {
     } else {
       SendBirdCall.connectWebSocket()
-        .then(/* Succeeded to connect */)
-        .catch(/* Failed to connect */);
     }
   });
-
-  // //Register event handlers: device-specific listener;
-  //   //event handler for client app to respond to diff events
-  // //UNIQUE_HANDLER_ID is any unique string value such as UUID
-  // SendBirdCall.addListener(UNIQUE_HANDLER_ID, {
-  //   onRinging: (call) => {},
-  //   onAudioInputDeviceChanged: (currentDevice, availableDevices) => {},
-  //   onAudioOutputDeviceChanged: (currentDevice, availableDevices) => {},
-  //   onVideoInputDeviceChanged: (currentDevice, availableDevices) => {},
-  // });
-
-  // //Make a call -> dialParams to initiate a call
-  // const dialParams = {
-  //   //CALLEE_ID = USER_ID thats inputted to make the call to other user; grab from input field
-  //   userId: CALLEE_ID,
-  //   isVideoCall: true,
-  //   //to set call's initial configuration
-  //   callOption: {
-  //     localMediaView: document.getElementById("local_video_element_id"),
-  //     remoteMediaView: document.getElementById("remote_video_element_id"),
-  //     audioEnabled: true,
-  //     videoEnabled: true,
-  //   },
-  // };
-
-  // //dial method to start making a call
-  // const call = SendBirdCall.dial(dialParams, (call, error) => {
-  //   if (error) {
-  //   }
-  //   //dial succeeded
-  // });
-
-  // call.onEstablished = (call) => {};
-
-  // call.onConnected = (call) => {};
-
-  // call.onEnded = (call) => {};
-
-  // call.onRemoteAudioSettingsChanged = (call) => {};
-
-  // call.onRemoteVideoSettingsChanged = (call) => {};
-
-  // //remoteMediaView is required for remote media stream to be displayed ->
-  // let remoteElement = dialParams.callOption.remoteMediaView;
-  // call.setRemoteMediaView(remoteElement);
-  // let localElement = dialParams.callOption.localMediaView;
-  // call.setLocalMediaView(localElement);
-
-  // //Receiving a call -> register a listener to receive incoming calls
-  // //UNIQUE_HANDLER_ID ??
-  // SendBirdCall.addListener(UNIQUE_HANDLER_ID, {
-  //   onRinging: (call) => {
-  //     //these listeners enable reacting to in-call events w/ callbacks methods
-  //     call.onEstablished = (call) => {};
-
-  //     call.onConnected = (call) => {};
-
-  //     call.onEnded = (call) => {};
-
-  //     call.onRemoteAudioSettingsChanged = (call) => {};
-
-  //     call.onRemoteVideoSettingsChanged = (call) => {};
-
-  //     const acceptParams = {
-  //       callOption: {
-  //         localMediaView: document.getElementById("local_video_element_id"),
-  //         remoteMediaView: document.getElementById("remote_video_element_id"),
-  //         audioEnabled: true,
-  //         videoEnabled: true,
-  //       },
-  //     };
-  //     //accept incoming call -> if call accepted, media session's automatically established
-  //     call.accept(acceptParams);
-
-  //     //decline incoming call
-  //     call.end();
-  //   },
-  // });
-
-  // //Handling current call
-  // call.muteMicrophone();
-  // call.unmuteMicrophone();
-
-  // // start to show video
-  // call.startVideo();
-  // // stops showing video
-  // call.stopVideo();
-
-  // // receives the audio event (if callee changes their audio setting, caller is notified)
-  // call.onRemoteAudioSettingsChanged = (call) => {
-  //   if (call.isRemoteAudioEnabled) {
-  //     // the peer has been unmuted
-  //     // Consider displaying a muted icon
-  //   } else {
-  //     // the peer has been muted.
-  //     // Consider displaying an unmuted icon.
-  //   }
-  // };
-
-  // // receives the video event (if callee changes their video settings, caller is notified)
-  // call.onRemoteVideoSettingsChanged = (call) => {
-  //   if (call.isRemoteVideoEnabled) {
-  //     // The peer has started the video
-  //   } else {
-  //     // The peer has stopped the video
-  //   }
-  // };
-
-  // // End a call
-  // call.end();
-
-  // // receives the event
-  // call.onEnded = (call) => {
-  //   // Ccnsider releasing or destroying call-related view from here.
-  // };
   
   useEffect(() => {
     const room = rooms[rooms.length - 1];
@@ -174,6 +53,7 @@ export default function App() {
          isOpen={showRoomCreated}
          room={passedRoom}
          close={() => setShowRoomCreated(false)}
+
         />
         </>
       )}

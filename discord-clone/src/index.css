@@ -4,10 +4,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* #root {
-  position: absolute;
-} */
-
 .server-headline {
   font-family: "Ginto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-size: 15px;
@@ -728,3 +724,21 @@ textarea:focus {
   width: 240px;
   cursor: pointer;
 }
+
+
+
+
+
+/* .sc-cOLXoO.gxAXJK{
+  background-image: url(/src/OnCall/GroupCall/icons/close-icon.svg);
+} */
+
+/* Room information form */
+.sc-bBHxTw.krNZTh{
+  background-image: url(/src/OnCall/GroupCall/icons/close-icon.svg);
+}
+
+.sc-ksdxgE.jwCmld{
+  color: white;
+}
+

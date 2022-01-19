@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./voice-call.css";
+import "./group-call.css";
 import SendBirdCall from "sendbird-calls";
 
 export default function GroupCallForm(props) {
@@ -21,7 +21,6 @@ export default function GroupCallForm(props) {
 
     SendBirdCall.createRoom(roomParams)
       .then((room) => {
-        console.log("created room:", room);
         newRoom = room;
         return SendBirdCall.fetchRoomById(room.roomId);
       })
@@ -40,7 +39,6 @@ export default function GroupCallForm(props) {
         const localMediaView = document.getElementById(
           "local_video_element_id"
         );
-        console.log("localMedView", localMediaView);
         newRoom.localParticipant.setMediaView(localMediaView);
         setPassedRoom(newRoom);
         newRoom.on("remoteParticipantStreamStarted", (remoteParticipant) => {
@@ -53,41 +51,34 @@ export default function GroupCallForm(props) {
         setShowRoomCreated(true);
       })
       .catch((e) => {
-        console.log("issue:", e);
+        console.log("error:", e);
       });
   };
 
   const enterGroupCallRoom = (e) => {
     SendBirdCall.fetchRoomById(inputtedRoomId)
       .then((room) => {
-        // `room` with the identifier `ROOM_ID` is fetched from Sendbird Server.
-        console.log("fetched room by id: room=", room);
-        //then call enter() method to enter the room
         const enterParams = {
           videoEnabled: true,
           audioEnabled: true,
         };
-
         room
           .enter(enterParams)
           .then(() => {
-            console.log("successfully entered room");
+            console.log("Successfully entered room");
           })
           .catch((e) => {});
       })
       .catch((e) => {});
-
-    // Returns the most recently cached ‘room’ with the identifier `ROOM_ID` from the SDK.
-    // If there is no such room with the given identifier, `undefined` is returned.
   };
 
   return (
     <div className="bg-modal" style={{ display: "flex" }}>
       <div className="modal-content-group-call">
-        <div className="voice_call_form_close_btn" onClick={closeVoiceCallForm}>
+        <div className="group_call_form_close_btn" onClick={closeVoiceCallForm}>
           +
         </div>
-        <h3 id="voice-call-form-title">Make a group call</h3>
+        <h3 id="group-call-form-title">Make a group call</h3>
         <div className="group_call_create_room_wrap">
           <form onSubmit={(e) => createGroupCallRoom(e)}>
             <h3>Create a room</h3>

@@ -22,7 +22,7 @@ const SuccessIcon = styled.div`
   height: 20px;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url(/icons/ic-success-filled.svg);
+  background-image: url(VoiceCallForms/success-icon.svg);
   margin-right: 16px;
 `
 

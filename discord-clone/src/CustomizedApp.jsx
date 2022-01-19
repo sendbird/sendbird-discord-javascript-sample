@@ -8,8 +8,6 @@ import "./index.css";
 import GroupChannelConversation from "./GroupChannelConversation";
 import OpenChannelConversation from "./OpenChannelConversation";
 import Profile from "./community-components/Profile";
-import VoiceCallForm from "./VoiceCallForms/VoiceCallForm";
-import DirectCallForm from "./VoiceCallForms/DirectCallForm";
 import GroupCallForm from "./VoiceCallForms/GroupCallForm";
 
 function CustomizedApp({
@@ -24,8 +22,6 @@ function CustomizedApp({
 }) {
   const [showSettings, setShowSettings] = useState(false);
   const [showGroupCallForm, setShowGroupCallForm] = useState(false);
-  const [showDirectCallForm, setShowDirectCallForm] = useState(false);
-  const [showVoiceCallForm, setShowVoiceCallForm] = useState(false);
   const [currentChannel, setCurrentChannel] = useState(null);
   const currentChannelUrl = currentChannel ? currentChannel.url : "";
   const serverName = `${nickname}'s server`;
@@ -52,8 +48,8 @@ function CustomizedApp({
     }
   };
 
-  const renderVoiceCallForm = () => {
-    setShowVoiceCallForm(!showVoiceCallForm);
+  const renderGroupCallForm = () => {
+    setShowGroupCallForm(true);
   };
 
   return (
@@ -95,22 +91,10 @@ function CustomizedApp({
           <div className="voice-channel-list">
             <div
               className="voice-channel-list__title"
-              onClick={renderVoiceCallForm}
+              onClick={renderGroupCallForm}
             >
-              Voice Call
+              Group Call
             </div>
-            {showVoiceCallForm && (
-              <VoiceCallForm
-                setShowVoiceCallForm={setShowVoiceCallForm}
-                setShowGroupCallForm={setShowGroupCallForm}
-                setShowDirectCallForm={setShowDirectCallForm}
-              />
-            )}
-
-            {showDirectCallForm && (
-              <DirectCallForm setShowDirectCallForm={setShowDirectCallForm} />
-            )}
-
             {showGroupCallForm && (
               <GroupCallForm
                 setShowGroupCallForm={setShowGroupCallForm}
