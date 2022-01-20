@@ -46,14 +46,12 @@ const Title = styled.div`
 const Close = styled.div`
   width: 32px;
   height: 32px;
-  padding: 6px;
   border-radius: 4px;
   cursor: pointer;
 `
 const ICClose = styled.div`
   width: 20px;
   height: 20px;
-  padding: 4px;
   background-image: url(/icons/ic-close.svg);
 `
 

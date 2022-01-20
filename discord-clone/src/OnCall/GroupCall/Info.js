@@ -45,7 +45,7 @@ export const InfoInputText = styled.div`
 export const InfoInputIcon = styled.div`
   width: 20px;
   height: 20px;
-  background-image: url(VoiceCallForms/copy-icon.svg);
+  background-image: url(/icons/ic-copy.svg);
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;

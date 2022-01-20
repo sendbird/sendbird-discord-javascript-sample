@@ -44,11 +44,13 @@ export default function App() {
     const room = rooms[rooms.length - 1];
   }, [rooms]);
 
+
+  console.log('onCall', onCall)
   return (
     <div className="app-wrapper">
       {onCall && (
         <>
-        <GroupCall room={passedRoom} />
+        <GroupCall room={passedRoom} setOnCall={setOnCall}/>
         <RoomCreated
          isOpen={showRoomCreated}
          room={passedRoom}

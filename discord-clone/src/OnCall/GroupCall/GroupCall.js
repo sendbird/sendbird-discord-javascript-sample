@@ -194,13 +194,18 @@ const ShareWrapper = styled.div`
   }
 `;
 
-const GroupCall = ({ room }) => {
+const GroupCall = ({ room, setOnCall }) => {
   const [showDeviceSettings, setShowDeviceSettings] = useState(false);
   const [showSide, setShowSide] = useState(false);
   const [showRoomInfo, setShowRoomInfo] = useState(false);
 
   const { participants, localParticipant, remoteParticipants } = room;
 
+  const endCall = () => {
+    room.exit();
+    setOnCall(false);
+    window.location.reload();
+  }
   return (
     <Wrapper>
       <Main>
@@ -236,7 +241,9 @@ const GroupCall = ({ room }) => {
             ) : (
               <StartVideoButton onClick={() => localParticipant.startVideo()} />
             )}
-            <EndButton onClick={() => room.exit()} />
+            <EndButton onClick={() => endCall()} />
+            {/* <EndButton onClick={() => room.exit()} /> */}
+            
           </UtilityButtons>
           <Button onClick={() => setShowSide(!showSide)}>
             <ButtonIcon src="/icons/ic-user.svg" />

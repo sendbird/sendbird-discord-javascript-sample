@@ -3,7 +3,7 @@ import styled, { css } from "styled-components"
 /** Types */
 const primary = css`
   color: var(--white);
-  background-color: var(--purple-300);
+  background-color: rgba(158,158,167,0.767);
 `
 
 /** Sizes */

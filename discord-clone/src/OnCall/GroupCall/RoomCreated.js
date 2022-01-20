@@ -17,11 +17,22 @@ const RoomCreated = (props) => {
       title="Room information"
       content={
         <React.Fragment>
-          <Text>Share the room ID for others to enter this room.</Text>
           <InputWithCopyButton text={props.room.roomId} title="Room ID" />
+          <div style={{ marginTop: 24 }}>
+            <InfoLabel>Created by</InfoLabel>
+            <CreatedByText>User ID : {props.room.createdBy}</CreatedByText>
+          </div>
         </React.Fragment>
+        
       }
-      footer={{}}
+      footer={{
+        confirm: {
+          label: "OK",
+          onClick: () => {
+            props.close();
+          },
+        },
+      }}
       {...props}
     />
   );
