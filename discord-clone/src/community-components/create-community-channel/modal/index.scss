@@ -9,15 +9,18 @@
   justify-content: center;
 }
 
+.sendbird-modal__content .sendbird-create-channel--scroll{
+  height: revert;
+  overflow-y: revert;
+}
+
 .sendbird-modal__content {
   width: 480px;
   border-radius: 4px;
   z-index: 10001;
   padding: 18px 24px 24px 24px;
-  position: relative;
   box-sizing: border-box;
   
-
   .sendbird-modal__close {
     position: absolute;
     top: 16px;

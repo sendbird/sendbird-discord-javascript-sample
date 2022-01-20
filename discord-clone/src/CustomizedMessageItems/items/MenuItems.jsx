@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { createPortal } from 'react-dom';
-import PropTypes from 'prop-types';
+import React, { Component } from "react";
+import { createPortal } from "react-dom";
+import PropTypes from "prop-types";
 
 export default class MenuItems extends Component {
   constructor(props) {
@@ -8,7 +8,7 @@ export default class MenuItems extends Component {
     this.menuRef = React.createRef();
     this.state = {
       menuStyle: {},
-      handleClickOutside: () => { },
+      handleClickOutside: () => {},
     };
   }
 
@@ -27,17 +27,17 @@ export default class MenuItems extends Component {
     const { parentContainRef = {} } = this.props;
     const { current } = parentContainRef;
     if (parentContainRef && current) {
-      current.classList.add('sendbird-icon--pressed');
+      current.classList.add("sendbird-icon--pressed");
     }
-  }
+  };
 
   hideParent = () => {
     const { parentContainRef = {} } = this.props;
     const { current } = parentContainRef;
     if (parentContainRef && current) {
-      current.classList.remove('sendbird-icon--pressed');
+      current.classList.remove("sendbird-icon--pressed");
     }
-  }
+  };
 
   setupEvents = () => {
     const { closeDropdown } = this.props;
@@ -51,15 +51,13 @@ export default class MenuItems extends Component {
       handleClickOutside,
     });
 
-    document.addEventListener('mousedown', handleClickOutside);
-  }
+    document.addEventListener("mousedown", handleClickOutside);
+  };
 
   cleanUpEvents = () => {
-    const {
-      handleClickOutside,
-    } = this.state;
-    document.removeEventListener('mousedown', handleClickOutside);
-  }
+    const { handleClickOutside } = this.state;
+    document.removeEventListener("mousedown", handleClickOutside);
+  };
 
   getMenuPosition = () => {
     const { parentRef, openLeft } = this.props;
@@ -84,11 +82,13 @@ export default class MenuItems extends Component {
     }
 
     if (menuStyle.top < 0) {
-      menuStyle.top = rect.height < innerHeight ? (innerHeight - rect.height) / 2 : 0;
+      menuStyle.top =
+        rect.height < innerHeight ? (innerHeight - rect.height) / 2 : 0;
     }
 
     if (menuStyle.left < 0) {
-      menuStyle.left = rect.width < innerWidth ? (innerWidth - rect.width) / 2 : 0;
+      menuStyle.left =
+        rect.width < innerWidth ? (innerWidth - rect.width) / 2 : 0;
     }
 
     menuStyle.top += 32;
@@ -100,33 +100,29 @@ export default class MenuItems extends Component {
     }
 
     return this.setState({ menuStyle });
-  }
+  };
 
   render() {
     const { menuStyle } = this.state;
     const { children, style } = this.props;
-    return (
-      createPortal(
-        (
-          <>
-            <div className="sendbird-dropdown__menu-backdrop" />
-            <ul
-              className="sendbird-dropdown__menu"
-              ref={this.menuRef}
-              style={{
-                display: 'inline-block',
-                position: 'fixed',
-                left: `${Math.round(menuStyle.left)}px`,
-                top: `${Math.round(menuStyle.top)}px`,
-                ...style,
-              }}
-            >
-              {children}
-            </ul>
-          </>
-        ),
-        document.getElementById('sendbird-dropdown-portal'),
-      )
+    return createPortal(
+      <>
+        <div className="sendbird-dropdown__menu-backdrop" />
+        <ul
+          className="sendbird-dropdown__menu"
+          ref={this.menuRef}
+          style={{
+            display: "inline-block",
+            position: "fixed",
+            left: `${Math.round(menuStyle.left)}px`,
+            top: `${Math.round(menuStyle.top)}px`,
+            ...style,
+          }}
+        >
+          {children}
+        </ul>
+      </>,
+      document.getElementById("sendbird-dropdown-portal")
     );
   }
 }

@@ -1,0 +1,75 @@
+#group_call_form_button{
+  padding: 20px;
+  border: 1px solid var(--sendbird-light-onlight-03);
+  background-color: transparent;
+  border-radius: 4px;
+  color: var(--sendbird-light-ondark-01);
+  font-family: var(--sendbird-font-family-default);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+}
+
+#group_call_form_button{
+  float: right;
+  margin-right: 20px;
+}
+
+.modal-content-group-call{
+  width: 600px;
+  height: 350px;
+  background-color: var(--sendbird-light-background-50);
+  border-radius: 4px;
+  text-align: center;
+  padding: 20px;
+  position: absolute;
+}
+
+.group_call_create_room_wrap,
+.group_call_enter_room_wrap {
+  width: 40%;
+  padding: 20px;
+  border: 1px solid var(--sendbird-light-onlight-03);
+  background-color: transparent;
+  border-radius: 4px;
+  color: var(--sendbird-light-ondark-01);
+  font-family: var(--sendbird-font-family-default);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+}
+.group_call_create_room_wrap{
+  float: left;
+}
+
+.group_call_enter_room_wrap{
+  float: right;
+}
+
+.group_call_form_close_btn {
+  position: absolute;
+  top: 0;
+  right: 14px;
+  font-size: 42px;
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+
+#group-call-form-title {
+  padding: 20px;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.4;
+  letter-spacing: -0.2px;
+} 
