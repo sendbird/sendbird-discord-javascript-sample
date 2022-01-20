@@ -44,8 +44,6 @@ export default function App() {
     const room = rooms[rooms.length - 1];
   }, [rooms]);
 
-
-  console.log('onCall', onCall)
   return (
     <div className="app-wrapper">
       {onCall && (

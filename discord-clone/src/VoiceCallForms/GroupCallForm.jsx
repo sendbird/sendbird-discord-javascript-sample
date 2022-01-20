@@ -16,9 +16,7 @@ export default function GroupCallForm(props) {
     const roomParams = {
       roomType: SendBirdCall.RoomType.SMALL_ROOM_FOR_VIDEO,
     };
-
     var newRoom;
-
     SendBirdCall.createRoom(roomParams)
       .then((room) => {
         newRoom = room;
@@ -56,20 +54,38 @@ export default function GroupCallForm(props) {
   };
 
   const enterGroupCallRoom = (e) => {
+    e.preventDefault();
+    var newRoom;
     SendBirdCall.fetchRoomById(inputtedRoomId)
       .then((room) => {
         const enterParams = {
           videoEnabled: true,
           audioEnabled: true,
         };
-        room
-          .enter(enterParams)
-          .then(() => {
-            console.log("Successfully entered room");
-          })
-          .catch((e) => {});
+        newRoom = room;
+        return room.enter(enterParams);
       })
-      .catch((e) => {});
+      .then(() => {
+        const customizedAppDiv =
+          document.getElementsByClassName("customized-app")[0];
+        customizedAppDiv.style.display = "none";
+        const localMediaView = document.getElementById(
+          "local_video_element_id"
+        );
+        newRoom.localParticipant.setMediaView(localMediaView);
+        setPassedRoom(newRoom);
+        newRoom.on("remoteParticipantStreamStarted", (remoteParticipant) => {
+          const remoteMediaview = document.createElement("video");
+          remoteMediaview.autoplay = true;
+          remoteParticipant.setMediaView(remoteMediaview);
+        });
+        setShowGroupCallForm(false);
+        setOnCall(true);
+        setShowRoomCreated(true);
+      })
+      .catch((e) => {
+        console.log("error:", e);
+      });
   };
 
   return (

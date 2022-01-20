@@ -19,9 +19,9 @@
     "react-modal": "^3.14.4",
     "react-scripts": "4.0.3",
     "react-toastify": "^8.1.0",
-    "sendbird": "^3.0.154",
+    "sendbird": "^3.1.7",
     "sendbird-calls": "^1.9.0",
-    "sendbird-uikit": "^2.3.1",
+    "sendbird-uikit": "^2.5.3",
     "styled-components": "^5.3.3",
     "web-vitals": "^1.1.2"
   },
