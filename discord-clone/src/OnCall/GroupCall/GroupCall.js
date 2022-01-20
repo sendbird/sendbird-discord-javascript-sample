@@ -35,7 +35,7 @@ const Header = styled.div`
   flex: 0;
   height: 64px;
   padding: 22px 24px;
-  background-color: var(--navy-900);
+  background-color: black;
   ${heading2text1};
   ${demi};
   color: white;
@@ -60,10 +60,8 @@ const Footer = styled.div`
   z-index: 10;
 `;
 
-// Settings / Participant buttons
 const Button = styled.div`
   width: 80px;
-  height: 88px;
   padding: 20px 14px;
   cursor: pointer;
   display: flex;
@@ -75,7 +73,6 @@ const Button = styled.div`
   color: var(--white);
 `;
 
-//Settings / Participant Button's Icons 
 const ButtonIcon = styled.div`
   background-image: ${(props) => css`url(${props.src})`};
   background-repeat: no-repeat;
@@ -101,7 +98,8 @@ const Side = styled.div`
   flex-direction: column;
   min-width: 376px;
   width: 376px;
-  background-color: var(--white);
+  background-color: white;
+  color: black;
   ${(props) =>
     props.show
       ? css``
@@ -116,15 +114,15 @@ const SideTitle = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: 95%;
   height: 63px;
   padding: 20px 24px;
-  border-bottom: 1px solid var(--navy-100);
+  border-bottom: 1px solid black;
 `;
 
 const SideClose = styled.div`
   width: 32px;
-  height: 32px;
+  height: 24px;
   padding: 6px;
   border-radius: 4px;
   cursor: pointer;
@@ -163,12 +161,12 @@ const ParticipantWrapper = styled.div`
 const ParticipantNickname = styled.div`
   ${normal};
   ${heavy};
-  color: var(--navy-900);
+  color: black;
 `;
 
 const ParticipantId = styled.div`
   ${small};
-  color: var(--navy-600);
+  color: black;
 `;
 
 const Participant = ({ participant }) => {
@@ -186,8 +184,6 @@ const Participant = ({ participant }) => {
     </ParticipantWrapper>
   );
 };
-
-
 
 const ShareWrapper = styled.div`
   padding: 24px;
@@ -224,9 +220,7 @@ const GroupCall = ({ room }) => {
 
         <Footer>
           <Button onClick={() => setShowDeviceSettings(true)}>
-            <ButtonIcon src="Icons/settings-icon.svg" />
-
-
+            <ButtonIcon src="/icons/ic-settings.svg" />
             Settings
           </Button>
           <UtilityButtons>
@@ -245,10 +239,7 @@ const GroupCall = ({ room }) => {
             <EndButton onClick={() => room.exit()} />
           </UtilityButtons>
           <Button onClick={() => setShowSide(!showSide)}>
-            <ButtonIcon src="Icons/user-icon.svg" />
-
-
-
+            <ButtonIcon src="/icons/ic-user.svg" />
             Participants
           </Button>
         </Footer>

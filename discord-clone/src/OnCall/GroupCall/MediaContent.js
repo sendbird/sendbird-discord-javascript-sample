@@ -22,7 +22,7 @@ const ParticipantView = styled.div`
       (props.width - 32) / 2
     ) + "px"};
   height: 100%;
-  background-color: var(--navy-800);
+  background-color: black;
   &:first-child {
     margin-right: 4px;
   }
@@ -50,9 +50,9 @@ const ParticipantInfo = styled.div`
   bottom: 0;
   height: 24px;
   padding: 2px 8px;
-  background-color: rgba(33, 34, 66, 0.7);
+  background-color: rgba(56, 56, 56, 0.9);
   ${normal};
-  color: var(--white);
+  color: white;
 `;
 
 export const ParticipantOverlay = styled.div`
@@ -60,7 +60,7 @@ export const ParticipantOverlay = styled.div`
   justify-content: center;
   align-items: center;
   position: absolute;
-  background-color: var(--navy-800);
+  background-color: black;
   left: 0;
   top: 0;
   width: 100%;

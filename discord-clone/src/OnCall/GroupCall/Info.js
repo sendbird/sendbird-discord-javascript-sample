@@ -119,7 +119,7 @@ export const RoomCreatorInfo = ({ room }) => {
     <RoomCreatorWrapper>
       <label>Created by</label>
       <div>
-        <img src={room.createdBy} alt=""/>
+        <img src={room.createdBy} alt="" />
       </div>
     </RoomCreatorWrapper>
   );
