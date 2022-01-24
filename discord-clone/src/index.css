@@ -463,12 +463,31 @@ body {
   background-color: revert !important;
 }
 
-.sendbird-channel-list .sendbird-channel-list__header .sendbird-channel-header {
+.sendbird-channel-list .sendbird-channel-list__header {
   padding: 20px;
   background-color: revert;
   width: revert;
   border-bottom: none !important;
 }
+
+.sendbird-channel-header {
+  padding: 20px;
+  background-color: revert !important;
+  width: revert !important;
+  border-bottom: none !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 .sendbird-chat-header
   .sendbird-chat-header__right

@@ -23,7 +23,6 @@ const RoomCreated = (props) => {
             <CreatedByText>User ID : {props.room.createdBy}</CreatedByText>
           </div>
         </React.Fragment>
-        
       }
       footer={{
         confirm: {

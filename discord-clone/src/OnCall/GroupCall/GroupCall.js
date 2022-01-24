@@ -198,14 +198,44 @@ const GroupCall = ({ room, setOnCall }) => {
   const [showDeviceSettings, setShowDeviceSettings] = useState(false);
   const [showSide, setShowSide] = useState(false);
   const [showRoomInfo, setShowRoomInfo] = useState(false);
-
+  const [showVideo, setShowVideo] = useState(false);
+  const [enableAudio, setEnableAudio] = useState(false);
   const { participants, localParticipant, remoteParticipants } = room;
 
   const endCall = () => {
     room.exit();
     setOnCall(false);
     window.location.reload();
-  }
+  };
+
+  const stopVideo = () => {
+    localParticipant.stopVideo();
+    if (!localParticipant.isVideoEnabled) {
+      setShowVideo(false);
+    }
+  };
+
+  const enableVideo = () => {
+    localParticipant.startVideo();
+    if (localParticipant.isVideoEnabled) {
+      setShowVideo(true);
+    }
+  };
+
+  const stopAudio = () => {
+    localParticipant.muteMicrophone();
+    if (!localParticipant.isAudioEnabled) {
+      setEnableAudio(false);
+    }
+  };
+
+  const startAudio = () => {
+    localParticipant.unmuteMicrophone();
+    if (localParticipant.isAudioEnabled) {
+      setEnableAudio(true);
+    }
+  };
+
   return (
     <Wrapper>
       <Main>
@@ -229,21 +259,17 @@ const GroupCall = ({ room, setOnCall }) => {
             Settings
           </Button>
           <UtilityButtons>
-            {localParticipant.isAudioEnabled ? (
-              <MuteButton onClick={() => localParticipant.muteMicrophone()} />
+            {enableAudio ? (
+              <MuteButton onClick={() => stopAudio()} />
             ) : (
-              <UnmuteButton
-                onClick={() => localParticipant.unmuteMicrophone()}
-              />
+              <UnmuteButton onClick={() => startAudio()} />
             )}
-            {localParticipant.isVideoEnabled ? (
-              <StopVideoButton onClick={() => localParticipant.stopVideo()} />
+            {showVideo ? (
+              <StopVideoButton onClick={() => stopVideo()} />
             ) : (
-              <StartVideoButton onClick={() => localParticipant.startVideo()} />
+              <StartVideoButton onClick={() => enableVideo()} />
             )}
             <EndButton onClick={() => endCall()} />
-            {/* <EndButton onClick={() => room.exit()} /> */}
-            
           </UtilityButtons>
           <Button onClick={() => setShowSide(!showSide)}>
             <ButtonIcon src="/icons/ic-user.svg" />

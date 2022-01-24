@@ -30,6 +30,7 @@ export default function App() {
   const [showRoomCreated, setShowRoomCreated] = useState(false);
   const [passedRoom , setPassedRoom] = useState({});
   const [onCall, setOnCall] = useState(false);
+  
   SendBirdCall.init(APP_ID);
 
   const authOption = { userId: USER_ID, accessToken: ACCESS_TOKEN };

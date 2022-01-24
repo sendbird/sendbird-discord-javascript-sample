@@ -1,10 +1,10 @@
-import  useSbCalls  from './SbCalls/SbCallsContext/useSbCalls'
-import { Fragment, useEffect } from "react"
-import styled from "styled-components"
-import Modal from "./Modal"
-import { small, normal, heavy } from "./fonts"
+import useSbCalls from "./SbCalls/SbCallsContext/useSbCalls";
+import { Fragment, useEffect } from "react";
+import styled from "styled-components";
+import Modal from "./Modal";
+import { small, normal, heavy } from "./fonts";
 
-const Wrapper = styled.div``
+const Wrapper = styled.div``;
 
 const SelectContainer = styled.div`
   width: 100%;
@@ -14,7 +14,7 @@ const SelectContainer = styled.div`
   &:last-of-type {
     margin-bottom: 0;
   }
-`
+`;
 
 const SelectLabel = styled.label`
   ${small};
@@ -22,7 +22,7 @@ const SelectLabel = styled.label`
   display: inline-block;
   height: 12px;
   margin-bottom: 6px;
-`
+`;
 
 const Select = styled.select`
   ${normal};
@@ -37,14 +37,14 @@ const Select = styled.select`
   background-image: url(/icons/ic-input-arrow-down.svg);
   background-repeat: no-repeat;
   background-position: calc(100% - 12px) center;
-`
+`;
 
-const DeviceSettings = props => {
-  const sbCalls = useSbCalls()
+const DeviceSettings = (props) => {
+  const sbCalls = useSbCalls();
 
   useEffect(() => {
-    if (props.isOpen) sbCalls.updateMediaDevices({ audio: true, video: true })
-  }, [])
+    if (props.isOpen) sbCalls.updateMediaDevices({ audio: true, video: true });
+  }, []);
 
   return (
     <Modal
@@ -57,15 +57,15 @@ const DeviceSettings = props => {
             <Select
               id="camera-select"
               defaultValue={sbCalls.videoInputDeviceInfo.current?.deviceId}
-              onChange={e => {
-                const { value } = e.target
+              onChange={(e) => {
+                const { value } = e.target;
                 const mediaInfo = sbCalls.videoInputDeviceInfo.available.find(
-                  device => device.deviceId === value
-                )
-                if (mediaInfo) sbCalls.selectVideoInputDevice(mediaInfo)
+                  (device) => device.deviceId === value
+                );
+                if (mediaInfo) sbCalls.selectVideoInputDevice(mediaInfo);
               }}
             >
-              {sbCalls.videoInputDeviceInfo.available.map(info => (
+              {sbCalls.videoInputDeviceInfo.available.map((info) => (
                 <option key={info.deviceId} value={info.deviceId}>
                   {info.label}
                 </option>
@@ -78,15 +78,15 @@ const DeviceSettings = props => {
             <Select
               id="microphone-select"
               defaultValue={sbCalls.audioInputDeviceInfo.current?.deviceId}
-              onChange={e => {
-                const { value } = e.target
+              onChange={(e) => {
+                const { value } = e.target;
                 const mediaInfo = sbCalls.audioInputDeviceInfo.available.find(
-                  device => device.deviceId === value
-                )
-                if (mediaInfo) sbCalls.selectAudioInputDevice(mediaInfo)
+                  (device) => device.deviceId === value
+                );
+                if (mediaInfo) sbCalls.selectAudioInputDevice(mediaInfo);
               }}
             >
-              {sbCalls.audioInputDeviceInfo.available.map(info => (
+              {sbCalls.audioInputDeviceInfo.available.map((info) => (
                 <option key={info.deviceId} value={info.deviceId}>
                   {info.label}
                 </option>
@@ -99,15 +99,15 @@ const DeviceSettings = props => {
             <Select
               id="speaker-select"
               defaultValue={sbCalls.audioOutputDeviceInfo.current?.deviceId}
-              onChange={e => {
-                const { value } = e.target
+              onChange={(e) => {
+                const { value } = e.target;
                 const mediaInfo = sbCalls.audioOutputDeviceInfo.available.find(
-                  device => device.deviceId === value
-                )
-                if (mediaInfo) sbCalls.selectAudioOutputDevice(mediaInfo)
+                  (device) => device.deviceId === value
+                );
+                if (mediaInfo) sbCalls.selectAudioOutputDevice(mediaInfo);
               }}
             >
-              {sbCalls.audioOutputDeviceInfo.available.map(info => (
+              {sbCalls.audioOutputDeviceInfo.available.map((info) => (
                 <option key={info.deviceId} value={info.deviceId}>
                   {info.label}
                 </option>
@@ -119,7 +119,7 @@ const DeviceSettings = props => {
       footer={{}}
       {...props}
     />
-  )
-}
+  );
+};
 
-export default DeviceSettings
+export default DeviceSettings;
