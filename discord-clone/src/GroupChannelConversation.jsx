@@ -20,21 +20,6 @@ export default function GroupChannelConversation(props) {
     conversationWrap.style.marginRight = "0px";
   };
 
-  const RenderMessage = ({
-    message,
-    onDeleteMessage,
-    onUpdateMessage,
-    emojiContainer,
-  }) => (
-    <CustomizedMessageItem
-      message={message}
-      onDeleteMessage={onDeleteMessage}
-      onUpdateMessage={onUpdateMessage}
-      emojiContainer={emojiContainer}
-      userId={userId}
-    />
-  );
-
   return (
     <div className="group-channel__conversation-wrap">
       <SBConversation
@@ -43,7 +28,16 @@ export default function GroupChannelConversation(props) {
           setShowSettings(true);
           renderSettingsBar();
         }}
-        renderChatItem={RenderMessage}
+ 
+        renderChatItem={({ message, onDeleteMessage, onUpdateMessage, emojiContainer }) => (
+          <CustomizedMessageItem
+            message={message}
+            onDeleteMessage={onDeleteMessage}
+            onUpdateMessage={onUpdateMessage}
+            emojiContainer={emojiContainer}
+            userId={userId}
+          />
+        )}
       />
       {showSettings && (
         <div className="sendbird-app__settingspanel-wrap">

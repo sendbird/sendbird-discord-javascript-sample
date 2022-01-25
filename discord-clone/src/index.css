@@ -20,11 +20,14 @@ body {
   height: 100vh;
 }
 
-.customized-app {
+.sendbird-app__wrap{
+  position: relative;
+}
+/* .customized-app {
   position: relative;
   height: 100%;
   width: 100%;
-}
+} */
 
 #root.sendbird_conversation {
   box-sizing: content-box !important;
@@ -197,6 +200,7 @@ body {
   background-color: #2f3136;
   color: #8e9297;
   flex: 1;
+  height: 100%;
 }
 
 .user-message
@@ -351,6 +355,7 @@ body {
   width: 1186px;
 }
 
+
 .sendbird-app__settingspanel-wrap {
   height: 100%;
   position: fixed;
@@ -404,7 +409,16 @@ body {
 
 #sendbird-modal-root .sendbird-modal .sendbird-modal__content {
   background-color: var(--sendbird-light-background-50);
-  padding: 40px;
+  padding: 30px 30px;
+  width: 500px !important;
+}
+
+.sendbird-user-list-item{
+  width: revert !important;
+}
+.sendbird-create-channel--scroll{
+  padding-top: 16px;
+  height: revert !important;
 }
 
 #sendbird-modal-root .sendbird-modal {
@@ -429,6 +443,10 @@ body {
   background-color: var(--sendbird-light-primary-400);
 }
 
+.sendbird-channel-settings__operators-list.sendbird-accordion__panel-header,
+.sendbird-channel-settings__members-list.sendbird-accordion__panel-header,
+.sendbird-channel-settings__muted-members-list.sendbird-accordion__panel-header,
+.sendbird-channel-settings__banned-members-list.sendbird-accordion__panel-header,
 .sendbird-app__settingspanel-wrap .sendbird-channel-settings,
 .sendbird-channel-profile,
 .sendbird-channel-settings__freeze,
@@ -436,10 +454,9 @@ body {
   background-color: #2f3136 !important;
 }
 
-.sendbird-channel-list .sendbird-channel-list__header {
-  display: revert;
-  height: 40px;
-  min-height: 40px;
+.sendbird-channel-list__header {
+  height: 30px !important;
+  min-height: 30px !important;
 }
 
 .sendbird-channel-header__title__right::after {
@@ -476,6 +493,8 @@ body {
   width: revert !important;
   border-bottom: none !important;
   padding: 0px !important;
+  height: 20px !important;
+  min-height: 20px !important;
 }
 
 .sendbird-channel-header .sendbird-channel-header__right-icon {
@@ -549,8 +568,13 @@ body {
   padding: 2px 0px !important;
 }
 
+.sendbird-conversation__messages {
+  padding-top: 10px;
+}
+
 .sendbird-message-input .sendbird-message-input--textarea {
   border-radius: 15px !important;
+  padding-left: 50px !important;
 }
 
 .sendbird-message-input .sendbird-message-input--placeholder {

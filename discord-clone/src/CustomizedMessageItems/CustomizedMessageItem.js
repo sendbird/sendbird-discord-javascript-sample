@@ -4,7 +4,7 @@ import FileMessage from "./FileMessage";
 import UserMessage from "./UserMessage";
 
 export default function CustomizedMessageItem(props) {
-  const { message, emojiContainer, onDeleteMessage, onUpdateMessage, userId } = props;
+  const { message, onDeleteMessage, onUpdateMessage, emojiContainer, userId } = props;
 
   const MessageHOC = useMemo(() => {
     if (message.isAdminMessage && message.isAdminMessage()) {

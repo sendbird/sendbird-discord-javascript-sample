@@ -91,7 +91,6 @@ div.sendbird-app__channellist-wrap {
 }
 
 .sendbird-theme--light .sendbird-iconbutton{
-  background-color: rgb(168, 164, 164);
   font-weight: bold;
   border-radius: 25px;
   font-size: 20px;
@@ -235,4 +234,9 @@ div.sendbird-app__channellist-wrap {
 .sendbird-message-input--edit-action__cancel.sendbird-button.sendbird-button--secondary.sendbird-button--small{
   border: none !important;
   background-color: var(--sendbird-light-primary-300);
+}
+
+.sendbird-avatar-img--default{
+  width: 50px !important;
+  height: 50px !important;
 }

@@ -198,9 +198,9 @@ const GroupCall = ({ room, setOnCall }) => {
   const [showDeviceSettings, setShowDeviceSettings] = useState(false);
   const [showSide, setShowSide] = useState(false);
   const [showRoomInfo, setShowRoomInfo] = useState(false);
-  const [showVideo, setShowVideo] = useState(false);
-  const [enableAudio, setEnableAudio] = useState(false);
-  const { participants, localParticipant, remoteParticipants } = room;
+  const [showVideo, setShowVideo] = useState(true);
+  const [enableAudio, setEnableAudio] = useState(true);
+  const { participants, localParticipant } = room;
 
   const endCall = () => {
     room.exit();

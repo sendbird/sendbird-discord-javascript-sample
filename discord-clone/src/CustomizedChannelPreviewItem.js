@@ -9,22 +9,22 @@ import {
   Paper,
   Popper,
   Typography,
-  IconButton as MIconButton
+  IconButton as MIconButton,
 } from "@material-ui/core";
 import { MoreVert as MoreVertIcon } from "@material-ui/icons";
 import { makeStyles, withStyles } from "@material-ui/styles";
 
-const SmallAvatar = withStyles(theme => ({
+const SmallAvatar = withStyles((theme) => ({
   root: {
     width: 22,
     height: 22,
-    border: `2px solid white`
-  }
+    border: `2px solid white`,
+  },
 }))(Avatar);
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   selected: {
-    backgroundColor: "rgba(25, 118, 210, 0.2)"
-  }
+    backgroundColor: "rgba(25, 118, 210, 0.2)",
+  },
 }));
 
 export default function CustomizedChannelPreviewItem(props) {
@@ -32,7 +32,13 @@ export default function CustomizedChannelPreviewItem(props) {
   const popperId = "popper-id";
 
   // props
-  const { userId, channel, onLeaveChannel, currentChannelUrl } = props;
+  const {
+    userId,
+    channel,
+    onLeaveChannel,
+    currentChannelUrl,
+    setCurrentChannel,
+  } = props;
   const { name } = channel;
   const channelName = name;
   const { lastMessage } = channel;
@@ -52,7 +58,7 @@ export default function CustomizedChannelPreviewItem(props) {
     }
     const { members } = channel;
     const membersExcludingMe = members.filter(
-      member => member.userId !== userId
+      (member) => member.userId !== userId
     );
     const [firstMember, secondMember] = membersExcludingMe;
     return (
@@ -60,7 +66,7 @@ export default function CustomizedChannelPreviewItem(props) {
         overlap="circle"
         anchorOrigin={{
           vertical: "bottom",
-          horizontal: "right"
+          horizontal: "right",
         }}
         badgeContent={
           membersExcludingMe.length > 1 && (
@@ -81,8 +87,8 @@ export default function CustomizedChannelPreviewItem(props) {
       return channelName;
     }
     const membersNamesExcludingMe = channel.members
-      .filter(member => member.userId !== userId)
-      .map(member => member.nickname || member.userId)
+      .filter((member) => member.userId !== userId)
+      .map((member) => member.nickname || member.userId)
       .join(", ");
     return membersNamesExcludingMe.length < 30
       ? membersNamesExcludingMe.length === 0
@@ -91,7 +97,7 @@ export default function CustomizedChannelPreviewItem(props) {
       : `${membersNamesExcludingMe.slice(0, 30)}...`;
   }, [userId, channel, channelName]);
 
-  // channel type filter    
+  // channel type filter
   if (
     channel.isOpenChannel() ||
     channel.isFrozen ||
@@ -103,22 +109,26 @@ export default function CustomizedChannelPreviewItem(props) {
   }
 
   // event handlers
-  const handleClickChannelPreviewMenu = event => {
+  const handleClickChannelPreviewMenu = (event) => {
     setAnchorEl(event.currentTarget);
     setOpenLeaveChannel(!openLeaveChannel);
     event.stopPropagation();
   };
 
-  const handleBlurChannelPreviewItem = event => {
+  const handleBlurChannelPreviewItem = (event) => {
     setOpenLeaveChannel(false);
   };
 
-  const handleClickLeaveChannel = event => {
+  const handleClickLeaveChannel = (event) => {
     onLeaveChannel(channel);
   };
 
+  const setChannel = (event) => {
+    setCurrentChannel(channel);
+  };
+
   return (
-    <div className="customized-channelpreview-item" >
+    <div className="customized-channelpreview-item" onClick={setChannel}>
       <Popper
         transition
         id={popperId}

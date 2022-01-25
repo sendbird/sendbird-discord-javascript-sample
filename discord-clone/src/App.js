@@ -1,10 +1,9 @@
-import React, { useState, useEffect} from "react";
+import React, { useState} from "react";
 import { SendBirdProvider as SBProvider } from "sendbird-uikit";
 import "sendbird-uikit/dist/index.css";
 import CustomizedApp from "./CustomizedApp.jsx";
 import "./index.css";
 import SendBirdCall from "sendbird-calls";
-import useSbCalls from './OnCall/GroupCall/SbCalls/SbCallsContext/useSbCalls'
 import GroupCall from "./OnCall/GroupCall/GroupCall.js";
 import RoomCreated from "./OnCall/GroupCall/RoomCreated.js";
 
@@ -25,8 +24,6 @@ export default function App() {
     "--sendbird-light-background-100": "#474a50",
   };
   const customizedPreviewItem = true;
-  const sbCalls = useSbCalls();
-  const { rooms } = sbCalls;
   const [showRoomCreated, setShowRoomCreated] = useState(false);
   const [passedRoom , setPassedRoom] = useState({});
   const [onCall, setOnCall] = useState(false);
@@ -41,10 +38,6 @@ export default function App() {
     }
   });
   
-  useEffect(() => {
-    const room = rooms[rooms.length - 1];
-  }, [rooms]);
-
   return (
     <div className="app-wrapper">
       {onCall && (
@@ -54,7 +47,6 @@ export default function App() {
          isOpen={showRoomCreated}
          room={passedRoom}
          close={() => setShowRoomCreated(false)}
-
         />
         </>
       )}
@@ -70,7 +62,6 @@ export default function App() {
           userId={USER_ID}
           nickname={NICKNAME}
           customizedPreviewItem={customizedPreviewItem}
-
           setShowRoomCreated={setShowRoomCreated}
           setPassedRoom={setPassedRoom}
           setOnCall={setOnCall}

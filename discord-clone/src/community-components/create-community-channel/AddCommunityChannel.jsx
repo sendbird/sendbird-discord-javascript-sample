@@ -4,7 +4,6 @@ import "./add-channel.scss";
 
 export default function AddCommunityChannel({ sdk, userId, setShowingForm }) {
   const [newChannelName, changeNewChannelName] = useState("");
-  // var newChannelName = "";
   var imageUrl =
     "https://logos-world.net/wp-content/uploads/2020/12/Discord-Logo.png";
   var operatorUserIds = [`${userId}`];
@@ -23,6 +22,7 @@ export default function AddCommunityChannel({ sdk, userId, setShowingForm }) {
           // Handle error.
         }
         const channel = openChannel.channelUrl;
+        console.log('Channel created:', channel)
       }
     );
     changeNewChannelName("");

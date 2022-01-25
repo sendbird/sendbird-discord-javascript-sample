@@ -4,8 +4,6 @@ import styled from "styled-components";
 import Modal from "./Modal";
 import { small, normal, heavy } from "./fonts";
 
-const Wrapper = styled.div``;
-
 const SelectContainer = styled.div`
   width: 100%;
   max-width: 500px;
@@ -44,7 +42,7 @@ const DeviceSettings = (props) => {
 
   useEffect(() => {
     if (props.isOpen) sbCalls.updateMediaDevices({ audio: true, video: true });
-  }, []);
+  }, [props.isOpen, sbCalls]);
 
   return (
     <Modal

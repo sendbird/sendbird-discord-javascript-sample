@@ -4,13 +4,6 @@ import Modal from "./Modal";
 import styled from "styled-components";
 import { normal } from "./fonts";
 
-const Text = styled.div`
-  ${normal};
-  letter-spacing: -0.1px;
-  color: var(--navy-900);
-  margin-bottom: 10px;
-`;
-
 const RoomCreated = (props) => {
   return (
     <Modal
