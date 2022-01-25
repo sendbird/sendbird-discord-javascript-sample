@@ -1,15 +1,13 @@
-/* admin message */
 .admin-message__avatar {
-    background-color: grey;
-  } */
-  
-  /* user message */
-  .user-message__avatar {
-    background-color: grey;
-  } 
-  
-  .user-message__text-area {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  background-color: grey;
+}
+
+.user-message__avatar {
+  background-color: grey;
+}
+
+.user-message__text-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
