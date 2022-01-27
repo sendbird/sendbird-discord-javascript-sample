@@ -32,7 +32,7 @@ export default function GroupCallForm(props) {
       })
       .then(() => {
         const customizedAppDiv =
-          document.getElementsByClassName("customized-app")[0];
+          document.getElementsByClassName("sendbird-app__wrap")[0];
         customizedAppDiv.style.display = "none";
         const localMediaView = document.getElementById(
           "local_video_element_id"
@@ -67,7 +67,7 @@ export default function GroupCallForm(props) {
       })
       .then(() => {
         const customizedAppDiv =
-          document.getElementsByClassName("customized-app")[0];
+          document.getElementsByClassName("sendbird-app__wrap")[0];
         customizedAppDiv.style.display = "none";
         const localMediaView = document.getElementById(
           "local_video_element_id"

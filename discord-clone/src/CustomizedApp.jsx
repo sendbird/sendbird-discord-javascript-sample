@@ -53,7 +53,6 @@ function CustomizedApp({
   };
 
   return (
-    <div className="customized-app">
       <div className="sendbird-app__wrap">
         <div className="sendbird-app__channellist-wrap">
           <h1 className="server-headline">{lowerCaseServerName}</h1>
@@ -113,7 +112,6 @@ function CustomizedApp({
           {conversationChatWindow()}
         </div>
       </div>
-    </div>
   );
 }
 
