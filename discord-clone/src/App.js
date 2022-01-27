@@ -24,10 +24,11 @@ export default function App() {
     "--sendbird-light-background-100": "#474a50",
   };
   const customizedPreviewItem = true;
+  // const sbCalls = useSbCalls();
+  // const { rooms } = sbCalls;
   const [showRoomCreated, setShowRoomCreated] = useState(false);
   const [passedRoom , setPassedRoom] = useState({});
   const [onCall, setOnCall] = useState(false);
-  
   SendBirdCall.init(APP_ID);
 
   const authOption = { userId: USER_ID, accessToken: ACCESS_TOKEN };
@@ -38,6 +39,12 @@ export default function App() {
     }
   });
   
+  // useEffect(() => {
+  //   const room = rooms[rooms.length - 1];
+  // }, [rooms]);
+
+
+  console.log('onCall', onCall)
   return (
     <div className="app-wrapper">
       {onCall && (

@@ -53,63 +53,65 @@ function CustomizedApp({
   };
 
   return (
-    <div className="sendbird-app__wrap">
-      <div className="sendbird-app__channellist-wrap">
-        <h1 className="server-headline">{lowerCaseServerName}</h1>
-        <div className="private-channel-list">
-          <SBChannelList
-            onChannelSelect={(channel) => {
-              if (channel && channel.url) {
-                setCurrentChannel(channel);
+    <div className="customized-app">
+      <div className="sendbird-app__wrap">
+        <div className="sendbird-app__channellist-wrap">
+          <h1 className="server-headline">{lowerCaseServerName}</h1>
+          <div className="private-channel-list">
+            <SBChannelList
+              onChannelSelect={(channel) => {
+                if (channel && channel.url) {
+                  setCurrentChannel(channel);
+                }
+              }}
+              renderChannelPreview={
+                customizedPreviewItem
+                  ? ({ channel, onLeaveChannel }) => (
+                      <CustomizedChannelPreviewItem
+                        userId={userId}
+                        channel={channel}
+                        onLeaveChannel={onLeaveChannel}
+                        currentChannelUrl={currentChannelUrl}
+                        setCurrentChannel={setCurrentChannel}
+                      />
+                    )
+                  : null
               }
-            }}
-            renderChannelPreview={
-              customizedPreviewItem
-                ? ({ channel, onLeaveChannel }) => (
-                    <CustomizedChannelPreviewItem
-                      userId={userId}
-                      channel={channel}
-                      onLeaveChannel={onLeaveChannel}
-                      currentChannelUrl={currentChannelUrl}
-                      setCurrentChannel={setCurrentChannel}
-                    />
-                  )
-                : null
-            }
-          />
-        </div>
-        <div className="community-app">
-          <div className="community-channel-list">
-            <CommunityChannelList
-              userId={userId}
-              appId={appId}
-              currentChannelUrl={currentChannelUrl}
-              setCurrentChannel={setCurrentChannel}
             />
           </div>
-        </div>
-        <div className="voice-channel-list">
-          <div
-            className="voice-channel-list__title"
-            onClick={renderGroupCallForm}
-          >
-            Group Call
+          <div className="community-app">
+            <div className="community-channel-list">
+              <CommunityChannelList
+                userId={userId}
+                appId={appId}
+                currentChannelUrl={currentChannelUrl}
+                setCurrentChannel={setCurrentChannel}
+              />
+            </div>
           </div>
-          {showGroupCallForm && (
-            <GroupCallForm
-              setShowGroupCallForm={setShowGroupCallForm}
-              setShowRoomCreated={setShowRoomCreated}
-              setPassedRoom={setPassedRoom}
-              setOnCall={setOnCall}
-            />
-          )}
+          <div className="voice-channel-list">
+            <div
+              className="voice-channel-list__title"
+              onClick={renderGroupCallForm}
+            >
+              Group Call
+            </div>
+            {showGroupCallForm && (
+              <GroupCallForm
+                setShowGroupCallForm={setShowGroupCallForm}
+                setShowRoomCreated={setShowRoomCreated}
+                setPassedRoom={setPassedRoom}
+                setOnCall={setOnCall}
+              />
+            )}
+          </div>
+          <div className="channel-list__footer">
+            <Profile user={user} />
+          </div>
         </div>
-        <div className="channel-list__footer">
-          <Profile user={user} />
+        <div className="sendbird-app__conversation-wrap">
+          {conversationChatWindow()}
         </div>
-      </div>
-      <div className="sendbird-app__conversation-wrap">
-        {conversationChatWindow()}
       </div>
     </div>
   );
