@@ -1,28 +1,26 @@
-import React, { ReactElement, useEffect, useState } from "react";
-import { withSendBird, sendBirdSelectors } from "sendbird-uikit";
+import React, { useEffect, useState } from "react";
+import { useSendbirdStateContext, sendbirdSelectors } from "@sendbird/uikit-react";
 
 import "./streaming-channel-list.scss";
 import OpenChannelPreview from "./OpenChannelPreview";
 import Profile from "./Profile";
 
-function StreamingChannelList({
-  sdk,
-  user,
+export default function StreamingChannelList({
   currentChannelUrl,
   setCurrentChannel,
 }) {
+  const context = useSendbirdStateContext();
+  const sdk = sendbirdSelectors.getSdk(context);
+  const user = context?.stores?.userStore?.user;
+
   const [channels, setChannels] = useState([]);
   useEffect(() => {
-    if (!sdk || !sdk.OpenChannel) {
+    if (!sdk || !sdk.openChannel) {
       return;
     }
-    const openChannelListQuery = sdk.OpenChannel.createOpenChannelListQuery();
-    // @ts-ignore: Unreachable code error
+    const openChannelListQuery = sdk.openChannel.createOpenChannelListQuery();
     openChannelListQuery.customTypes = ["SB_LIVE_TYPE"];
-    openChannelListQuery.next(function (openChannels, error) {
-      if (error) {
-        return;
-      }
+    openChannelListQuery.next().then((openChannels) => {
       setChannels(openChannels);
       if (openChannels.length > 0) {
         setCurrentChannel(openChannels[0]);
@@ -63,11 +61,3 @@ function StreamingChannelList({
     </div>
   );
 }
-
-export default withSendBird(StreamingChannelList, (store) => {
-  console.warn(store);
-  return {
-    sdk: sendBirdSelectors.getSdk(store),
-    user: store.stores.userStore.user,
-  };
-});

@@ -23,7 +23,7 @@ const useStyles = makeStyles(theme => ({
 export default function FileMessage(props) {
   const classes = useStyles();
   // props
-  const { message, userId, onDeleteMessage } = props;
+  const { message, userId, onDeleteMessage = () => {} } = props;
 
   return (
     <div className="file-message">

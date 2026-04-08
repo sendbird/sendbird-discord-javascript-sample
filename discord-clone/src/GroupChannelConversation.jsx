@@ -2,8 +2,8 @@ import React from "react";
 import {
   Channel as SBConversation,
   ChannelSettings as SBChannelSettings,
-} from "sendbird-uikit";
-import "sendbird-uikit/dist/index.css";
+} from "@sendbird/uikit-react";
+import "@sendbird/uikit-react/dist/index.css";
 import "./index.css";
 import "./community.css";
 import CustomizedMessageItem from "./CustomizedMessageItems/CustomizedMessageItem";
@@ -22,15 +22,9 @@ export default function GroupChannelConversation(props) {
 
   const RenderMessage = ({
     message,
-    onDeleteMessage,
-    onUpdateMessage,
-    emojiContainer,
   }) => (
     <CustomizedMessageItem
       message={message}
-      onDeleteMessage={onDeleteMessage}
-      onUpdateMessage={onUpdateMessage}
-      emojiContainer={emojiContainer}
       userId={userId}
     />
   );
@@ -43,7 +37,7 @@ export default function GroupChannelConversation(props) {
           setShowSettings(true);
           renderSettingsBar();
         }}
-        renderChatItem={RenderMessage}
+        renderMessage={RenderMessage}
       />
       {showSettings && (
         <div className="sendbird-app__settingspanel-wrap">

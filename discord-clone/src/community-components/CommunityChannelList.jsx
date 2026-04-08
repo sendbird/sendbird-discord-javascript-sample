@@ -1,35 +1,32 @@
 import React, { useEffect, useState } from "react";
-import { withSendBird, sendBirdSelectors } from "sendbird-uikit";
+import { useSendbirdStateContext, sendbirdSelectors } from "@sendbird/uikit-react";
 import "./community-channel-list.scss";
 import OpenChannelPreview from "./OpenChannelPreview.jsx";
 import AddCommunityChannel from "./create-community-channel/AddCommunityChannel";
 
-function CommunityChannelList({
-  sdk,
+export default function CommunityChannelList({
   userId,
   currentChannelUrl,
   setCurrentChannel,
 }) {
+  const context = useSendbirdStateContext();
+  const sdk = sendbirdSelectors.getSdk(context);
+
   const [channels, setChannels] = useState([]);
   const [showingForm, setShowingForm] = useState(false);
   useEffect(() => {
-    if (!sdk || !sdk.OpenChannel) {
+    if (!sdk || !sdk.openChannel) {
       return;
     }
 
-    const openChannelListQuery = sdk.OpenChannel.createOpenChannelListQuery();
-    // @ts-ignore: Unreachable code error
-
-    openChannelListQuery.next(function (openChannels, error) {
-      if (error) {
-        return;
-      }
+    const openChannelListQuery = sdk.openChannel.createOpenChannelListQuery();
+    openChannelListQuery.next().then((openChannels) => {
       setChannels(openChannels);
       if (openChannels.length > 0) {
         setCurrentChannel(openChannels[0]);
       }
     });
-  }, [sdk,setCurrentChannel]);
+  }, [sdk, setCurrentChannel]);
 
   const showForm = () => {
     setShowingForm(!showingForm);
@@ -74,9 +71,3 @@ function CommunityChannelList({
     </div>
   );
 }
-
-export default withSendBird(CommunityChannelList, (store) => {
-  return {
-    sdk: sendBirdSelectors.getSdk(store)
-  };
-});
