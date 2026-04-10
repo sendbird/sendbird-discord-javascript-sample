@@ -165,7 +165,7 @@ body {
 .sendbird-channel-list__body .MuiAvatar-img,
 .sendbird-channel-list__body
   .MuiTypography-root.MuiTypography-caption.MuiTypography-colorTextSecondary,
-.MuiButtonBase-root.MuiIconButton-root.MuiIconButton-sizeSmall,
+.sendbird-channel-list__body .MuiButtonBase-root.MuiIconButton-root.MuiIconButton-sizeSmall,
 .sendbird-chat-header
   .sendbird-chat-header--avatar--group-channel.sendbird-avatar
   .sendbird-avatar-img.sendbird-image-renderer,
@@ -201,6 +201,17 @@ body {
   color: #8e9297;
   flex: 1;
   height: 100%;
+  overflow: visible;
+}
+
+.private-channel-list .sendbird-channel-list {
+  height: auto !important;
+  overflow: visible !important;
+}
+
+.private-channel-list .sendbird-channel-list__body {
+  height: auto !important;
+  overflow: visible !important;
 }
 
 .user-message
