@@ -11,20 +11,16 @@ export default function AddCommunityChannel({ sdk, userId, setShowingForm }) {
   var data = null;
 
   const openChannelFormSubmit = () => {
-    sdk.OpenChannel.createChannel(
-      newChannelName,
-      imageUrl,
-      data,
-      operatorUserIds,
-      customType,
-      function (openChannel, error) {
-        if (error) {
-          // Handle error.
-        }
-        const channel = openChannel.channelUrl;
-        console.log('Channel created:', channel)
-      }
-    );
+    const params = {
+      name: newChannelName,
+      coverUrlOrImage: imageUrl,
+      data: data,
+      operatorUserIds: operatorUserIds,
+      customType: customType,
+    };
+    sdk.openChannel.createChannel(params).then((openChannel) => {
+      console.log('Channel created:', openChannel.url);
+    });
     changeNewChannelName("");
   };
 
@@ -52,7 +48,7 @@ export default function AddCommunityChannel({ sdk, userId, setShowingForm }) {
 
 AddCommunityChannel.propTypes = {
   sdk: PropTypes.shape({
-    getErrorFirstCallback: PropTypes.func,
+    openChannel: PropTypes.object,
   }).isRequired,
   disabled: PropTypes.bool,
   userId: PropTypes.string.isRequired,

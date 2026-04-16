@@ -1,6 +1,6 @@
 import React from "react";
-import { OpenChannel, OpenChannelSettings } from "sendbird-uikit";
-import "sendbird-uikit/dist/index.css";
+import { OpenChannel, OpenChannelSettings } from "@sendbird/uikit-react";
+import "@sendbird/uikit-react/dist/index.css";
 import "./index.css";
 import "./community.css";
 

@@ -10,7 +10,7 @@ import {
 
 export default function UserMessage(props) {
   // props
-  const { message, userId, onDeleteMessage, onUpdateMessage } = props;
+  const { message, userId, onDeleteMessage = () => {}, onUpdateMessage = () => {} } = props;
 
   // useState
   const [messageText, changeMessageText] = useState(message.message);

@@ -1,6 +1,6 @@
-import "sendbird-uikit/dist/index.css";
+import "@sendbird/uikit-react/dist/index.css";
 import React, { useState } from "react";
-import { ChannelList as SBChannelList, withSendBird } from "sendbird-uikit";
+import { ChannelList as SBChannelList, useSendbirdStateContext } from "@sendbird/uikit-react";
 import CustomizedChannelPreviewItem from "./CustomizedChannelPreviewItem";
 import CommunityChannelList from "./community-components/CommunityChannelList.jsx";
 import "./community.css";
@@ -10,8 +10,7 @@ import OpenChannelConversation from "./OpenChannelConversation";
 import Profile from "./community-components/Profile";
 import GroupCallForm from "./VoiceCallForms/GroupCallForm";
 
-function CustomizedApp({
-  user,
+export default function CustomizedApp({
   customizedPreviewItem,
   userId,
   appId,
@@ -20,6 +19,9 @@ function CustomizedApp({
   setPassedRoom,
   setOnCall,
 }) {
+  const context = useSendbirdStateContext();
+  const user = context?.stores?.userStore?.user;
+
   const [showSettings, setShowSettings] = useState(false);
   const [showGroupCallForm, setShowGroupCallForm] = useState(false);
   const [currentChannel, setCurrentChannel] = useState(null);
@@ -114,9 +116,3 @@ function CustomizedApp({
       </div>
   );
 }
-
-export default withSendBird(CustomizedApp, (store) => {
-  return {
-    user: store.stores.userStore.user,
-  };
-});

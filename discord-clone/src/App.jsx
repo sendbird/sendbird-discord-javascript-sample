@@ -1,17 +1,17 @@
 import React, { useState} from "react";
-import { SendBirdProvider as SBProvider } from "sendbird-uikit";
-import "sendbird-uikit/dist/index.css";
+import { SendBirdProvider as SBProvider } from "@sendbird/uikit-react";
+import "@sendbird/uikit-react/dist/index.css";
 import CustomizedApp from "./CustomizedApp.jsx";
 import "./index.css";
 import SendBirdCall from "sendbird-calls";
-import GroupCall from "./OnCall/GroupCall/GroupCall.js";
-import RoomCreated from "./OnCall/GroupCall/RoomCreated.js";
+import GroupCall from "./OnCall/GroupCall/GroupCall.jsx";
+import RoomCreated from "./OnCall/GroupCall/RoomCreated.jsx";
 
 export default function App() {
-  const APP_ID = process.env.REACT_APP_APP_ID;
-  const USER_ID = process.env.REACT_APP_USER_ID;
-  const NICKNAME = process.env.REACT_APP_NICKNAME;
-  const ACCESS_TOKEN = process.env.REACT_APP_ACCESS_TOKEN;
+  const APP_ID = import.meta.env.VITE_APP_ID;
+  const USER_ID = import.meta.env.VITE_USER_ID;
+  const NICKNAME = import.meta.env.VITE_NICKNAME;
+  const ACCESS_TOKEN = import.meta.env.VITE_ACCESS_TOKEN;
   const myColorSet = {
     "--sendbird-light-background-50": "#474a50",
     "--sendbird-light-primary-500": "#33353a",
